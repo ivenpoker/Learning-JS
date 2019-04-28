@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../main-libraries/js-files/bootstrap.min.js"></script>
+		<script src="../main-libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../main-libraries/css-files/bootstrap.min.css">
+		<title>Validate user input</title>
+
+		<script type="text/javascript">
+
+            $(document).ready(function () {
+                $("div.jumbotron").css({
+                    "background-image": "url('background/background_02.jpg')",
+                    "color": "white"
+                });
+            });
+
+
+            function validateInput()  {
+				let val = document.getElementById('numb').value;
+				if (isNaN(val) || val < 1 ||  val > 100) {
+				    document.getElementById('demo').innerHTML = "Invalid Input";
+				    validationResponse("red");
+				} else {
+				    document.getElementById('demo').innerHTML = "Input OK!";
+				    validationResponse("green");
+				}
+			}
+			function validationResponse(color) {
+			    let elem = document.getElementById('demo');
+			    elem.style.color = color;
+			    elem.style.padding = "10px";
+			    elem.style.fontSize = "25px";
+				elem.style.borderRadius = "8px";
+			}
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron" style="text-align: center;">
+			<h3>Validate Input</h3>
+		</div>
+		<div style="text-align: center"><p id="demo"></p></div>
+		<hr/>
+		<div style="text-align: center;">
+			<p>Enter a number between 1 and 100</p>
+			<input type="number" id="numb" placeholder="Enter integer"/>
+		</div>
+		<hr/>
+		<div style="text-align: center;">
+			<button type="button" class="btn btn-outline-dark btn-sm" onclick="validateInput()">
+				Validate input
+			</button>
+		</div>
+	</body>
+</html>
