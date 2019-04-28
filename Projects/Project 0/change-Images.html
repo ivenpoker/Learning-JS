@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../main-libraries/js-files/bootstrap.min.js"></script>
+		<script src="../main-libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../main-libraries/css-files/bootstrap.min.css">
+		<title>Change Pictures</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+                    "background-image": "url('background/background_02.jpg')",
+				    "color": "white"
+			    });
+			});
+
+			// Function to change the background image for image with id 'myImage'
+			function changeImage() {
+				let imagePic = document.getElementById('myImage');
+				let newImageName = "background/background_0" + (1 + getRandomInt(6)) + ".jpg";
+				while (imagePic.src.match(newImageName))
+					newImageName = "background/background_0" + (1 + getRandomInt(6)) + ".jpg";
+				imagePic.src = newImageName;
+			}
+
+			// Function returns a random number >= 0 and < 'max'.
+			function getRandomInt(max) {
+			    return Math.floor(Math.random() * Math.floor(max));
+			}
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron" style="text-align: center;">
+			<h3>Change Pictures</h3>
+		</div>
+		<hr/>
+		<div class="text-center">
+			<img alt="Just a simple image" src="background/background_01.jpg"
+				width="500px" height="280px" id="myImage"/>
+		</div>
+		<hr/>
+		<div class="text-center">
+			<button type="button" class="btn btn-outline-dark btn-sm"
+				onclick="changeImage()">
+				Change the image
+			</button>
+		</div>
+	</body>
+</html>
