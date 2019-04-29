@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../main-libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../main-libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../main-libraries/css-files/bootstrap.min.css">
+		<title>Display Time</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$("div.jumbotron").css({
+					"background-image": "url('background/background_06.jpg')",
+					"color": "white"
+				});
+			});
+			function showTime() {
+			    let time = new Date();
+			    let dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+			    let monthNames = ["January", "February", "March", "April", "May", "June",
+			                     "July", "August", "September", "October", "November", "December"];
+			    let dayName = dayList[time.getDay()];
+			    let monthName = monthNames[time.getMonth()];
+
+			    let seconds = time.getSeconds();
+			    let minutes = time.getMinutes();
+
+			    let timeStr = dayName + ", " + monthName + " " + time.getDate() + " " + time.getFullYear()
+			        + " " + time.getHours() + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" +
+				        (seconds < 10 ? "0" + seconds : seconds);
+			    document.getElementById('timeSpace').innerHTML = timeStr;
+			    document.getElementById('timeSpace').style.color = "blue";
+			}
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4 style="text-align: center;">
+				Current Time
+			</h4>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<hr/>
+				<p id="timeSpace"></p>
+				<hr/>
+				<div style="text-align: center;">
+					<button type="button" class="btn btn-outline-dark btn-sm"
+						onclick="showTime()">
+						Show the current time
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
