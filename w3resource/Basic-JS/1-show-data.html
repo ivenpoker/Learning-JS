@@ -25,10 +25,9 @@
                 let seconds = time.getSeconds();
                 let minutes = time.getMinutes();
 
-                let timeStr = dayName + ", " + monthName + " " + time.getDate() + " " + time.getFullYear()
+                document.getElementById('timeSpace').innerHTML = dayName + ", " + monthName + " " + time.getDate() + " " + time.getFullYear()
                     + " " + time.getHours() + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" +
                     (seconds < 10 ? "0" + seconds : seconds);
-                document.getElementById('timeSpace').innerHTML = timeStr;
                 document.getElementById('timeSpace').style.color = "blue";
             }
 		</script>

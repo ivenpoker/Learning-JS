@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Print window</title>
+
+		<script type="text/javascript">
+			$(document).read(function () {
+				$("div.jumbotron").css({
+                    "background-image": "url('../../Pictures/background_02.jpg')",
+                    "color": "white"
+				});
+			});
+            function printWindow() {
+                window.print();     // prints the current window on which function is called.
+            }
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4 style="text-align: center;">Print Current Window</h4>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<button type="button" class="btn btn-outline-dark btn-sm"
+					onclick="printWindow()">Print current window</button>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
