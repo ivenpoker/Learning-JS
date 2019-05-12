@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Zebra stripes in table with JQuery</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image": "url('../../Pictures/background_02.jpg",
+				    "color" : "white"
+			    });
+			    $("div.jumbotron h4").css("text-align", "center");
+			    $("div.divBtn").css("text-align", "center");
+			    $("button#mainBtn").click(function () {
+			        $("tr").each(function (index, elem) {
+				        if (index % 2 === 0 && index !== 0)
+			                $(this).css("background-color", "grey");
+			        })
+			    });
+
+			});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Zebra striped table with JQuery</h4>
+		</div>
+		<h4/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<table class="table">
+					<tr>
+						<th>Firstname</th>
+						<th>Lastname</th>
+						<th>Age</th>
+					</tr>
+					<tr>
+						<td>Jill</td>
+						<td>Smith</td>
+						<td>50</td>
+					</tr>
+					<tr>
+						<td>Eve</td>
+						<td>Jackson</td>
+						<td>94</td>
+					</tr>
+					<tr>
+						<td>Happi</td>
+						<td>Yvan</td>
+						<td>56</td>
+					</tr>
+					<tr>
+						<td>James</td>
+						<td>Boots</td>
+						<td>34</td>
+					</tr>
+					<tr>
+						<td>King</td>
+						<td>kong</td>
+						<td>34</td>
+					</tr>
+					<tr>
+						<td>Vyle</td>
+						<td>Jakes</td>
+						<td>89</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-4"></div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div class="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Add stripes with JQuery
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+
+	</body>
+</html>
