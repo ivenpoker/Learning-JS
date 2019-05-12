@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Test if JQuery is loaded</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_02.jpg')",
+				    "color" : "white"
+			    });
+			    $("div.jumbotron h3").css("text-align", "center");
+			    $("button#mainBtn").click(function () {
+                    $("div.info").addClass("alert alert-success");
+                    $("div.info > p").html("<b id='mess'>JQuery is LOADED!</b>");
+                    $("p#infoPara").css("text-align", "center");
+			    });
+			});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h3>Testing if jQuery is loaded</h3>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<br/>
+				<div class="info">
+					<p id="infoPara"></p>
+				</div>
+				<br/>
+				<button class="btn btn-outline-dark btn-sm" type="button" id="mainBtn">
+					Click to check if JQuery is loaded
+				</button>
+			</div>
+			<div class="col-4"></div>
+		</div>
+
+	</body>
+</html>
