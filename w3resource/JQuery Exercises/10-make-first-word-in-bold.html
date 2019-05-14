@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Make the first word in bold</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_02.jpg')",
+				    "color" : "white"
+			    }).end().add("div.jumbotron h4, div.divBtn").css("text-align", "center");
+			    let cnt = 1;
+			    $("button#addText").click(function () {
+			        if ($('input#userText').val() === "") {
+			            $("div.info").addClass("alert alert-danger").html("Please enter text in input field")
+				            .css("text-align", "center");
+			        } else {
+			            let newElem = $("<p class='newPara'></p>").text(cnt++ + ". " + $('input#userText').val());
+						$('div.newData').append(newElem);
+						$('div.info').removeClass('alert alert-danger').addClass('alert alert-success')
+							.html('Text added!').css('text-align', 'center');
+						$("input#userText").val("");
+
+			        }
+			    });
+			    $("button#makeBold").click(function () {
+			        $("div.newData p.newPara").each(function (index, elem) {
+			            console.log(elem.tagName + ": " + elem.innerHTML);
+			            let strings = elem.innerHTML.split(' ');
+				        strings[1] = "<b>" + strings[1] + "</b>";
+				        this.innerHTML = strings.join(' ');
+			        });
+			    });
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Make first word(s) in bold</h4>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div class="info">
+
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div class="input-group mb-3 input-group-sm">
+					<input type="text" class="form-control" id="userText" placeholder="Enter some text" aria-label="Recipient's username" aria-describedby="basic-addon2">
+					<div class="input-group-append">
+						<button class="btn btn-dark btn-sm" type="button" id="addText">Add text</button>
+					</div>
+				</div>
+				<hr/>
+				<div class="divBtn">
+					<button class="btn btn-primary btn-sm" type="button" id="makeBold">
+						Make first words of data added bold.
+					</button>
+				</div>
+				<br/>
+				<div class="newData"></div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
