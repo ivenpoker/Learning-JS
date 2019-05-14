@@ -12,6 +12,7 @@
 				    "background-image" : "url('../../Pictures/background_02.jpg')",
 				    "color" : "white"
 			    }).end().add("div.jumbotron h4, div.divBtn").css("text-align", "center");
+			    $("button#makeBold").attr('disabled', true);
 			    let cnt = 1;
 			    $("button#addText").click(function () {
 			        if ($('input#userText').val() === "") {
@@ -23,7 +24,7 @@
 						$('div.info').removeClass('alert alert-danger').addClass('alert alert-success')
 							.html('Text added!').css('text-align', 'center');
 						$("input#userText").val("");
-
+						$('button#makeBold').attr('disabled', false);
 			        }
 			    });
 			    $("button#makeBold").click(function () {
@@ -33,6 +34,7 @@
 				        strings[1] = "<b>" + strings[1] + "</b>";
 				        this.innerHTML = strings.join(' ');
 			        });
+			        $(this).attr("disabled", true);
 			    });
 			})
 		</script>
