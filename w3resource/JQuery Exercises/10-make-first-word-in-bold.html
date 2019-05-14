@@ -29,7 +29,6 @@
 			    });
 			    $("button#makeBold").click(function () {
 			        $("div.newData p.newPara").each(function (index, elem) {
-			            console.log(elem.tagName + ": " + elem.innerHTML);
 			            let strings = elem.innerHTML.split(' ');
 				        strings[1] = "<b>" + strings[1] + "</b>";
 				        this.innerHTML = strings.join(' ');
