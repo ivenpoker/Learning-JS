@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Print a Page using jQuery</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image": "url('../../Pictures/background_01.jpg')",
+				    "color" : "white"
+			    });
+			    $("div.jumbotron h4, div.divBtn").css("text-align", "center");
+			    $("button#mainBtn").click(function () {
+			        window.print();
+			    });
+			});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Print Page using JQuery</h4>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div class="divBtn">
+					<button class="btn btn-outline-dark btn-sm" type="button" id="mainBtn">
+						Print page using JQuery
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
