@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Check to see if and Object is a JQuery object</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_04.jpg')",
+				    "color" : "white"
+			    }).end().add("div.jumbotron h4, div.divBtn").css('text-align', 'center')
+				    .end().add('kbd#codeA').html("let obj1 = { what: \"A regular JS object\" };")
+				    .end().add("kbd#codeB").html("let obj2 = $('body');");
+
+			    $("button#mainBtn").click(function () {
+                    let obj1 = { what: "A regular JS object" };
+				    let obj2 = $('body');
+
+				    if (obj1.jquery) {
+				        $("div#info").addClass('alert alert-success')
+					        .html("JQuery Object: <b>obj1</b>");
+				    } else if (obj2.jquery) {
+				        $("div#info").addClass('alert alert-success')
+					        .html("JQuery Object : <b>obj2</b>");
+				    }
+
+			    })
+			});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Check An <code>Object</code></h4>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="info"></div>
+				<div class="divBtn">
+					<kbd id="codeA"></kbd>
+				</div><hr/>
+				<div class="divBtn">
+					<kbd id="codeB"></kbd>
+				</div>
+				<hr/>
+				<div class="divBtn">
+					<button type="button" id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Verify which is a JQuery object.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
