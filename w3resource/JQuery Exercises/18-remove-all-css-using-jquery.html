@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Title</title>
+
+		<script type="text/javascript">
+            $(document).ready(function () {
+                $("div.jumbotron").css({
+                    "background-image" : "url('../../Pictures/background_02.jpg')",
+                    "color" : "white"
+                }).end().add('div.jumbotron h4, div.divBtn, div.cssDiv').css("text-align", "center");
+
+
+                $("button#mainBtn").click(function () {
+					$("div.cssDiv button").each(function (index, html) {
+					    $(this).html("All <ins>css</ins> removed");
+					}).removeClass()
+                });
+
+            })
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Remove all <code><ins>css classes</ins></code> using <code><ins>JQuery</ins></code></h4>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4">
+				<div class="cssDiv">
+					<button type="button" class="btn btn-primary btn-sm">
+						This button is styled using css
+					</button>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="cssDiv">
+					<button type="button" class="btn btn-dark btn-sm">
+						This button is styled using css
+					</button>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="cssDiv">
+					<button type="button" class="btn btn-danger btn-sm">
+						This button is styled using css
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<hr/>
+
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div class="divBtn">
+					<button id="mainBtn" type="button" class="btn btn-outline-dark btn-sm">
+						Remove all css from the buttons above.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
