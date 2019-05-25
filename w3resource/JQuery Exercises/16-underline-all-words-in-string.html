@@ -15,7 +15,7 @@
 			    }).end().add('div.jumbotron h4, div.divBtn').css('text-align', 'center');
 
 			    $("button#mainBtn").click(function () {
-			        let userText = $("textArea#userData").val();
+			        let userText = $("textArea#userData").val().trim();
 			        if (userText.length === 0) {
 			            $("div#info").removeClass('alert alert-success')
 				            .addClass('alert alert-danger').html('Please provide data')
