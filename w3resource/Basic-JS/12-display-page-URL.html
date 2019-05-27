@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Show page URL</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_04.jpg')",
+				    "color" : "white"
+			    }).end().add("div.jumbotron h4, div#divInfo, div#divBtn").css('text-align', 'center');
+
+			    $("div#divBtn button").click(function () {
+			        $("div#divInfo").addClass('alert alert-info').html("<b>URL:</b> " + document.URL);
+			    });
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Display this page URL</h4>
+		</div>
+		<hr/>
+		<div id="divInfo"></div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="divBtn">
+					<button type="button" class="btn btn-outline-dark btn-sm">
+						Reveal this page URL.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
