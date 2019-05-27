@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Convert between temperatures</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_02.jpg')",
+				    "color" : "white"
+			    }).end().add("div.jumbotron h4, div#divInfo").css("text-align", "center");
+
+			    $("button#toCelsiusBtn").click(function () {
+			        let userVal = $("input#celsiusVal").val();
+			        if (userVal.length === 0) {
+			            let elem = $("div#divInfo");
+			            if (elem.hasClass("alert-success"))
+			                elem.removeClass("alert alert-success");
+			            elem.addClass('alert alert-danger').html("Provide <b><ins>fahrenheit</ins></b> value!");
+			        } else {
+			            let tmp  = (5/9) * (userVal - 32);
+			            let elem = $("div#divInfo");
+			            if (elem.hasClass('alert-danger'))
+			                elem.removeClass('alert alert-danger');
+			            elem.addClass('alert alert-success').html("<b>" + userVal + "</b> to to celsius: <b> " + tmp
+				                + "</b>");
+			        }
+			    });
+			    $("button#toFahrenheitBtn").click(function () {
+			        let userVal = $("input#fahrenheitVal").val();
+			        if (userVal.length === 0) {
+                        let elem = $("div#divInfo");
+                        if (elem.hasClass("alert-success"))
+                            elem.removeClass("alert alert-success");
+                        elem.addClass('alert alert-danger').html("Provide <b><ins>celsius</ins></b> value!");
+			        } else {
+                        let tmp  = userVal * 9 / 5 + 32;
+                        let elem = $("div#divInfo");
+                        if (elem.hasClass('alert-danger'))
+                            elem.removeClass('alert alert-danger');
+                        elem.addClass('alert alert-success').html("<b>" + userVal + "</b> to fahrenheit: <b> " + tmp
+                            + "</b>");
+			        }
+			    });
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Convert between temperatures</h4>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="divInfo"></div>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="celsiusVal" class="form-control" placeholder="Fahrenheit value">
+					<button id="toCelsiusBtn" class="btn btn-outline-dark btn-sm">To celsius</button>
+				</div>
+				<hr/>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="fahrenheitVal" class="form-control" placeholder="Celsius value">
+					<button id="toFahrenheitBtn" class="btn btn-outline-dark btn-sm">To Fahrenheit</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
