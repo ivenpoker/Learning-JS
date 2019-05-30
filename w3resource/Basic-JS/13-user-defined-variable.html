@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Create a variable dynamically</title>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_02.jpg')",
+				    "color" : "white"
+			    }).end().add('div.jumbotron h4, div#divBtn, div#divInfo').css('text-align', 'center');
+			    $("button#mainBtn").click(function () {
+			        let varName = $("input#userVarName").val();
+			        if (varName.length === 0) {
+			            let info = $("div#divInfo");
+			            if (info.hasClass('alert-success') || info.hasClass('alert-info'))
+			                info.removeClass('alert-success').removeClass('alert-info');
+			            info.addClass('alert alert-danger').html('Provide a variable name');
+			        } else {
+			            let info = $("div#divInfo");
+			            if (info.hasClass('alert-danger'))
+			                info.removeClass('alert-danger');
+			            this[varName] = 120;
+				        info.addClass('alert-success').html(`Variable <b>'${varName}'</b> create.<br/>
+										Initial value: ${this[varName]}`);
+			        }
+			    });
+			});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Creating a <code>variable</code> dynamically</h4>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col"></div>
+			<div class="col">
+				<div id="divInfo"></div>
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="userVarName" class="form-control" placeholder="Enter variable name">
+				</div>
+				<hr/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm">Create variable</button>
+				</div>
+			</div>
+			<div class="col"></div>
+		</div>
+	</body>
+</html>
