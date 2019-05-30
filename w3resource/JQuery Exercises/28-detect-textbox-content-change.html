@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Detect change in textbox using JQuery</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_04.jpg')",
+				    "color" : "white"
+			    }).end().add('div.jumbotron h4').css('text-align', 'center');
+
+			    $("input#firstName").on({
+				    'input': function () {
+				        let firstName =  $("input#firstName").val();
+                        let elem = $("div#divInfoA");
+                        if (firstName.length !== 0) {
+                            if (!elem.hasClass('alert'))
+                                elem.addClass('alert alert-info');
+                            elem.html(`First name: <b>${firstName}</b>`);
+				        } else {
+				            if (elem.hasClass('alert'))
+				                elem.removeClass('alert alert-info');
+				            elem.html('');
+				        }
+				    }
+			    });
+			    $("input#secondName").on({
+				    'input' : function () {
+				        let secondName = $("input#secondName").val();
+				        let elem = $("div#divInfoB");
+				        if (secondName.length !== 0) {
+				            if(!elem.hasClass('alert'))
+				                elem.addClass('alert alert-info');
+				            elem.html(`Second name: <b>${secondName}</b>`);
+				        } else {
+				            if (elem.hasClass('alert'))
+				                elem.removeClass('alert alert-info');
+				            elem.html('');
+				        }
+				    }
+			    })
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Detect change in <code>textbox</code> using JQuery</h4>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="divInfoA"></div>
+				<div id="divInfoB"></div>
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="firstName" class="form-control" placeholder="Enter first name">
+				</div>
+				<hr/>
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="secondName" class="form-control" placeholder="Enter second name">
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
