@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+	<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+	<meta charset="UTF-8">
+	<title>Find absolute position of image</title>
+
+	<script type="text/javascript">
+        $(document).ready(function () {
+            let i = 1;
+            $('div.jumbotron').css({
+                "background-image" : "url('../../Pictures/background_02.jpg')",
+                "color" : "white"
+            }).end().add('div.jumbotron h4, div#divBtn, div#pic, div#info').css('text-align', 'center');
+            $("div#divBtn button").click(function () {
+
+                $("div#info").addClass('alert alert-danger')
+                    .html($("div#pic img").get(0).outerHTML);
+                let imgPath = $("img#mainImage").attr('src').split('/');
+                imgPath.pop();
+                imgPath = imgPath.join('/');
+                imgPath += '/background_0' + (i++) + ".jpg";
+                $("img#mainImage").attr('src', imgPath);
+                i = 1 + i % 6;
+            });
+        });
+	</script>
+</head>
+<body class="container">
+<div class="jumbotron">
+	<h4>Finding absolute using jQuery</h4>
+</div>
+<hr/>
+<div class="row">
+	<div class="col-4"></div>
+	<div class="col-4">
+		<div id="info"></div>
+		<div id="pic">
+			<img src="../../Pictures/background_05.jpg" id="mainImage" class="img-thumbnail img-fluid" alt="awesome pic"
+			     width="304" height="236"/>
+		</div>
+		<hr/>
+		<div id="divBtn">
+			<button type="button" class="btn btn-outline-dark btn-sm">
+				Show absolute position of image
+			</button>
+		</div>
+	</div>
+	<div class="col-4"></div>
+</div>
+</body>
+</html>
