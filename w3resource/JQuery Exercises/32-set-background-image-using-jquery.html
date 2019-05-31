@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Change jumbotron background picture</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    let i = 2;
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_02.jpg')",
+				    "color" : "white"
+			    }).end().add("div.jumbotron h5, div#divBtn").css("text-align", "center");
+
+			    $("button#mainBtn").click(function () {
+			        let newImageUrl = document.getElementsByClassName("jumbotron")[0].style.backgroundImage;
+			        newImageUrl = newImageUrl.substring(5, newImageUrl.length-2);
+
+			        let tmp;
+			        for (let i = 1; i < 7; i++) {
+			            if (newImageUrl.indexOf("0" + i) >= 0) {
+			                tmp = (i+1) % 7;
+			                tmp = tmp === 0 ? 1 : tmp;
+			                let val = newImageUrl.split('/');
+			                val[val.length-1] = "background_0" + tmp;
+			                val = val.join('/');
+			                console.log(val);
+                            $("div.jumbotron").css("background-image", `url('${val}.jpg')`);
+				            break;
+                        }
+			        }
+			    });
+
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Change jumbotron background image</h5>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="divBtn">
+					<button id="mainBtn" type="button" class="btn btn-outline-dark btn-sm">
+						Change jumbotron background picture now.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
