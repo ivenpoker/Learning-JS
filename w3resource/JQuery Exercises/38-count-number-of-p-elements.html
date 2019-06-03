@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Count <p> tags in document</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+                $("div.jumbotron").css({
+                    "background-image" : "url('../../Pictures/background_06.jpg')",
+                    "color" : "white"
+                }).end().add("div.jumbotron h5, div#mainData").css('text-align', 'center');
+
+                $("div#divInfo").addClass('alert alert-info').html(`Number of paragraphs: <b>${$('div#pTags p').length}</b>`);
+
+                let i = 1;
+                $("div#pTags p").each(function (index, elem) {
+                    $(elem).attr('id', `p${i++}`).
+                        append($("<button/>").html('remove').addClass('btn btn-outline-danger btn-sm').click(function () {
+                            $(`div#pTags p#${$(elem).attr('id')}`).remove();
+                            $("div#divInfo").html(`Number of paragraphs: <b>${$("div#pTags p").length}</b>`);
+                    }));
+
+                });
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Count the number of <kbd>&lt;p&gt;</kbd> elements below</h5>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="mainData">
+					<div id="divInfo"></div>
+					<div id="pTags">
+						<p>This is paragraph 1</p>
+						<p>This is paragraph 2</p>
+						<p>This is paragraph 3</p>
+						<p>This is paragraph 4</p>
+					</div>
+					<hr/>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
