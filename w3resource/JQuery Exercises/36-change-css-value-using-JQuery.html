@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Change CSS value using JQuery</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+                $("div.jumbotron").css({
+                    "background-image" : "url('../../Pictures/background_02.jpg')",
+                    "color" : "white"
+                }).end().add("div.jumbotron h5, div#mainData").css('text-align', 'center');
+				$("div#divInfo").addClass('alert alert-info').html('Alert box to observe changes');
+
+				$("button#mainBtn").click(function () {
+				    let elem = $("div#divInfo");
+				    if (elem.hasClass('alert-info')) {
+                        elem.removeClass('alert alert-info');
+                        elem.addClass('alert alert-danger').html('Class just changed!')
+                    } else {
+				        elem.removeClass('alert alert-danger');
+				        elem.addClass('alert alert-info').html("Class changed again!");
+				    }
+				});
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Change CSS value using JQuery</h5>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="mainData">
+					<div id="divInfo"></div>
+					<hr/>
+					<div id="divBtn">
+						<button id="mainBtn" class="btn btn-outline-dark btn-sm">
+							Change the 'class' property of the Alert above.
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
