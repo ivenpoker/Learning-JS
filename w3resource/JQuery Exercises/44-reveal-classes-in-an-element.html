@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<meta charset="UTF-8">
+		<title>Reveal classes found in a button</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+                $("div.jumbotron").css({
+                    "background-image" : "url('../../Pictures/background_04.jpg')",
+                    "color" : "white"
+                }).end().add('div.jumbotron h5, div#mainData, div#info').css('text-align', 'center');
+
+                $("div#divBtn button#mainBtn").click(function () {
+                    let data = "";
+                    for (let i = 0; i < this.classList.length; i++) {
+                        data += `<b><ins>${this.classList[i]}</ins></b>`;
+	                    if (i !== this.classList.length-1)
+	                        data += " ";
+                    }
+                   $("div#info").addClass('alert alert-info')
+	                   .html(`Button classes: ${data}`);
+                });
+			});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Reveal the classes found within a button</h5>
+		</div>
+		<hr/>
+		<div id="info"></div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="mainData">
+					<div id="divBtn">
+						<button id="mainBtn" class="btn btn-outline-dark btn-sm">
+							Reveal the classes found in this button
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
