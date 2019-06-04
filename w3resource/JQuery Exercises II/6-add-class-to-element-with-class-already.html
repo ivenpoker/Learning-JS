@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Add class to element with class already</title>
+
+		<script type="text/javascript">
+            $(document).ready(function () {
+                $("div.jumbotron").css({
+                    "background-image" : "url('../../Pictures/background_02.jpg')",
+                    "color" : "white"
+                }).end().add('div.jumbotron h5, div.textArea, div#paras, div#divBtn').css({textAlign: 'center'});
+
+                $("div#divBtn button#mainBtn").click(function () {
+                    $("div.textArea").css({border: '2px solid blue'}).add('div#paras p')
+                        .css({border: '2px solid red'});
+                });
+            })
+		</script>
+	
+		<script type="text/javascript">
+	        $(document).ready(function () {
+	            $("div.jumbotron").css({
+	                "background-image" : "url('../../Pictures/background_02.jpg')",
+	                "color" : "white"
+	            }).end().add('div.jumbotron h5, div.textArea, div#paras, div#divBtn').css({textAlign: 'center'});
+	
+	            $("div#divBtn button#mainBtn").click(function () {
+	                console.log(this.classList.contains('btn-outline-dark'));
+	                $(this).addClass(function (index, currentClass) {
+		                if (currentClass.indexOf('btn') >= 0)
+		                    return currentClass;
+		                return "btn btn-outline-dark btn-sm"
+                    })
+	            });
+	        })
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Adding class to DOM element with class(es) already</h5>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="divBtn">
+					<button type="button" id="mainBtn">
+						Do the JQuery class stuff with/to this button.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
