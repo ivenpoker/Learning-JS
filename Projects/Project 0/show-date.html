@@ -12,12 +12,20 @@
 				$("div.jumbotron").css({
 					"background-image": "url('../../Pictures/background_06.jpg')",
 					"color": "white"
-				});
+				}).end().add('div#infoDiv').css({textAlign: 'center'});
+
+                $("button#mainBtn").click(function () {
+                    showTime();
+                    $("div#infoDiv").css({border: '2px solid blue', borderRadius: "8px", paddingTop: '8px'})
+                });
 			});
+
+
 			function showTime() {
 			    let time = new Date();
 			    let dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-			    let monthNames = ["January", "February", "March", "April", "May", "June",
+			    let monthNames = ["January", "Fnesday, June 5 2019 10:59:30\n" +
+                "\nebruary", "March", "April", "May", "June",
 			                     "July", "August", "September", "October", "November", "December"];
 			    let dayName = dayList[time.getDay()];
 			    let monthName = monthNames[time.getMonth()];
@@ -29,7 +37,6 @@
 			        + " " + time.getHours() + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" +
 				        (seconds < 10 ? "0" + seconds : seconds);
 			    document.getElementById('timeSpace').innerHTML = timeStr;
-			    document.getElementById('timeSpace').style.color = "blue";
 			}
 		</script>
 	</head>
@@ -43,11 +50,12 @@
 			<div class="col-4"></div>
 			<div class="col-4">
 				<hr/>
-				<p id="timeSpace"></p>
+				<div id="infoDiv">
+					<p id="timeSpace"></p>
+				</div>
 				<hr/>
 				<div style="text-align: center;">
-					<button type="button" class="btn btn-outline-dark btn-sm"
-						onclick="showTime()">
+					<button type="button" class="btn btn-outline-dark btn-sm" id="mainBtn">
 						Show the current time
 					</button>
 				</div>
