@@ -14,6 +14,11 @@
                     "background-image": "url('../../Pictures/background_02.jpg')",
 				    "color": "white"
 			    });
+
+			    $("button#mainBtn").click(function () {
+			        changeImage();
+                    $("img#myImage").addClass('img-fluid img-thumbnail').css({width: '500px', height: '280px'})
+			    }).trigger('click');
 			});
 
 			// Function to change the Pictures image for image with id 'myImage'
@@ -42,8 +47,7 @@
 		</div>
 		<hr/>
 		<div class="text-center">
-			<button type="button" class="btn btn-outline-dark btn-sm"
-				onclick="changeImage()">
+			<button type="button" class="btn btn-outline-dark btn-sm" id="mainBtn">
 				Change the image
 			</button>
 		</div>
