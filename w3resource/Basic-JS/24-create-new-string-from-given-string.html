@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Create string by deleting some characters</title>
+
+		<script type="text/javascript">
+	        $(document).ready(function () {
+	            $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+	                .add('div#link a').addClass('small').css({textAlign: 'center', color: 'orange'});
+	            $("input#userString, div#divBtn, div#info").css({textAlign: 'center'});
+
+	            $("button#mainBtn").click(function () {
+	                let userTxt = $("input#userString").val().trim();
+	                let info = $("div#info");
+
+	                if (userTxt.length  < 1) {
+	                    if (info.hasClass('alert-info'))
+	                        info.removeClass('alert-info');
+	                    info.addClass('alert alert-danger').html('Please provide a <b>string</b> whose length is >= 1');
+	                } else {
+	                    if (info.hasClass('alert-danger'))
+	                        info.removeClass('alert-danger');
+	                    info.addClass('alert alert-info').html(`String after processing: <b>${userTxt.charAt(0)
+	                                    + userTxt + userTxt.charAt(0)}</b>`)
+	                }
+	            });
+	        })
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Create string by adding first character to front and back of old string</h5>
+			<div id="link">
+				<a href="http://www.w3resource.com/">Go to the website</a>
+			</div>
+		</div>
+		<hr/>
+		<div id="info"></div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="userString" class="form-control" placeholder="Enter some string">
+				</div>
+				<hr/>
+				<div id="divBtn">
+					<button type="button" id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Generate new string now.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
