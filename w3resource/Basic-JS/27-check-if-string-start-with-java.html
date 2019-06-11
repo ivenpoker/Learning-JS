@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Create string by deleting some characters</title>
+
+		<script type="text/javascript">
+	        $(document).ready(function () {
+	            $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+	                .add('div#link a').addClass('small').css({textAlign: 'center', color: 'orange'});
+	            $("input#userString, div#divBtn, div#info").css({textAlign: 'center'});
+
+	            $("button#mainBtn").click(function () {
+	                let userTxt = $("input#userString").val().trim();
+	                let info = $("div#info");
+
+	                if (userTxt.length === 0) {
+	                    swapClasses(info, "alert-info", "alert alert-danger");
+	                    info.html("Please enter a string to validate");
+	                } else if (userTxt.length < 4) {
+	                    swapClasses(info, "alert-info", "alert alert-danger");
+	                    info.html("Please enter a string whose length is >= 3");
+	                } else if (userTxt.substring(0, 4).toLowerCase() === "java") {
+	                        swapClasses(info, "alert-danger", "alert alert-info");
+	                        info.html(`String '<b>${userTxt}</b>' begins with '<b>Java</b>' (case insensitive).`)
+	                } else {
+	                    swapClasses(info, "alert-info", "alert alert-danger");
+	                    info.html(`String '<b>${userTxt}</b>' doesn't begins with '<b>Java</b>' (case insensitive) in it.`);
+	                }
+	                $("input#userString").val('').focus();
+	            });
+
+	            function swapClasses(elem, classA, classB) {
+	                if (elem.hasClass(classA))
+	                    elem.removeClass(classA);
+	                elem.addClass(classB);
+	            }
+	        })
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Create string by adding first character to front and back of old string</h5>
+			<div id="link">
+				<a href="http://www.w3resource.com/">Go to the website</a>
+			</div>
+		</div>
+		<hr/>
+		<div id="info"></div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="userString" class="form-control" placeholder="Enter some string">
+				</div>
+				<hr/>
+				<div id="divBtn">
+					<button type="button" id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Generate new string now.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
