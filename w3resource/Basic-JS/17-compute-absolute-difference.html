@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Compute the sum of two integers</title>
+
+		<script type="text/javascript">
+	        $(document).ready(function () {
+	            $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+	                .add('div#link a').addClass('small').css({textAlign: 'center', color: 'orange'});
+	            $("div#divBtn, input#userVal, div#info").css({textAlign: 'center'});
+
+	            $("div#divBtn button#mainBtn").click(function () {
+	                let userVal = $("input#userVal").val();
+	                let info = $("div#info");
+
+	                if (userVal.length === 0) {
+		                if (info.hasClass('alert-info'))
+		                    info.removeClass('alert alert-info');
+		                info.addClass('alert alert-danger').html("Please provide an <b><ins>integer</ins></b>");
+	                } else {
+	                    if (info.hasClass('alert-danger'))
+	                        info.removeClass('alert alert-danger');
+		                info.addClass('alert alert-info');
+
+		                if (Number(userVal) > 19) {
+		                    info.html(`Ans is <b>${3 * Math.abs(Number(userVal) - 19)}</b>`)
+		                } else {
+		                    info.html(`Ans is <b>${Math.abs(Number(userVal) - 19)}</b>`)
+		                }
+	                }
+	            });
+	        })
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Compute the absolute difference with 19</h5>
+			<div id="link">
+				<a href="http://www.w3resource.com/">Go to the website</a>
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="info"></div>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="userVal" class="form-control" placeholder="Enter first integer">
+				</div>
+				<hr/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Compute their sum now.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
