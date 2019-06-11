@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Check number within 20 of 100 or 400</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add("div#link a").addClass('small').css({textAlign: 'center', color: 'orange'});
+			    $("div#divBtn, input#userVal").css({textAlign: 'center'});
+
+			    $("div#divBtn button#mainBtn").click(function () {
+			        let userVal = $("input#userVal").val();
+				    let info = $("div#info");
+
+				    if (userVal.length === 0 || isNaN(userVal)) {
+				        if (info.hasClass('alert-info'))
+				            info.removeClass('alert alert-info');
+				        info.addClass('alert alert-danger').html("Please provide a <b><ins>number</ins></b> within the range.");
+                        $("input#userVal").val().focus();
+                    } else {
+				        if (info.hasClass('alert-danger')) info.removeClass('alert-danger');
+						if (!isWithinRange(userVal)) {
+						    if (info.hasClass('alert-info')) info.removeClass('alert alert-info');
+							info.addClass('alert alert-warning').html(`Number <b> ${userVal}</b> is not within range`);
+						} else {
+						    if (info.hasClass('alert-warning')) info.removeClass('alert alert-warning');
+						    info.addClass('alert alert-info').html(`Number <b>${userVal}</b> is within the range`);
+						}
+                        $("input#userVal").val().focus();
+                    }
+                });
+
+			    function isWithinRange(someVal) {
+                    return ((Math.abs(100 - someVal) <= 20) ||
+                        (Math.abs(400 - someVal) <= 20));
+			    }
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Check if a number is within 20 of 100 or 400</h5>
+			<div id="link">
+				<a href="http://www.w3resource.com/">Go to the website</a>
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="info"></div>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="userVal" class="form-control" placeholder="Enter first integer">
+				</div>
+				<hr/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Verify the my value now.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
