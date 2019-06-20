@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Ajax Handler</title>
+
+		<script type="text/javascript">
+	        $(document).ready(function () {
+	            $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+	                .add("div#link a").addClass('small').css({color: 'orange', textAlign: 'center'});
+	            $('div#divBtn, div#info, div#completeInfo').css({textAlign: "center"});
+
+	            $(document).ajaxSuccess(function () {
+	                $("div#completeInfo").addClass('alert alert-info').html("Triggered <b>ajaxSuccess</b> handler");
+	            });
+
+	            $("div#divBtn button#mainBtn").click(function () {
+	                $("div#info").load('./data/data1', function (responseTxt, status, xhr) {
+	                    if (status === "success") {
+	                        swapClasses($(this), "alert-danger", "alert alert-success");
+	                        $(this).html(`<b>Data loaded!</b><br/>${responseTxt}`);
+	                    } else if (status === "error") {
+	                        swapClasses($(this), "alert-success", "alert alert-danger");
+	                        $(this).html(`<b>ERROR LOADING DATA...</b>`);
+	                    }
+	                });
+	            });
+
+	            function swapClasses(elem, classA, classB) {
+	                if (elem.hasClass(classA))
+	                    elem.removeClass(classA);
+	                elem.addClass(classB);
+	            }
+	        })
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Handler when <code>AJAX</code> request call is Successful.</h5>
+			<div id="link">
+				<a href="http://www.w3resource.com/">Go to the website</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="info"></div>
+				<div id="completeInfo"></div>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Make an AJAX request to load data.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
