@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Title</title>
+
+		<script type="text/javascript">
+	        $(document).ready(function () {
+	            $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+	                .add('div#link a').addClass('small').css({color: 'orange', textAlign: "center"});
+
+	            $("div#btnDiv, div#link, div#para, div#info, input#userVal").css({textAlign: 'center'});
+	            let paraDiv = $("div#para");
+	            for (let i = 1; i <= 5; i++)
+	                paraDiv.append($('<p/>').html(`${i}. This is a paragraph`));
+
+	            $("div#btnDiv button#mainBtn").click(function () {
+	                let userText = $("input#userVal").val();
+	                let divInfo = $("div#info");
+
+	                if (userText.length === 0) {
+	                    swapClass(divInfo, "alert-info", "alert alert-danger");
+	                    divInfo.html("Please provide text to add after paragraphs");
+	                } else {
+	                    $("div#para p").after($('<div/>').addClass("alert alert-info").html(`<b>${userText}</b>`));
+	                    swapClass(divInfo, "alert-danger", "alert alert-info");
+	                    divInfo.html(`Text: <b>${userText}</b> added!`);
+	                }
+	            });
+
+	            function swapClass(elem, classA, classB) {
+	                if (elem.hasClass(classA))
+	                    elem.removeClass(classA);
+	                elem.addClass(classB);
+	            }
+	        })
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Insert <code>JQuery</code> object all paragraphs</h5>
+			<div id="link">
+				<a href="http://www.w3resource.com/">Go to the website</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<hr/>
+				<div id="info"></div>
+				<div id="para"></div>
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="userVal" class="form-control" placeholder="Enter text for jquery object">
+				</div>
+				<hr/>
+				<div id="btnDiv">
+					<button type="button" class="btn btn-outline-dark btn-sm" id="mainBtn">
+						Insert text after paragraphs.
+					</button>
+				</div>
+
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
