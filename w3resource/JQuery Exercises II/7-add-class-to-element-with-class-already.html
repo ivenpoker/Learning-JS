@@ -8,20 +8,6 @@
 		<title>Add class to element with class already</title>
 
 		<script type="text/javascript">
-            $(document).ready(function () {
-                $("div.jumbotron").css({
-                    "background-image" : "url('../../Pictures/background_02.jpg')",
-                    "color" : "white"
-                }).end().add('div.jumbotron h5, div.textArea, div#paras, div#divBtn').css({textAlign: 'center'});
-
-                $("div#divBtn button#mainBtn").click(function () {
-                    $("div.textArea").css({border: '2px solid blue'}).add('div#paras p')
-                        .css({border: '2px solid red'});
-                });
-            })
-		</script>
-	
-		<script type="text/javascript">
 	        $(document).ready(function () {
 	            $("div.jumbotron").css({
 	                "background-image" : "url('../../Pictures/background_02.jpg')",
