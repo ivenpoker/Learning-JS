@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Animation</title>
+
+		<style type="text/css">
+			div.colored {
+				background: #000000;
+			}
+		</style>
+
+		<script type="text/javascript">
+	        $(document).ready(function () {
+	            $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+	                .add('div#link a').addClass('small').css({textAlign: "center", color: "orange"});
+
+	            $("div#divBtn").css({textAlign: "center"});
+	            $("button#mainBtn").click(function () {
+	                $("div:animated").toggleClass('colored');
+	            });
+
+	            function animateIt() {
+	                $("#div1, #div2").slideToggle("slow", animateIt);
+	            }
+
+	            animateIt();
+
+	            $("div#data div").css({
+                    background: "#B0E0E6",
+                    border: "1px solid #e30ae8",
+                    width: "20px",
+                    height: "30px",
+                    margin: "0 5px",
+                    float: "left"
+	            });
+	        }).end().add("div#data").css({textAlign: "center"});
+		</script>
+	</head>
+	<body class="container">
+	<div class="jumbotron">
+		<h5>Change color of the div that is animated</h5>
+		<div id="link">
+			<a href="http://www.w3resource.com/" target="_blank">Go to the website</a>
+		</div>
+	</div>
+	<hr/>
+	<div class="row">
+		<div class="col-4"></div>
+		<div class="col-4">
+			<div id="data">
+				<div id="div1"></div>
+				<div id="div2"></div>
+				<div id="div3"></div>
+			</div>
+			<div id="divBtn">
+				<button type="button" id="mainBtn" class="btn btn-outline-dark btn-sm">Animate now</button>
+			</div>
+		</div>
+		<div class="col-4"></div>
+	</div>
+	</body>
+</html>
