@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Append some text to paragraph</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add('div#link a').addClass('small').css({color: "orange", textAlign: "center"});
+
+			    $("div#inputField, input#userText, div#btnDiv, div#info").css({textAlign: "center"});
+			    $("button#mainBtn").click(function () {
+			        let userText = $("input#userText").val();
+			        let divInfo  = $("div#info");
+
+			        if (userText.length === 0) {
+			            swapClass(divInfo, "alert-info", "alert alert-danger");
+			            divInfo.html("Please enter some text to append")
+			        } else {
+			            swapClass(divInfo, "alert-danger" ,"alert alert-info");
+			            $("div#paraData p").append(document.createTextNode(`${userText}`));
+			            divInfo.html('Text appended!');
+			            $("input#userText").val('').focus();
+			        }
+			    });
+
+			    function swapClass(elem, classA, classB) {
+			        if (elem.hasClass(classA))
+			            elem.removeClass(classA);
+			        elem.addClass(classB);
+			    }
+
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Append some text to paragraph</h5>
+			<div id="link">
+				<a href="http://www.w3resource.com/" target="_blank">Go to the website</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="info"></div>
+				<div id="paraData">
+					<p></p>
+				</div>
+				<div id="inputField">
+					<div class="input-group input-group-sm">
+						<input type="text" width="50" id="userText" class="form-control" placeholder="Enter some text to append">
+					</div>
+				</div>
+				<hr/>
+				<div id="btnDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Append text to paragraph now
+					</button>
+				</div>
+
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
