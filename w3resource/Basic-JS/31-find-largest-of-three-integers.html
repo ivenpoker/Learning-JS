@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Find the largest of three integers</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add('div#link a').addClass('small').css({color: 'orange', textAlign: 'center'});
+
+			    $("div#divBtn, input#numA, input#numB, input#numC, div#info").css({textAlign: 'center'});
+				$("div#divBtn button#mainBtn").click(function (evt) {
+				    let valA = $("input#numA").val();
+				    let valB = $("input#numB").val();
+				    let valC = $("input#numC").val();
+				    let info = $("div#info");
+
+                    let errorTxt = "";
+                    if (valA.length === 0 || isNaN(valA)) {
+                        errorTxt += "Please provide <b>first</b>";
+                    }
+                    if (valB.length === 0 || isNaN(valB)) {
+                        if (errorTxt) {
+                            errorTxt += ", <b>second</b>";
+                        } else {
+                            errorTxt += "Please provide <b>second</b>";
+                        }
+                    }
+                    if (valC.length === 0 || isNaN(valC)) {
+                        if (errorTxt) {
+                            if (errorTxt.indexOf(", second") >= 0) {
+                                errorTxt = errorTxt.slice(0, errorTxt.indexOf("and second"));
+                                errorTxt += ", <b>second</b> and third";
+                            } else {
+                                errorTxt += " and <b>third</b>";
+                            }
+                        } else {
+                            errorTxt += "Please provide <b>third</b>";
+                        }
+                    }
+                    if (errorTxt) {
+                        errorTxt += " integer value";
+                        swapClasses(info, "alert-info", "alert alert-danger");
+                        info.html(errorTxt);
+                    } else {
+
+                        // we got ALL three integer values from user
+	                    swapClasses(info, "alert-danger", "alert alert-info");
+	                    let max = Number(valA);
+	                    if (max < Number(valB)) max = Number(valB);
+	                    if (max < Number(valC)) max = Number(valC);
+
+	                    info.html(`Maximum of <b>${Number(valA)}</b>, <b>${Number(valB)}</b> and
+							<b>${Number(valC)}</b> is <ins><b>${max}</b></ins>`)
+                    }
+				});
+
+				function swapClasses(elem, classA, classB) {
+				    if (elem.hasClass(classA))
+				        elem.removeClass(classA);
+				    elem.addClass(classB);
+				}
+
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Find the largest of three integers</h5>
+			<div id="link">
+				<a href="http://www.w3resource.com/">Go to the website</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="info"></div>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="numA" class="form-control" placeholder="Enter first integer">
+				</div>
+				<br/>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="numB" class="form-control" placeholder="Enter second integer">
+				</div>
+				<br/>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="numC" class="form-control" placeholder="Enter third integer">
+				</div>
+				<br/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Validate input
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
