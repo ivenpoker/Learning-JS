@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Find repeats</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add("div#link a").addClass('small').css({textAlign: 'center', color: 'orange'});
+
+                $("div#link a").attr("target", "_blank");
+
+			    $("div#divBtn, div#info, input#stringA, input#stringB").css({textAlign: 'center'});
+
+			    $("div#divBtn button#mainBtn").click(function () {
+					let mainString = $("input#stringA").val().trim();
+					let userChar = $("input#stringB").val().trim().charAt(0);   // just first character
+				    let info = $("div#info");
+
+				    if (mainString.length === 0) {
+						swapClasses(info, "alert-info", "alert alert-danger", "Please provide data in first input field");;
+				    } else if (String(userChar).length === 0) {
+				        swapClasses(info, "alert-info", "alert alert-danger", "Please provide data in second input field");
+				    } else {
+
+				        let cnt = findCharOccurrencesInString(mainString, userChar);
+				        let isValid = inRange(2, cnt, 4);
+				        swapClasses(info, "alert-danger", "alert alert-info",
+					        `Occurrences of <b>'${userChar}'</b> in <b>'${mainString}'</b>: ${cnt}
+										[Passes test: <b>${isValid ? "YES" : "NO"}</b>]`);
+				    }
+
+			    });
+
+			    let inRange = (low, val, high) => { return Number(low) <= Number(val) && Number(val) <= Number(high); };
+
+			    let findCharOccurrencesInString = (someStr, char) => {
+			        let cnt = 0;
+			        for (let i = 0; i < someStr.length; i++)
+			            if (someStr.toString().charAt(i) === String(char))
+			                cnt++;
+			        return cnt;
+			    };
+
+			    let swapClasses = (elem, classA, classB, html) => {
+					if (elem.jquery) {  // if 'elem' is a jquery object
+					    if (elem.hasClass(classA))
+					        elem.removeClass(classA);
+					    elem.addClass(classB).html(html);
+					} else {
+					    if (elem.classList.contains(classA))
+					        elem.classList.remove(classA);
+					    elem.classList.add(classB);
+					}
+			    };
+			});
+
+		</script>
+
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Checks that a given string contains 2 to 4 numbers of a specified character.</h4>
+			<div id="link">
+				<a href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-35.php">
+					Web application source
+				</a>
+			</div>
+		</div>
+		<div id="info"></div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="stringA" class="form-control" placeholder="Enter main string">
+				</div>
+				<br/>
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="stringB" class="form-control" placeholder="Enter character to search for">
+				</div>
+				<br/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-dark btn-sm" type="button">
+						Do the search now
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
