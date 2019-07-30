@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Does some validity</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_04.jpg')"})
+				    .add("div#link a").addClass('small').css({color: 'orange', textAlign: 'center'});
+			    $("div#divBtn button#mainBtn").css({color: 'orange', border: '1px solid orange'})
+				    .mouseenter(function () {
+				        $(this).css({border: '1px solid white', color: 'white'});
+				    }).mouseout(function () {
+				        $(this).css({border: '1px solid orange', color: 'orange'});
+			    }).click(function () {
+
+			        let intA = $("input#intA").val().trim();
+			        let intB = $("input#intB").val().trim();
+			        let info = $("div#info");
+
+                    let errorText = "";
+                    if (intA.length === 0) {
+                        errorText += "Please enter first";
+                    }
+                    if (intB.length === 0) {
+                        if (errorText) {
+                            errorText += " and second";
+                        } else {
+                            errorText += "Please enter second";
+                        }
+                    }
+                    if (errorText) {
+                        errorText += " integer(s)";
+                        swapClasses(info, "alert-info","alert alert-danger", errorText);
+                    } else {
+                        if (Number(intA) === 8 || Number(intB) === 8 || (Number(intA) + Number(intB) === 8)
+                            || Math.abs(Number(intA) - Number(intB)) === 8) {
+                            swapClasses(info, "alert-danger", "alert alert-info", "Inputs <b>PASSES</b> condition!");
+                        } else {
+                            swapClasses(info, "alert-info", "alert alert-danger", "Inputs <b>FAILED</b> condition!");
+                        }
+                    }
+			    });
+
+			    let swapClasses = (elem, classA, classB, htmlData) => {
+				    if ($(elem).hasClass(classA))
+				        $(elem).removeClass(classA);
+				    $(elem).addClass(classB).html(htmlData);
+ 			    };
+
+			    $("div#divBtn, div#info, input#intA, input#intB").css({textAlign: 'center'});
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Checks if from given integers (2) if either is 8 or their sum or difference is 8.</h4>
+			<div id="link">
+				<a href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-40.php">
+					Web application source
+				</a>
+			</div>
+			<br/>
+			<div id="info"></div>
+			<div class="row">
+				<div class="col-4"></div>
+				<div class="col-4">
+					<div class="input-group input-group-sm">
+						<input type="number" width="50" id="intA" class="form-control" placeholder="Enter first integer">
+					</div>
+					<br/>
+					<div class="input-group input-group-sm">
+						<input type="number" width="50" id="intB" class="form-control" placeholder="Enter second integer">
+					</div>
+					<br/>
+					<div id="divBtn">
+						<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+							Create new string now.
+						</button>
+					</div>
+				</div>
+				<div class="col-4"></div>
+			</div>
+		</div>
+	</body>
+</html>
