@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Checkbox state</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_04.jpg')"})
+				    .add("div#link a").addClass('small').css({color: 'orange', textAlign: 'center'});
+				$("div#checkDiv, div#divInfo").css({textAlign: 'center'});
+
+				$("input#check1").change(function () {
+				    let thisInput = $(this);
+				    thisInput.html('');             // clear the field.
+				    let infoText = `.attr('checked'): ${thisInput.attr('checked')}`;
+				    infoText += `<br/>.prop('checked'): ${thisInput.prop('checked')}`;
+					infoText += `<br/>.is(':checked'): ${thisInput.is(":checked")}`;
+
+					$("div#divInfo kbd#info").html(infoText);
+				});
+
+
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Displays checked attribute of checkbox as it's checked</h5>
+			<div id="link">
+				<a href="https://www.w3resource.com/jquery-exercises/1/jquery-fundamental-exercise-27.php">
+					Web application source
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="divInfo">
+					<kbd id="info">Just check the box below...</kbd>
+				</div>
+				<hr/>
+				<div id="checkDiv">
+					<input id="check1" type="checkbox">
+					<label for="check1">Check me</label>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
