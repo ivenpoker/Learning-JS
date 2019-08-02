@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Append data to paragraphs</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_04.jpg')"})
+				    .add("div#link a").addClass('small').css({color: 'orange', textAlign: 'center'});
+				$("div#info, div#paras, div#divBtn, input#userText").css({textAlign: 'center'});
+
+				$("div#divBtn button#mainBtn").click(function () {
+				    let text = $("input#userText").val().trim();
+					let info = $("div#info");
+
+					if (text.length === 0) {
+					    swapClasses(info, "alert-info", "alert alert-danger", "Please, provide some text to append");
+					} else {
+					    $("div#paras p").each(function (index, elem) {
+					        $(elem).html($(elem).html() + text);
+					    });
+					    swapClasses(info, "alert-danger", "alert alert-info", `Text '<b>${text}</b>' appended to paragraphs!`);
+					}
+
+				});
+
+				let swapClasses = (elem, classA, classB, html) => {
+				    if ($(elem).hasClass(classA))
+				        $(elem).removeClass(classA);
+				    $(elem).addClass(classB).html(html);
+				}
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Appends text to paragraph</h4>
+			<div id="link">
+				<a href="https://www.w3resource.com/jquery-exercises/1/jquery-fundamental-exercise-24.php">
+					Web application source.
+				</a>
+			</div>
+		</div>
+		<div id="info"></div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="paras">
+					<p>This is paragraph 1.</p>
+					<p>This is paragraph 2.</p>
+					<p>This is paragraph 3.</p>
+				</div>
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="userText" class="form-control" placeholder="Enter some text to append to paragraphs">
+				</div>
+				<br/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Append text to paragraphs
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
