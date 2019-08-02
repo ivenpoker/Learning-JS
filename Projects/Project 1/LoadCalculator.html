@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Loan calculator</title>
+
+		<style type="text/css" rel="stylesheet">
+
+		</style>
+
+		<script type="text/javascript" rel="script">
+
+            "use strict";
+
+            let calculate = () => {
+                let amount = document.getElementById("amount");
+                let apr = document.getElementById('apr');
+                let years = document.getElementById('years');
+                let zipcode = document.getElementById('zipcode');
+                let payment = document.getElementById('payment');
+                let total = document.getElementById('total');
+                let totalInterest = document.getElementById('totalinterest');
+
+                // Get the user's input from the input elements. Assume it is all valid.
+                // Convert interest from a percentage to a decimal, and convert from
+                // an annual rate to a monthly rate. Convert payment period in years
+                // to the number of monthly payments.
+
+                let principal = Number.parseFloat(amount.value);
+                let interest  = Number.parseFloat(apr.value) / 100 / 12;
+                let payments  = Number.parseFloat(years.value) * 12;
+
+                // Now compute the monthly payment figure.
+
+                let x = Math.pow(1 + interest, payments);
+                let monthly = (principal * x * interest) / (x-1);
+
+                // If the result is a finite number, the user's input was good and
+                // we have meaningful results to display
+
+                if (Number.isFinite(monthly)) {
+                    // Fill in the output fields, rounding to 2 decimal places
+                    payment.innerHTML = monthly.toFixed(2);
+                    total.innerHTML = (monthly * payments).toFixed(2);
+                    totalInterest.innerHTML = ((monthly * payments) - principal).toFixed(2);
+
+                    // Save the user's input so we can restore it the next time they visit
+                    save(amount.value, apr.value, years.value, zipcode.value);
+
+                    // Advertise: find and display local lenders, but ignore network errors
+                    try {
+                        getLenders(amount.value, apr.value, years.value, zipcode.value);
+                    } catch (e) {
+                        // Ignore errors
+                    }
+                    chart(principal, interest, monthly, payments);
+                } else {
+                    payment.innerHTML = "";         // Erase the contents of these elements
+                    total.innerHTML = "";
+                    totalInterest.innerHTML = "";
+                    chart();                        // with no arguments, clears the chart
+                }
+            };
+
+            let save = (amount, apr, years, zipcode) => {
+                if (window.localStorage) {  // Only do this if the browser supports it
+                    localStorage.loan_amount = amount;
+                    localStorage.loan_apr = apr;
+                    localStorage.loan_years = years;
+                    localStorage.loan_zipcode = zipcode;
+                }
+            };
+
+			$(document).ready(function () {
+				$("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.add("div#link a").addClass('small').css({textAlign: 'center', color: 'orange'});
+				$("div#app").css({textAlign: 'center'});
+
+				if (window.localStorage && localStorage.lo)
+
+			});
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Loan calculator</h4>
+			<div id="link">
+				<a href="http://shop.oreilly.com/product/9780596805531.do">App inspiration (source)</a>
+			</div>
+		</div>
+
+		<div id="app">
+			<table>
+				<tr><th>Enter Loan Data:</th>
+					<td></td>
+					<th>Loan Balance, Cumulative Equity, and Interest Payments</th></tr>
+				<tr><td>Amount of the loan ($):</td>
+					<td><input id="amount" onchange="calculate();"></td>
+					<td rowspan=8>
+						<canvas id="graph" width="400" height="250"></canvas></td></tr>
+				<tr><td>Annual interest (%):</td>
+					<td><input id="apr" onchange="calculate();"></td></tr>
+				<tr><td>Repayment period (years):</td>
+					<td><input id="years" onchange="calculate();"></td>
+				<tr><td>Zipcode (to find lenders):</td>
+					<td><input id="zipcode" onchange="calculate();"></td>
+				<tr><th>Approximate Payments:</th>
+					<td><button onclick="calculate();">Calculate</button></td></tr>
+				<tr><td>Monthly payment:</td>
+					<td>$<span class="output" id="payment"></span></td></tr>
+				<tr><td>Total payment:</td>
+					<td>$<span class="output" id="total"></span></td></tr>
+				<tr><td>Total interest:</td>
+					<td>$<span class="output" id="totalinterest"></span></td></tr>
+				<tr><th>Sponsors:</th><td colspan=2>
+					Apply for your loan with one of these fine lenders:
+					<div id="lenders"></div></td></tr>
+
+			</table>
+		</div>
+
+	</body>
+</html>
