@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Find some data</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add('div#link a').addClass('small').css({color: 'orange', textAlign: 'center'});
+			    $('div.data div').css({textAlign: 'justify', textJustify: 'inner-word'});
+
+			    $('div#divBtn, div.data').css({textAlign: 'center'});
+			    $('div#divBtn button#mainBtn').click(function () {
+			        $('div.data [name*=tutorial]').css({border: '2px solid red', padding: '5px',
+			                borderRadius: '8px'});
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<header>
+			<div class="jumbotron">
+				<h5>Find <code>div</code> with name attribute containing <code>tutorial</code></h5>
+				<div id="link">
+					<a href="https://www.w3resource.com/jquery-exercises/1/jquery-fundamental-exercise-29.php">
+						Web application source.
+					</a>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-8">
+					<div class="data">
+						<div name="some-sample-tutorials">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur cumque fugiat
+							laudantium maxime nam obcaecati officia perferendis quibusdam quod recusandae, voluptas,
+							voluptates! Ab fugiat illo in sit totam veritatis vitae!Lorem ipsum dolor sit amet,
+							consectetur adipisicing elit. Consequatur id illo iste molestiae perspiciatis rem
+							repellendus sint unde. Aliquid cum delectus iure libero minima numquam possimus sed unde
+							voluptas voluptate?
+						</div>
+						<br/>
+						<div name="some-info">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab debitis dolor eaque eum ex
+							facere, illo, illum in iure iusto maiores maxime nam nostrum obcaecati omnis, repellendus
+							temporibus totam voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+							Doloremque laboriosam perferendis placeat praesentium quae quo repellat temporibus. Animi
+							aspernatur consequuntur cumque esse explicabo nihil placeat repudiandae saepe tempore
+							veniam. Quae.
+						</div><br/>
+						<div name="tutorial-data">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci animi
+							asperiores commodi delectus distinctio, et facere fuga id laborum maiores placeat rem sunt
+							suscipit ut veritatis voluptatem voluptatibus voluptatum?Lorem ipsum dolor sit amet,
+							consectetur adipisicing elit. Ab ad architecto blanditiis, consequuntur deserunt fugiat
+							illum in iure magni, minus nulla odio quisquam rem similique sint velit veritatis voluptate
+							voluptates?
+						</div><br/>
+						<div id="divBtn">
+							<button id="mainBtn" class="btn btn-outline-dark btn-sm">
+								Find the <code>div</code> with <code>name</code> attribute being <code>tutorial</code>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-2"></div>
+			</div>
+		</main>
+
+	</body>
+</html>
