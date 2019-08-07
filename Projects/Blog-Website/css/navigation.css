@@ -1,0 +1,38 @@
+
+ul.nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 8px;
+}
+
+
+li.nav-list-item {
+    float: left;
+}
+
+li.nav-list-item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.nav-list-item a:hover:not(.active) {
+    /*background-color: #111;*/
+    background-color: orange;
+    color: black;
+}
+
+.active {
+    /*background-color: #4CAF50;*/
+    background-color: orange;
+    color: black;
+}
+
+.active a {
+    color: black;
+}

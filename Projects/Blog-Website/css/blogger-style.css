@@ -1,0 +1,146 @@
+/* CSS for the display social medial links in a grid */
+.grid-social-media-links-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto;
+    grid-row-gap: 10px;
+}
+
+.grid-social-item {
+    text-align: center;
+}
+
+.grid-user-info-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    padding-right: 20px;
+}
+
+.grid-user-info-item {
+
+}
+
+div.bio-data {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: small;
+}
+
+
+/* CSS for the social media links*/
+
+div.blogger-links {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* This is CSS for the author of the blog (the person who manages it), handles */
+
+a.blogger-a-link-facebook:link, a.blogger-a-link-facebook:visited {
+    background-color: #3b5998;
+    color: white;
+    padding: 8px 10px;
+    text-align: center;
+    width: 80%;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+a.blogger-a-link-facebook:hover, a.blogger-a-link-facebook:active {
+    background-color: #6c8cc4;
+}
+
+a.blogger-a-link-twitter:link, a.blogger-a-link-twitter:visited {
+    background-color: #1da1f2;
+    color: white;
+    padding: 8px 10px;
+    width: 80%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+a.blogger-a-link-twitter:hover, a.blogger-a-link-twitter:active {
+    background-color: #6c8cc4;
+}
+
+a.blogger-a-link-linkedIn:link, a.blogger-a-link-linkedIn:visited {
+    background-color: #0077B5;
+    color: white;
+    padding: 8px 10px;
+    width: 80%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+a.blogger-a-link-linkedIn:hover, a.blogger-a-link-linkedIn:active {
+    background-color: #6c8cc4;
+}
+
+
+
+/* ############### This is CSS for the author of a blog blog post (the person who manages it), handles ################# */
+
+a.blog-post-author-link-facebook:link, a.blog-post-author-link-facebook:visited {
+    background-color: #3b5998;
+    color: white;
+    padding: 8px 10px;
+    width: 80%;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+a.blog-post-author-link-facebook:hover, a.blog-post-author-link-facebook:active {
+    background-color: #6c8cc4;
+}
+
+a.blog-post-author-link-twitter:link, a.blog-post-author-link-twitter:visited {
+    background-color: #1da1f2;
+    color: white;
+    padding: 8px 10px;
+    width: 80%;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+a.blog-post-author-link-twitter:hover, a.blog-post-author-link-twitter:active {
+    background-color: #6c8cc4;
+}
+
+a.blog-post-author-link-linkedIn:link, a.blog-post-author-link-linkedIn:visited {
+    background-color: #0077B5;
+    color: white;
+    padding: 8px 10px;
+    width: 80%;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+
+div.blog-creator {
+    text-align: center;
+}
+
+div.block-text {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.blogger-pic {
+    text-align: center;
+    padding-right: 0;
+}
