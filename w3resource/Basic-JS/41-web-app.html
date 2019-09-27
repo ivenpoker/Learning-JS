@@ -6,66 +6,70 @@
 		<script type="text/javascript" src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
 		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Does some basic check</title>
 
 		<script type="text/javascript">
 
 			$(document).ready(function (evt) {
 
 			    let swapClasses = (elem, classA, classB, htmlData) => {
-			        if ($(elem).hasClass(classA))
-			            $(elem).removeClass(classA);
-			        $(elem).addClass(classB).html(htmlData);
+					if ($(elem).hasClass(classA))
+					    $(elem).removeClass(classA);
+					$(elem).addClass(classB).html(htmlData);
+
 			    };
 
-			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_05.jpg')"})
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_04.jpg')"})
 				    .add('div#link a').addClass('small').css({color: 'orange', textAlign: 'center'});
 			    $('div#divBtn, div#info').css({textAlign: 'center'});
 
 			    $("div#divBtn button#mainBtn").click(function () {
-					let intA = $('input#intA').val().trim();
-					let intB = $('input#intB').val().trim();
-					let intC = $('input#intC').val().trim();
-				    let info = $('div#info');
+			        let intA = $('input#intA').val().trim();
+			        let intB = $('input#intB').val().trim();
+			        let intC = $('input#intC').val().trim();
+			        let info = $('div#info');
 
-				    let errorText = "";
-				    if (intA.length === 0) {
-				        errorText += "Please enter first";
-				    }
-				    if (intB.length === 0) {
-				        if (errorText) {
-				            errorText += " and second";
-				        } else {
-				            errorText += "Please enter second";
-				        }
-				    }
-				    if (intC.length === 0) {
-				        if (errorText) {
-				            errorText += " and third";
-				        } else {
-				            errorText += "Please enter third";
-				        }
-				    }
-				    if (errorText) {
-				        errorText += " integer(s)";
-				        swapClasses(info, "alert-info", "alert alert-danger", errorText);
-				    } else {
-				        if (intB - intA === 1 && intC - intB === 1) {
-				            swapClasses(info, "alert-danger", "alert alert-info", `Data is valid.`);
-				        } else {
-				            swapClasses(info, "alert-info", "alert alert-danger", `Data is invalid.`);
-				        }
-				    }
+			        let errorText = "";
+			        if (intA.length === 0) {
+			            errorText += "Please enter first";
+			        }
+			        if (intB.length === 0) {
+			            if (errorText) {
+			                errorText += " and second";
+			            } else {
+			                errorText += "Please enter second";
+			            }
+			        }
+			        if (intC.length === 0) {
+			            if (errorText) {
+			                errorText += " and third";
+			            } else {
+			                errorText += "Please enter third";
+			            }
+			        }
+			        if (errorText) {
+			            errorText += " integer(s)";
+                        swapClasses(info, "alert-info", "alert alert-danger", errorText);
+                    } else {
+			            if (intA === intB && intB === intC) {
+			                swapClasses(info, "alert-danger", "alert alert-info", `Result is: ${30}`);
+			            } else if (intA === intB || intA === intC || intB === intC) {
+			                swapClasses(info, "alert-danger", "alert alert-info", `Result is: ${40}`);
+			            } else {
+			                swapClasses(info, "alert-danger", "alert alert-info", `Result is: ${20}`);
+			            }
+			        }
 			    });
-
 			})
 
 		</script>
 	</head>
 	<body class="container">
 		<div class="jumbotron">
-			<h4>Checks if three given numbers are increasing in strict mode or in soft mode</h4>
+			<h4>Given three numbers, if the three numbers are same return 30 otherwise return 20 and if two
+				numbers are same return 40</h4>
 			<div id="link">
-				<a href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-42.php">
+				<a href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-41.php">
 					Application source
 				</a>
 			</div>
@@ -76,20 +80,20 @@
 			<div class="col-4"></div>
 			<div class="col-4">
 				<div class="input-group input-group-sm">
-					<input type="number" width="50" id="intA" class="form-control" placeholder="Enter first integer">
+					<input type="number" width="50" id="intA" class="form-control" placeholder="Enter first number">
 				</div>
 				<br/>
 				<div class="input-group input-group-sm">
-					<input type="number" width="50" id="intB" class="form-control" placeholder="Enter second integer">
+					<input type="number" width="50" id="intB" class="form-control" placeholder="Enter first number">
 				</div>
 				<br/>
 				<div class="input-group input-group-sm">
-					<input type="number" width="50" id="intC" class="form-control" placeholder="Enter second integer">
+					<input type="number" width="50" id="intC" class="form-control" placeholder="Enter first number">
 				</div>
 				<br/>
 				<div id="divBtn">
 					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
-						Create new string now.
+						Do the check now.
 					</button>
 				</div>
 			</div>
