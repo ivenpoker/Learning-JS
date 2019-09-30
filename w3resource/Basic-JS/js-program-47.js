@@ -1,7 +1,7 @@
 // ######################################################################################################
 // #                                                                                                    #
-// #    Program Purpose: Checks if a given number in the range 40....100000 presents in two number (in
-// #                     same range).
+// #    Program Purpose: Checks if a given number in the range 40....100000 presents in two number (in  #
+// #                     same range).                                                                   #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                          #
 // #       Program Date: September 30, 2019.                                                            #
 // #                                                                                                    #
