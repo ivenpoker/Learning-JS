@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Finds all checkbox inputs</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_02.jpg')",
+			                            color: 'orange'});
+			    $('div#buttonDiv, div#divInfo, div#mainForm').css({textAlign: 'center'});
+			    $('div#headInfo, div#mainForm').css({textAlign: 'center'});
+			    $('div#buttonDiv button#mainBtn').click(function () {
+			        let input = $('form input:checkbox').wrap('<span></span>')
+				        .parent().css({
+					       background: 'black',
+					       border: '2px solid red'
+				        });
+			        $('div#divInfo').addClass('alert alert-info').text(`No. of checkboxes: ${input.length}`);
+			    });
+
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="headInfo">
+				<h5>Finds all checkbox inputs</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="divInfo"></div>
+				<hr/>
+				<form id="mainForm">
+					<input type="button" value="Input Button">
+					<input type="checkbox">
+					<input type="checkbox">
+					<input type="hidden">
+					<input type="button" value="Output Button">
+					<select>
+						<option>Option</option>
+					</select>
+				</form>
+				<hr/>
+				<div id="buttonDiv">
+					<button type="button" class="btn btn-outline-dark btn-sm" id="mainBtn">
+						Reveal all checkbox inputs
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
