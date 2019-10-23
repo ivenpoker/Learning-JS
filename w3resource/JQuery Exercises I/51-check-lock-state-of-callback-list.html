@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Check the lock-state of a callback list.</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+
+				$('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_04.jpg')",
+									    color: 'orange'});
+			    $('div#headInfo, div#divInfo, div#buttonDiv').css({textAlign: 'center'});
+			    $('div#buttonDiv button#mainBtn').click(function () {
+			        let foo = (value) => {
+			           return `Foo: ${value};`
+			        };
+			        let callbacks = $.Callbacks();
+
+			        // Add 'foo' to the callback list
+				    callbacks.add(foo);
+
+				    // Fire the items on the list, passing an argument
+				    callbacks.fire('JavaScript');
+
+				    // Lock the callbacks list
+				    callbacks.lock();
+
+				    // Test the lock-state of the list
+				    $('div#divInfo').addClass('alert alert-info').html(`Is lock state active: <b>${callbacks.locked()}</b>`);
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="headInfo">
+				<h5>Checks the lock state of callback list.</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="divInfo"></div>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Test lock states now.
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
