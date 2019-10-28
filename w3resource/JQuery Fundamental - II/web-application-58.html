@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Title</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+
+				$('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_02.jpg')", color: 'orange'});
+				$('div#jsInfo, div#mainHead, div#mainData, div#buttonDiv').css({textAlign: 'center'});
+
+				$('div#buttonDiv button#mainBtn').click(function () {
+				    $('div#mainData div').children().each(function (index, elem) {
+				        $(elem).css({borderBottom: '3px double blue'});
+				    });
+				    $('div#jsInfo').addClass('alert alert-info').html('Effects applied. Look down!');
+				});
+
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="mainHead">
+				<h5>Finds all children of each division with JQuery</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<p>This is a paragraph</p>
+					<div>
+						<p>This is a paragraph within a division.</p>
+					</div>
+					<p>Here is another paragraph</p>
+					<div>
+						This is a <span>span</span> element within a division.
+					</div>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Reveal all children of each division.
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
