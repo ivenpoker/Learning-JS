@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Place border around list items</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+
+				$('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_02.jpg')", color: 'orange'});
+				$('div#mainHead, div#jsInfo, div#buttonDiv').css({textAlign: 'center'});
+
+			    $('div#buttonDiv button#mainBtn').click(function () {
+
+			        $('ul.tutorial').children().each(function (index, elem) {
+			            $(elem).css({border: '3px solid blue'});
+			        });
+			        $('div#jsInfo').addClass('alert alert-info').html('Border has been highlighted now');
+
+			    });
+
+			})
+
+		</script>
+
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="mainHead">
+				<h5>Place a border around all list items that are children of a specified class of
+					an unordered list.</h5>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<ul class="tutorial">
+						<li>Frontend</li>
+						<li>Backend
+							<ul>
+								<li>C#</li>
+								<li>Java</li>
+								<li>PHP</li>
+								<li>Python</li>
+							</ul>
+						</li>
+						<li>DataBase
+							<ul>
+								<li>MySQL</li>
+								<li>PostgreSQL</li>
+								<li>SQLite</li>
+								<li>Oracle</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Do the bordering stuff now
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
