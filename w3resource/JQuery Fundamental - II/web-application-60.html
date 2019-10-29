@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Finds all text nodes</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')", color: 'orange'});
+			    $('div#mainHead, div#jsInfo, div#mainData, div#buttonDiv').css({textAlign: 'center'});
+
+			    $("div#buttonDiv button#mainBtn").click(function () {
+			        let italic = $('<i/>');
+			        $('div#mainData p').contents().filter(function (index, elem) {
+			            return this.nodeType !== 1;
+			        }).wrap(italic);
+
+					$('div#jsInfo').alert('alert alert-info').html('Effect activated. Look down!');
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="mainHead">
+				<h5>Finds all text nodes inside a paragraph and wrap them with an italic tag</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<p>This is paragraph 1</p>
+					<p>This is paragraph 2</p>
+					<p><a href="https://www.w3resource.com/jquery-exercises/">JQuery</a>, Exercises, Practice and Solution</p>
+					<p><a href="https://www.w3resource.com/javascript-exercises/">JavaScript</a> Exercises, Practice and Solution</p>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Find and wrap the data.
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
