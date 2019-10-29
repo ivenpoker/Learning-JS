@@ -22,11 +22,12 @@
 					borderRadius: '8px',
 					backgroundColor: 'orange'
 				}).contextmenu(function () {
-				    $(this).css({backgroundColor: 'lightblue'});
-				    $('div#jsInfo').addClass('alert alert-info').html('Box is now light blue');
-				}).click(function () {
-				    $(this).css({backgroundColor: 'orange'});
-				    $('div#jsInfo').addClass('alert alert-info').html('Box is now orange');
+				    window.alert(`Background color: ${this.style.backgroundColor}`);
+				    if (this.style.backgroundColor.indexOf('lightblue') >= 0) {
+				        $(this).css({backgroundColor: 'orange'});
+				    } else {
+				        $(this).css({backgroundColor: 'lightblue'});
+				    }
 				});
 
 			})
