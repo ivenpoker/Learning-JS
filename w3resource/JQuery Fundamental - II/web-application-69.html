@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Change the size of div</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .end().add('div#source a').css({color: 'orange', textAlign: 'center'});
+
+			    $("div#jsInfo, div#instructions, div#divBox").css({margin: 'auto', textAlign: 'center'});
+				$("div#instructions").addClass('alert alert-info').html("Click the <kbd>div</kbd> to change it's size.")
+					.css({marginTop: '10px'});
+			    $('div#divBox').css({
+				    width: '100px',
+				    height: '100px',
+				    border: '2px solid black',
+				    borderRadius: '8px',
+				    backgroundColor: 'orange'
+			    }).click(function (evt) {
+			        let prevWidth = $(this).css('width');
+			        let prevHeight = $(this).css('height');
+					$(this).css({
+						width: "+=10px",    // add 10px to the height
+						height: "+=10px",   // add 10px to the width
+					});
+					$('div#jsInfo').addClass('alert alert-info')
+						.html(`Previous width: <b>${prevWidth}</b> | Previous height: <b>${prevHeight}</b><br/>
+							   Current width: <b>${$(this).css('width')}</b> | Current height: <b>${ $(this).css('height')}</b>`);
+			    });
+			});
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Change the size of a <kbd>div</kbd> when clicked upon.</h5>
+			<div id="source">
+				<a href="https://www.w3resource.com/jquery-exercises/2/jquery-fundamental-exercise-69.php">
+					Application source
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div><br/>
+				<div id="divBox"></div><br/>
+				<div id="instructions"></div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+
+	</body>
+</html>
