@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Finding descendants of a form and marking them</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add('div#link a').addClass('small').css({color: 'orange', textAlign: 'center'});
+			    $('div#mainData, div#buttonDiv').css({textAlign: 'center'});
+
+			    $("div#buttonDiv button#mainBtn").click(function (evt) {
+			        $('div#mainData form').find(":input").css({border: '2px dotted red'});
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="head">
+				<h5>Finding descendants of a form and marking them with a dotted red border. </h5>
+			</div>
+			<div id="link">
+				<a href="https://www.w3resource.com/jquery-exercises/2/jquery-fundamental-exercise-77.php">Application source</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<form>
+						<label for="name">Child of Form:</label>
+						<input name="name" id="name">
+						<fieldset>
+							<label for="newsletter">Grandchild of form, child of fieldset:</label>
+							<input name="newsletter" id="newsletter">
+						</fieldset>
+					</form>
+					Sibling to form: <input name="none"/>
+				</div>
+				<br/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Reveal the descendants of from now.
+					</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</body>
+</html>
