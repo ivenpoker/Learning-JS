@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Removing all paragraphs from the DOM</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+
+			    function insertParagraphsIntoDOM(cnt, jqParent) {
+
+			        if (Number.isNaN(cnt))
+			            throw TypeError('Invalid argument. Expected an integer');
+			        if (!jqParent.jquery)
+			            throw TypeError('Invalid argument. Expected jQuery object');
+
+			        for (let i = 0; i < cnt; i++) {
+			            $('<p></p>').css({
+				            border: '1px solid grey',
+				            textAlign: 'center',
+				            borderRadius:'8px',
+				            backgroundColor: 'orange'
+			            }).html(`New paragraph #${i+1}`).appendTo(jqParent);
+			        }
+			    }
+
+
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add('div#link a').addClass('small').css({color: 'orange', textAlign: 'center'});
+
+			    $('div#buttonDiv, div#jsInfo').css({textAlign: 'center'});
+			    $('div#buttonDiv button#mainBtn').click(function () {
+			        $('div#mainData p').detach();
+			        $('div#jsInfo').slideDown(1000).addClass('alert alert-info').html('All paragraphs have been removed from DOM');
+			        $(this).attr('disabled', 'disabled');
+			    });
+
+			    insertParagraphsIntoDOM(10, $('div#mainData'));
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="head">
+				<h5>Removing all paragraphs from the DOM</h5>
+			</div>
+			<div id="link">
+				<a href="https://www.w3resource.com/jquery-exercises/2/jquery-fundamental-exercise-79.php">
+					Application Source
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData"></div>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-danger btn-sm" type="button">
+						Remove all the paragraphs from the DOM.
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+
+	</body>
+</html>
