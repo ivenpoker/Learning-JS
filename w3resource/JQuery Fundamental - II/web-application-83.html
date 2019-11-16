@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Find all elements that are empty</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add('div#link a').addClass('small').css({color: 'orange', textAlign: 'center'});
+			    $('div#jsInfo, div#mainData, div#buttonDiv').css({textAlign: 'center'});
+
+			    $("div#buttonDiv button#mainBtn").click(function (evt) {
+			        let domElems = "";
+			        $('body *').each(function (index, elem) {
+			            if ($(elem).children().length === 0) {      // no children for this DOM element
+			                domElems += `<b>${elem.tagName}</b>, `;
+			            }
+			        });
+					$('div#jsInfo').addClass('alert alert-info')
+						.html(`Element(s) that are empty: <br/>${domElems}`);
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="head">
+				<h5>Find all elements that are empty</h5>
+			</div>
+			<div id="link">
+				<a href="https://www.w3resource.com/jquery-exercises/2/jquery-fundamental-exercise-83.php">
+					Application Source
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<p>This a paragraph with <span style="color: red">span data</span></p>
+					<p>This is just another paragraph</p>
+					<div>
+						<h4>Just a simple heading</h4>
+						<p>Another <b>paragraph.</b></p>
+					</div>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" type="button" class="btn btn-outline-dark btn-sm">
+						Reveal all elements that are empty
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
