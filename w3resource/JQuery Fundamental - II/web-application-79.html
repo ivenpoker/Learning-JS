@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Find all elements that are disabled</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+				$('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_04.jpg')"})
+					.add('div#link a').addClass('small').css({color: 'orange', textAlign: 'center'});
+
+				$('div#buttonDiv, div#mainData, div#jsInfo').css({textAlign: 'center'});
+
+				$('div#buttonDiv button#mainBtn').click(function () {
+				    $('input:disabled').each(function (index, elem) {
+				        $(this).css({border: '2px solid red', borderRadius: '5px'});
+				        $('div#jsInfo').addClass('alert alert-info')
+					        .html('Elements that are <b>disabled</b> have a <b>red</b> border');
+				    })
+				});
+
+			})
+
+		</script>
+
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="head">
+				<h5>Final all elements that are disabled</h5>
+			</div>
+			<div id="link">
+				<a href="https://www.w3resource.com/jquery-exercises/2/jquery-fundamental-exercise-79.php">Application Source</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<form>
+						First Name: <input type="text" name="fName"><br/><br/>
+						Last Name: <input type="text" name="lName" disabled="disabled"><br/>
+					</form>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Reveal all the disable element.
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
