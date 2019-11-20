@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Find certain rows</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add('div#link a').addClass('small').css({color: 'orange', textAlign: 'center'});
+			    $('div#jsInfo, div#mainData, div#buttonDiv').css({textAlign: 'center'});
+
+			    $('div#mainData table tr td').each(function (index, elem) {
+				    $(elem).css({padding: '15px'});
+			    });
+			    $('div#mainData table').css({margin: 'auto'});
+
+			    // Now the real thing beings...
+
+				$('div#buttonDiv button#mainBtn').click(function (evt) {
+                    $('div#mainData table tr:even').each(function (index, elem) {
+                        $(elem).css({border: '3px solid red'});
+                    });
+				});
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Finds even table rows, matching the first, third and so on (index 0, 2, 4 etc.).</h5>
+			<div id="link">
+				<a href="https://www.w3resource.com/jquery-exercises/2/jquery-fundamental-exercise-88.php">
+					Application Source
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<table border="1">
+						<tr><td>R1C1  Index-0</td><td>R1C2 Index-0</td></tr>
+						<tr><td>R2C1  Index-0</td><td>R2C2 Index-1</td></tr>
+						<tr><td>R3C1  Index-0</td><td>R3C2 Index-2</td></tr>
+						<tr><td>R4C1  Index-0</td><td>R4C2 Index-3</td></tr>
+						<tr><td>R5C1  Index-0</td><td>R5C2 Index-4</td></tr>
+					</table>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Find the rows now.
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
