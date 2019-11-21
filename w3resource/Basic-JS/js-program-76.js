@@ -1,7 +1,7 @@
 // #######################################################################################################
 // #                                                                                                     #
-// #    Program Purpose: Creates a new array taking the first and last elements from a given array of
-// #                     integers and length must be > 1.
+// #    Program Purpose: Creates a new array taking the first and last elements from a given array of    #
+// #                     integers and length must be > 1.                                                #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                           #
 // #       Program Date: November 20, 2019.                                                              #
 // #                                                                                                     #
