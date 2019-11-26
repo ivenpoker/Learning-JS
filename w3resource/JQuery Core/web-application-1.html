@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Reveals certain elements</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_04.jpg')"})
+				    .add('div#link a').addClass('small').css({textAlign: 'center', color: 'orange'});
+			    $('div#mainData, div#buttonDiv').css({textAlign: 'center'});
+
+			    $('div#buttonDiv button#mainBtn').click(function (evt) {
+			        $('div > h4').each(function (index, elem) {
+			            $(elem).css({backgroundColor: 'orange', border: '2px solid black', borderRadius: '8px', padding: '5px'});
+			        });
+			    });
+			})
+
+		</script>
+
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Finds all <kbd>h4</kbd> elements that are children of a div element and apply a
+				background to them.</h5>
+			<div id="link">
+				<a href="#">Application Source</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="mainData">
+					<h4><kbd>h4</kbd> heading right here</h4>
+					<p>This is a sample paragraph</p>
+					<div>
+						<h4>Just another <kbd>h4</kbd> heading right here</h4>
+						<p>Still another paragraph</p>
+						<div>
+							<h4>Deep inner <kbd>h4</kbd>heading here.</h4>
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Reveal all the <kbd>h4</kbd> elements that are children of <kbd>div</kbd> element
+					</button>
+				</div>
+
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
