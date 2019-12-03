@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+		<title>Change hyperlink and the text of an existing link</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .addClass('small').css({textAlign: 'center', color: 'orange'});
+			    $('div#jsInfo, div#mainData, div#buttonDiv').css({textAlign: 'center'});
+
+			    let linkInfo = $("div#mainData a").attr('href');
+				$('div#linkInfo').html(`(${linkInfo})`);
+
+				$('div#buttonDiv button#mainBtn').click(function () {
+				    let newLinkInfo = $('div#link a').attr('href');
+				    $('div#mainData a').eq(0).attr('href', newLinkInfo).html($('div#link a').text());
+				    $('div#mainData div#linkInfo').html(newLinkInfo);
+
+				    // alert user of changes
+					$('div#jsInfo').addClass('alert alert-info').html('Just did the changes');
+					$(this).attr('disabled', 'disabled');
+				});
+			})
+
+		</script>
+
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Change link reference and the text of an existing link</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker" target="_blank">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<a href="https://bootstrapdocs.com/v3.3.6/docs/components" target="_blank">Bootstrap Components</a>
+					<div id="linkInfo"></div>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Do the link changes now
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
