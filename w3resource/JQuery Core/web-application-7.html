@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+		<title>Get single element from a selection.</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .addClass('small').css({textAlign: 'center', color: 'orange'});
+			    $('div#jsInfo, div#mainData, div#buttonDiv').css({textAlign: 'center'});
+
+			    $("ul#mainList li").each(function (ind, elem) {
+			        $(elem).css({
+				        color: 'white',
+				        backgroundColor: 'black',
+				        padding: '10px',
+				        marginBottom: '5px',
+				        borderRadius: '10px'
+			        })
+			    });
+
+			    let prevInd = -1;
+
+                // Function returns a random number >= 0 and < 'max'.
+                function getRandomInt(max) {
+                    return Math.floor(Math.random() * Math.floor(max));
+                }
+
+				$('div#buttonDiv button#mainBtn').click(function () {
+                    let listItems = $('ul#mainList li');
+					if (prevInd !== -1) {
+					    $(listItems[prevInd]).css({
+						    backgroundColor: 'black',
+						    color: 'white'
+					    });
+					}
+					let randInd = getRandomInt(listItems.length);
+					while (randInd === prevInd) {
+					    randInd = getRandomInt(listItems.length);
+					}
+					console.log(`Random integer: ${randInd}`);
+
+					$(listItems[randInd]).css({
+						color: 'black',
+						backgroundColor: 'orange'
+					});
+					$('div#jsInfo').addClass('alert alert-info')
+						.html(`Just selected list item <b>#${randInd}</b>`);
+
+					prevInd = randInd;
+
+				});
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Get a single element from a selection</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker" target="_blank">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<ul id="mainList" style="list-style-type: none">
+						<li>Html Tutorial</li>
+						<li>Mongodb Tutorial</li>
+						<li>Python Tutorial</li>
+						<li>Java Tutorial</li>
+						<li>C/C++ Tutorial</li>
+					</ul>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Reveal a single selection from list
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
