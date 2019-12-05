@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+		<title>Add class</title>
+
+		<style type="text/css">
+
+			.myClassA {
+				color: white;
+				padding: 10px;
+				background-color: black;
+				border-radius: 10px;
+			}
+
+			.myClassB {
+				color: black;
+				background: orange;
+				border-radius: 10px;
+				padding: 10px;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+
+			    let insertPara = (parent, cnt) => {
+			       if (!parent.jquery) {
+			           console.log(`Invalid object, expected JQuery object`);
+			       }
+			       for (let i = 0; i < cnt; i++) {
+			           let newElem = $('<p/>').addClass('myClassA')
+				           .attr('id', 'para-center').html(`This is paragraph #${i+1}`);
+			           $(parent).append(newElem);
+			       }
+			    };
+
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+				$('div#jsInfo, div#mainData, div#buttonDiv').css({textAlign: 'center'});
+				$('p#para-center').css({margin: 'auto'});
+
+				$('div#buttonDiv button#mainBtn').click(function (evt) {
+				    insertPara($('div#mainData'), 5);
+				    $(this).remove();
+
+				    // Create new button to apply the effects.
+				    let newBtn = $('<button/>').addClass('btn btn-outline-dark btn-sm')
+									.html(`Now apply the <kbd>myClass</kbd> to odd paragraphs`)
+									.click(function () {
+									    $('p#para-center').each(function (ind, elem) {
+									        if (ind % 2 !== 0) {
+									            console.log(`Processing '${$(elem).html()}' ...`);
+									            $(elem).removeClass('myClassA').addClass('myClassB');
+                                                console.log($(elem)[0]);
+									        }
+									    });
+									    $(this).attr('disabled', 'disabled');
+									});
+				    $('div#buttonDiv').append(newBtn);
+				});
+			});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Adds a class <kbd>myClass</kbd> to matched paragraph elements</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker" target="_blank">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Create new paragraphs (ie. <kbd>p</kbd> elements)
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
