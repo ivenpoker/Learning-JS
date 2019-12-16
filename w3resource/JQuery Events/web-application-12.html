@@ -20,10 +20,12 @@
 				    $('input#mainInput').on({
 					    'blur': function (evt) {
 					        $('div#jsInfo').addClass('alert alert-info small')
-						        .html(`<kbd>blur</kbd> function called <kbd>${numTimes++}X</kbd>`);
+						        .html(`<kbd>blur</kbd> function called <kbd>${numTimes++}X</kbd>. Content is <kbd>${$(this).val()}</kbd>`);
 					    }
 				    });
 				    $(this).attr('disabled', 'disabled');
+				    $('div#jsInfo').addClass('alert alert-success small')
+						.html(`Function to handle <kbd>blur</kbd> event now active`);
 				});
 			})
 
