@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Find the data passed with the on() method for each DOM element.</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+			    $('div#jsInfo, div#mainHeaders, div#buttonDiv').css({textAlign: 'center'});
+
+			    let createHeadings = (parentElem, cnt, reportElem) => {
+			        if (cnt < 0) {
+			            throw new Error("Invalid number of count(s)");
+			        } else {
+			            for (let i = 0; i < cnt; i++) {
+			                let newHeading = $('<h5>').html(`This is heading #${i+1}`)
+			                        .on('click', i, function (evt) {
+			                            $(reportElem).addClass('alert alert-info')
+				                            .html(`Data passed to heading #${i+1} is: <kbd>${i}</kbd>`);
+			                        });
+							$(parentElem).append(newHeading);
+			            }
+			        }
+			    };
+
+			    $('div#buttonDiv button#mainBtn').click(function (evt) {
+			        $(this).attr('disabled', 'disabled');
+			        createHeadings($('div#mainHeaders'), 5, $('div#jsInfo'));
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Find the data passed with the on() method for each <kbd>&lt;p&gt;</kbd> element.</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainHeaders"></div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-dark btn-sm" type="button">
+						Start the application now.
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
