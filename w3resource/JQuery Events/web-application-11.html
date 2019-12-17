@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Prevent the default action upon clicking a button</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({color: 'orange', textAlign: 'center'});
+			    $('div#buttonDiv, div#jsInfo').css({textAlign: 'center'});
+
+			    $('button#mainBtn').click(function (evt) {
+			        evt.preventDefault();
+			        $('div#jsInfo').addClass('alert alert-info small')
+				        .html(`Just prevented default action on viewing <kbd>Happi Yvan</kbd> profile on <kbd>GitHub</kbd>`);
+			        $(this).attr('disabled', 'disabled');
+			    });
+			});
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Prevents the default action upon clicking a button</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="buttonDiv">
+					<form action="https://github.com/ivenpoker" target="_blank">
+						<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="submit">
+							Visit profile of <kbd>Happi Yvan</kbd> on <kbd>github</kbd>
+						</button>
+					</form>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
