@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Title</title>
+
+		<style type="text/css">
+
+			.focusedin {
+				background: orange;
+			}
+
+			.focusedout {
+				background: cornflowerblue;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({color: 'orange', textAlign: 'center'});
+			    $('div#mainData, input#inputA, input#inputB').css({textAlign: 'center'});
+
+			    $('div#mainData div').focusin(function () {
+			        $(this).attr('class', 'focusedin');
+			    }).focusout(function () {
+                    $(this).attr('class', 'focusedout');
+			    });
+
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Set background color of an element when the element gets focus or loses focus</h5>
+			<div id="link">
+				Author: <a href="http://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="mainData">
+					<div>
+						<input id="inputA" class="form-control form-control-sm" type="text" placeholder="Enter first name"/>
+						<br/>
+						<input id="inputA" class="form-control form-control-sm" type="text" placeholder="Enter second name"/>
+					</div>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
