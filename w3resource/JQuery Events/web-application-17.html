@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/popper.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+
+		<title>Attaches a function to the focus event on input field</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({color: 'orange', textAlign: 'center'});
+			    $('div#mainData, div#jsInfo, input#inputA, input#inputB').css({textAlign: 'center'});
+			    $('input#inputA').attr('title', 'Your first name');
+			    $('input#inputB').attr('title', 'Your second name');
+
+			    // activate all tooltip in document
+			    $("[data-toggle='tooltip']").tooltip();
+
+			    let inputAHandled = false;
+
+			    $('input#inputA').focus(function (evt) {
+			        $(this).css({borderColor: 'orange'});
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Attaches a function to the <kbd>focus</kbd> event on input field</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<p><input id="inputA" data-toggle="tooltip" data-placement="right" title="Right tooltip"  class="form-control form-control-sm" type="text" placeholder="Enter some text here"></p>
+					<hr/>
+					<input id="inputB" data-toggle="tooltip" data-placement="right" title="Right tooltip" class="form-control form-control-sm" type="text" placeholder="Enter some text here"/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
