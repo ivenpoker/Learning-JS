@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Count the number of specific DOM elements</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({color: 'orange', textAlign: 'center'});
+			    $('div#mainData, div#buttonDiv, div#jsInfo').css({textAlign: 'center'});
+
+			    $('div#buttonDiv button#mainBtn').click(function (evt) {
+			        $(this).attr('disabled', 'disabled');
+			        let listCnt = $('div#mainData ul li').length;
+			        $('div#jsInfo').addClass('alert alert-info small')
+				        .html(`Number of <kbd>li</kbd> elements is <kbd>${listCnt}</kbd>`);
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Count the number of <kbd>li</kbd> elements in DOM</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker" target="_blank">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<ul style="list-style-type: none">
+						<li>List item #1</li>
+						<li>List item #2</li>
+						<li>List item #3</li>
+						<li>List item #4</li>
+						<li>List item #5</li>
+					</ul>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Count number of <kbd>li</kbd> DOM elements.
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
