@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Reveal mouse down an up</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+
+			    $('div#jsInfo, div#buttonDiv, div#mainData').css({textAlign: 'center'});
+				$('div#buttonDiv button#mainBtn').click(function (evt) {
+				    $(this).hide();
+
+				    let newClickDiv = $('<div/>').html('Press Mouse and Release here')
+						.css({
+							padding: '10',
+							border: '2px solid black',
+							borderRadius: '8px',
+						}).on({
+						    'mousedown': function (evt) {
+						        $(this).css({backgroundColor: 'orange'}).html('Mouse Down');
+						    },
+						    'mouseup': function (evt) {
+						        $(this).css({backgroundColor: 'lightblue'}).html('Mouse Up');
+						    }
+					    });
+				    $('div#buttonDiv').append(newClickDiv);
+				});
+
+
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Shows Texts when mouseup and mousedown event triggering</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="jsInfo"></div>
+				<div id="mainData"></div>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Activate environment for event handling.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
