@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Display the window width while (or after) it is resized</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+
+			    $('div#buttonDiv, div#mainData, div#jsInfo').css({textAlign: 'center'});
+
+			    $('div#buttonDiv button#mainBtn').click(function (evt) {
+			        $(this).hide();
+			        $('div#mainData').html('Resize this browser to see the <kbd>width</kbd> changes').css({
+				        padding: '10px',
+				        border: '2px solid brown',
+				        borderRadius: '10px'
+			        });
+			        $(window).on({
+				        'resize': function (evt) {
+				            $('div#jsInfo').addClass('alert alert-info small').html(`<kbd>width</kbd>: ${$(this).width()}`);
+				        }
+			        })
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Display the <kbd>window</kbd> width while (or after) it is resized</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="mainData"></div>
+				<br/>
+				<div id="jsInfo"></div>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Activate application now for the <kbd>resize</kbd> effect
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
