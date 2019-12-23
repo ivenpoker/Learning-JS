@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Stop an animation</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+			    $('div#buttonDiv, div#jsInfo, div#mainData').css({textAlign: 'center'});
+
+			    $('div#buttonDiv button#mainBtn').click(function (evt) {
+			        $(this).hide();
+
+			        // setup instructions for user.
+				    $('div#jsInfo').addClass('alert alert-info small')
+				        .html('Please click on <kbd>button</kbd> below to perform actions');
+
+			        // box for animation construction ...
+				    let newDivBox = $('<div/>').css({
+					    width: '40%',
+					    height: '200px',
+					    border: '2px solid black',
+					    borderRadius: '10px',
+					    margin: 'auto'
+				    }).css({textAlign: 'center'}).attr('id', 'animDiv');
+
+				    // button to start animation ...
+				    let startAnimationBtn = $('<button/>').html('Start the animation now')
+				        .addClass('btn btn-primary btn-sm').on({
+						    'click': function (evt) {
+						        let target = $('div#animDiv');
+						        target.animate({height: '450px'}, 1200);
+						        target.animate({width: '450px'}, 1200);
+						        target.animate({height: '200px'}, 1200);
+						        target.animate({width: '40%'}, 1200);
+						    }
+					    });
+
+				    // button to stop animation ...
+				    let stopAnimation = $('<button/>').html('Stop the animation')
+				        .addClass('btn btn-danger btn-sm').on({
+						    'click': function (evt) {
+						        $('div#animDiv').clearQueue(); // stop all animation on jQuery object.
+						    }
+					    });
+				    $('div#mainData').append(newDivBox).append("<br/>").append(startAnimationBtn)
+				        .append("<br/>").append("<br/>").append(stopAnimation);
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Stop an animation.</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData"></div>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-dark btn-sm" type="button">
+						Start the environment now for animation effect.
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
