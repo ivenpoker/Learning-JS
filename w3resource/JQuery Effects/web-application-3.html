@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Sets a timer to delay execution of subsequent items in the queue</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+				$('div#buttonDiv, div#jsInfo, div#mainData').css({textAlign: 'center'});
+
+				$('div#buttonDiv button#mainBtn').click(function (evt) {
+				    $(this).hide();
+					$('div#jsInfo').addClass('alert alert-info small').html('Click to button to reveal boxes');
+
+					// creating displays ...
+					let divA = $('<div class="col-3"/>').css({
+						width: '5%',
+						height: '100px',
+						display: 'none',
+						backgroundColor: 'orange',
+						borderRadius: '10px',
+						textAlign: 'center'
+					}).attr('id', 'divA');
+					let divB = $('<div class="col-3"/>').css({
+						width: '5%',
+						height: '100px',
+						display: 'none',
+						backgroundColor: 'lightblue',
+						borderRadius: '10px',
+						marginLeft: '5px'
+					}).attr('id', 'divB');
+					let divC = $('<div class="col-3"/>').css({
+						width: '5%',
+						height: '100px',
+						display: 'none',
+						backgroundColor: 'pink',
+						borderRadius: '10px',
+						marginLeft: '5px'
+					}).attr('id', 'divC');
+
+					let mainTemp = $('<div class="row"/>').append(divA).append(divB).append(divC);
+
+					// button to show the effects now...
+					let showEffects = $("<button/>").addClass('btn btn-primary btn-sm')
+						.on({
+							'click': function (evt) {
+							    $('div#divA').delay(800).fadeIn();
+							    $('div#divB').delay(2400).fadeIn();
+							    $('div#divC').delay(4000).fadeIn();
+								$('div#jsInfo').html('Application of effects done');
+							}
+						}).html('Reveal the boxes now with the <kbd>delay</kbd> settings');
+                    $('div#mainData').append(mainTemp).append("<hr/>").append(showEffects);
+				});
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Sets a timer to delay execution of subsequent items in the queue</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-9">
+				<div id="jsInfo"></div>
+				<div id="mainData"></div>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Setup the <kbd>timer</kbd> now.
+					</button>
+				</div>
+
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</body>
+</html>
