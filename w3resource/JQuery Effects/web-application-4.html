@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Use dequeue to end a custom queue function which allows the queue to keep going</title>
+
+		<style type="text/css">
+
+			div.new {
+				background-color: #3B0B24;
+			}
+		</style>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({color: 'orange', textAlign: 'center'});
+			    $('div#buttonDiv').css({textAlign: 'center'});
+
+			    $('div#mainBox').css({
+                    width: '50px',
+                    height: '50px',
+                    left: '10px',
+                    backgroundColor: 'orange',
+				    position: 'absolute',
+				    borderRadius: '10px',
+				    border: '4px solid black'
+			    });
+
+			    $('div#buttonDiv button#mainBtn').click(function (evt) {
+			        $(this).attr('disabled', 'disabled');
+			        $('div#mainBox').animate({left: '+=500px'}, 2000)
+				        .queue(function () {
+				            $(this).toggleClass('new').dequeue();
+				        })
+				        .animate({left: '-=500px'}, 2000);
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Use the <kbd>dequeue</kbd> to end a custom <kbd>queue</kbd> function which allows the queue to
+			keep going</h5>
+			<div id="link">
+				Author: <a href="http://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="mainBox"></div>
+				<br/>
+				<br/>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Start animation with <kbd>queue</kbd> and <kbd>dequeue</kbd>
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>
