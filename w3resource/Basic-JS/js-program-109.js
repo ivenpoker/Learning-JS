@@ -2,7 +2,7 @@
 // #                                                                                                     #
 // #    Program Purpose: Sorts an array of all prime numbers between 1 and a given integer.              #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                           #
-// #       Program Date: December 26, 2019.                                                              #
+// #       Program Date: December 30, 2019.                                                              #
 // #                                                                                                     #
 // #######################################################################################################
 
