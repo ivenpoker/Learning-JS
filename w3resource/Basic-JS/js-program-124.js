@@ -1,27 +1,20 @@
 // #######################################################################################################
 // #                                                                                                     #
-// #    Program Purpose: Finds the longest string from a given array of strings.                         #
+// #    Program Purpose: Creates the logical value of logical NOR operation for two given booleans.      #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                           #
 // #       Program Date: January 01, 2020.                                                               #
 // #                                                                                                     #
 // #######################################################################################################
 
-const findLongestString = (arr) => {
-    if (!Array.isArray(arr))
-        throw new TypeError(`Invalid argument type. Expected 'array' got '${typeof(arr)}'`);
-    let longest = '';
-    arr.forEach((elem) => {
-        if (elem.length > longest.length) {
-            longest = elem;
-        }
-    });
-    return longest;
+const logicalNOR = (valA, valB) => {
+    return !(valA || valB);
 };
 
 const runTests = () => {
-    console.log(findLongestString(["ab", "a", "abcd"]));
-    console.log(findLongestString(["ab", "ab", "ab"]));
+     console.log(`First case  -> ${logicalNOR(true, false)}`);
+     console.log(`Second case -> ${logicalNOR(false, false)}`);
+     console.log(`Third case  -> ${logicalNOR(true, true)}`);
 };
 
-// run test cases now
+// run program now.
 runTests();

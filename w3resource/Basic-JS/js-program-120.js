@@ -6,27 +6,17 @@
 // #                                                                                                     #
 // #######################################################################################################
 
-let matrixErrorHandler = (matrix) => {
-    if (!Array.isArray(matrix))
-        throw new TypeError(`Invalid argument type. Expected 'array' got '${typeof(matrix)}'`)
+let checkAPoint = (a, b, x, y, r) => {
+    let dist_points = (a - x) * (a - x) + (b - y) * (b - y);
+    r *= r;
+    return dist_points < r;
 };
 
-let isLowerTriangular = (matrix) => {
-    matrixErrorHandler(matrix);
-    for (let i = 0; i < matrix.length; i++) {
-        matrixErrorHandler(matrix[i]);
-        for (let j = 0; j < matrix[i].length; j++) {
-            if (j > i && matrix[i][j] !== 0)
-                return false;
-        }
-    }
-    return true;
-};
 
 let runTests = () => {
-    console.log(isLowerTriangular([[1, 0, 0], [2, 0, 0], [0, 3, 3]]));
-    console.log(isLowerTriangular([[1, 0, 1], [2, 0, 0], [0, 3, 3]]));
+    console.log(checkAPoint(0, 0, 2, 4, 6));
+    console.log(checkAPoint(0, 0, 6, 8, 6));
 };
 
-// test the program's functionalities
+// run the program
 runTests();
