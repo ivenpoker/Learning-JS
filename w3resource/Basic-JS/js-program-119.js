@@ -13,7 +13,10 @@ let checkAPoint = (a, b, x, y, r) => {
 };
 
 
-let isPointInCircle = (circle, point) => {
+let runTests = () => {
     console.log(checkAPoint(0, 0, 2, 4, 6));
     console.log(checkAPoint(0, 0, 6, 8, 6));
 };
+
+// run the program
+runTests();
