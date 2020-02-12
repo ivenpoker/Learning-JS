@@ -3,7 +3,7 @@
 // #    Program Purpose: Pads a string on both sides with the specified characters, if it's shorter than #
 // #                     the specified length.                                                           #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                           #
-// #       Program Date: February 10, 2020.                                                              #
+// #       Program Date: February 12, 2020.                                                              #
 // #                                                                                                     #
 // #######################################################################################################
 
