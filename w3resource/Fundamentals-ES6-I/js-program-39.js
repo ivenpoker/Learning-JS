@@ -2,7 +2,7 @@
 // #                                                                                                     #
 // #    Program Purpose: Removes the key-value pairs corresponding to the given keys from an object.     #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                           #
-// #       Program Date: February 10, 2020.                                                              #
+// #       Program Date: February 12, 2020.                                                              #
 // #                                                                                                     #
 // #######################################################################################################
 
