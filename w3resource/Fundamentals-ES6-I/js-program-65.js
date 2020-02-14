@@ -1,7 +1,7 @@
 // #######################################################################################################
 // #                                                                                                     #
-// #    Program Purpose: Adds special characters to text to print in color in the console (combined with
-// #                     console.log()).
+// #    Program Purpose: Adds special characters to text to print in color in the console (combined with #
+// #                     console.log()).                                                                 #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                           #
 // #       Program Date: February 13, 2020.                                                              #
 // #                                                                                                     #
