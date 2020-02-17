@@ -3,7 +3,7 @@
 // #                                                                                                     #
 // #    Program Purpose: Removes an event listener from an element.                                      #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                           #
-// #       Program Date: February 15, 2020.                                                              #
+// #       Program Date: February 17, 2020.                                                              #
 // #                                                                                                     #
 // #######################################################################################################
 
