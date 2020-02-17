@@ -1,8 +1,8 @@
 // #######################################################################################################
 // #                                                                                                     #
-// #    Program Purpose:                                                                   #
+// #    Program Purpose: Moves the specified amount of elements to the end of the array.                 #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                           #
-// #       Program Date: February 15, 2020.                                                              #
+// #       Program Date: February 17, 2020.                                                              #
 // #                                                                                                     #
 // #######################################################################################################
 
