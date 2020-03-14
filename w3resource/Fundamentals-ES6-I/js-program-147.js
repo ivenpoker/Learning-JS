@@ -12,7 +12,7 @@ const serializeCookie = (name, val) =>
 
 (function () {
 
-    console.log("Seriallized data:", serializeCookie("foo", "bar"));
+    console.log("Serialized data:", serializeCookie("foo", "bar"));
 
 })();
 
