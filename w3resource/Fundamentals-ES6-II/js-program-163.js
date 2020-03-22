@@ -1,0 +1,26 @@
+// #######################################################################################################
+// #                                                                                                     #
+// #    Program Purpose: Converts a number in bytes to human readable strings.                           #
+// #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                           #
+// #       Program Date: March 22, 2020.                                                                 #
+// #                                                                                                     #
+// #######################################################################################################
+
+const prettyBytes = (num, precision = 3, addSpace = true) => {
+	const UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+	if (Math.abs(num) < 1) {
+		return num + (addSpace ? ' ' : '') + UNITS[0];
+	}
+	const exponent = Math.min(Math.floor(Math.log10(num < 0 ? -num : num) / 3), UNITS.length-1);
+	const n = Number(((num < 0 ? -num : num) / 1000 ** exponent).toPrecision(precision));
+	return (num < 0 ? '-' : '') + n + (addSpace ? ' ' : '') + UNITS[exponent];
+};
+
+(function () {
+
+	console.log(prettyBytes(1000));
+	console.log(prettyBytes(-27378273828232.5821, 5));
+	console.log(prettyBytes(123456789, 3, false));
+
+})();
+
