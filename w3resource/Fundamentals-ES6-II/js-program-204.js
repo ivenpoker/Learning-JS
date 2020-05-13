@@ -1,6 +1,6 @@
 // #######################################################################################################
 // #                                                                                                     #
-// #    Program Purpose: Checks whether the given argument is a native boolean element.					 #
+// #    Program Purpose: Checks whether the given argument to a function is a native boolean element.	 #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                           #
 // #       Program Date: May 13, 2020.                                                                   #
 // #                                                                                                     #
