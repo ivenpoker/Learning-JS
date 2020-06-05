@@ -14,6 +14,6 @@ const inRange = (lower, val, upper) => lower <= val && val <= upper;
 	console.log(inRange(3, 2, 5));
 	console.log(inRange(3, 4));
 	console.log(inRange(2, 3, 5));
-	console.log(inRange(3, 2))
+	console.log(inRange(3, 2));
 
 })();
