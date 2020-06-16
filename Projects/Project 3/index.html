@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<script src="../../Main-Libraries/js-files/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" href="../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<link rel="stylesheet" href="./proj-css/loader.css"/>
+		<meta charset="UTF-8">
+		<title>Cat Facts Api</title>
+
+		<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+		<script type="text/babel" src="src-dev/CatsFacts.js"></script>
+
+		<script type="text/babel">
+
+
+			const MAIN_URL = "https://cat-fact.herokuapp.com/facts"
+			$(document).ready(function () {
+
+				handleDataFetch();
+
+
+
+			});
+
+			const handleDataFetch = () => {
+				$.get(MAIN_URL, function (data) {
+					$("div#main-spinner").hide();
+
+					// $("div#main-body").append(mainDeck);
+					ReactDOM.render(<CatsFactsContainer catsData={data.all}/>, $("div#main-body")[0])
+				});
+			}
+
+		</script>
+
+	</head>
+	<body class="">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-2 navbar-shadow">
+			<div class="container">
+				<a class="navbar-brand" href="#">Cats Facts</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Features</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Pricing</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Dropdown link
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="main-spinner">
+			<div class="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+		</div>
+		<div id="main-body" class="container"></div>
+
+	</body>
+</html>
