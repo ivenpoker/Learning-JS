@@ -21,6 +21,18 @@
 			const MAIN_URL = "https://cat-fact.herokuapp.com/facts"
 			$(document).ready(function () {
 
+				$("li.nav-item").each(function (idx, elem) {
+					$(elem).on("mouseover", function () {
+						if (!$(this).hasClass("dark-bottom")) {
+							$(this).addClass("dark-bottom");
+						}
+					}).on("mouseout", function () {
+						if ($(this).hasClass("dark-bottom")) {
+							$(this).removeClass("dark-bottom");
+						}
+					})
+				})
+
 				handleDataFetch();
 
 

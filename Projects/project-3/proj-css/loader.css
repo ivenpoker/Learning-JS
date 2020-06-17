@@ -7,6 +7,12 @@ body {
     background-color: #eeeeee;
 }
 
+/*########## [NAVBAR ANIMATIONS] ###############*/
+
+.dark-bottom {
+    background-color: #eeeeee;
+}
+
 /*###################################################### */
 .spinner {
     margin: 50px auto 0;
