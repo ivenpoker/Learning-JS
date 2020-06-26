@@ -1,17 +1,35 @@
 // #######################################################################################################
 // #                                                                                                     #
-// #    Program Purpose: Flattens a given array up to the specified depth.					      		 #
+// #    Program Purpose: Flattens an object with paths for keys.								   		 #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                           #
 // #       Program Date: June 26, 2020.                                                                  #
 // #                                                                                                     #
-// #######################################################################################################
+// #######################################################################################################'
 
-const flatten = (arr, depth = 1) =>
-	arr.reduce((a, v) => a.concat(depth > 1 && Array.isArray(v) ? flatten(v, depth - 1) : v), []);
+const flattenObjKeyPath = (obj = {}, prefix = '') => Object.keys(obj).reduce((acc, key) => {
+	const pre = prefix.length ? prefix + "." : "";
+	if (typeof obj[key] === "object") {
+		Object.assign(acc, flattenObjKeyPath(obj[key], pre + key));
+	} else {
+		acc[pre + key] = obj[key];
+	}
+	return acc;
+}, {});
 
 (() => {
 
-	console.log(flatten([1, [2], 3, 4]));
-	console.log(flatten([1, [2, [3, [4, 5], 6], 7], 8], 2));
+	console.log(flattenObjKeyPath({
+		a: {
+			b: {
+				c: 1
+			},
+			e: {
+				d: 1,
+				v: 2,
+				f: false
+			}
+		},
+		d: 1
+	}));
 
 })();
