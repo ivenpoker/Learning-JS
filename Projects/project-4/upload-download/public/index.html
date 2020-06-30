@@ -5,11 +5,89 @@
 		<title>Title</title>
 
 		<!-- Bootstrap CSS -->
+
 		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="public/styles/loader.css"/>
+		<link rel="stylesheet" href="public/styles/app.css" type="text/css"/>
+
+		<!-- JQuery first, then Popper.js the Bootstrap JS. -->
+
+		<script src="node_modules/jquery/dist/jquery.js"></script>
+		<script src="node_modules/popper.js/dist/popper.js"></script>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="public/js/SimpleImage.js"></script>
+
+		<script type="text/javascript">
+
+			$(function () {
+
+				// ==============[ CANVAS SECTION SETTINGS ]===============
+
+				// Hide loading feature.
+				$("div#main-spinner").hide();
+
+				$("canvas#image-canvas").css({
+					width: "100%",
+					height: 300,
+					border: "1px solid grey",
+					borderRadius: "8px"
+				});
+
+				$("div#image-title").hide();
+
+				// Change the canvas's 'title' to reflect new file
+				// when a new file has been selected.
+
+				$("input#selected-file").on("change", function () {
+					const data = $(this).val().trim();
+					const dataSeg = data.split("\\");
+					const filename = dataSeg[dataSeg.length-1];
+					// console.log("Selected filename:", filename, "Segments:", dataSeg);
+
+
+					$("div#image-title").html(`<h6 class="font-weight-bold">${filename}</h6>`);
+					$("div#image-title").show();
+
+				});
+
+				$("button#uploadBtn").on("click", function () {
+
+					//loadCanvasWithInputFile();
+
+				});
+
+				// function loadCanvasWithInputFile(){
+				// 	// canvas
+				// 	let canvas = document.getElementById('image-canvas');
+				// 	let context = canvas.getContext("2d");
+				// 	let fileinput = document.getElementById('selected-file'); // input file
+				// 	let img = new Image();
+				//
+				// 	fileinput.onchange = function(evt) {
+				// 		let files = evt.target.files; // FileList object
+				// 		let file = files[0];
+				// 		if(file.type.match('image.*')) {
+				// 			let reader = new FileReader();
+				// 			// Read in the image file as a data URL.
+				// 			reader.readAsDataURL(file);
+				// 			reader.onload = function(evt){
+				// 				if( evt.target.readyState == FileReader.DONE) {
+				// 					img.src = evt.target.result;
+				// 					context.drawImage(img,100,100);
+				// 				}
+				// 			}
+				//
+				// 		} else {
+				// 			alert("not an image");
+				// 		}
+				// 	};
+				// }
+
+			});
+
+		</script>
+
 	</head>
 	<body>
-
 		<header>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-2 navbar-shadow">
 				<div class="container">
@@ -46,10 +124,45 @@
 			</nav>
 		</header>
 
-		<!-- JQuery first, then Popper.js the Bootstrap JS. -->
-		<script src="node_modules/jquery/dist/jquery.min.js"></script>
-		<script src="node_modules/popper.js/dist/popper.min.js"></script>
-		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<main>
+			<section id="content">
+				<div class="container container-lg">
+					<div class="row">
+						<div class="col-12 col-sm-5">
+							<div class="navbar-shadow">
+
+								<div id="main-spinner">
+									<div class="spinner">
+										<div class="bounce1"></div>
+										<div class="bounce2"></div>
+										<div class="bounce3"></div>
+									</div>
+								</div>
+
+								<div id="image-title" class="text-center">
+								</div>
+								<canvas class="mb-1" id="image-canvas"></canvas>
+
+								<input id="selected-file" type="file" class="btn btn-dark btn-block" accept="image/*">
+
+								<div class="mt-2">
+									<button id="uploadBtn" type="button" class="btn btn-primary btn-block">
+										Upload selected document.
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-7">
+							<div class="alert alert-info p-3">
+								<div class="text-center">
+									No documents uploaded
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
 
 	</body>
 </html>

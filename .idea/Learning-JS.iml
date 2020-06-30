@@ -13,5 +13,6 @@
     <orderEntry type="library" name="@types/jquery" level="application" />
     <orderEntry type="library" name="popper" level="application" />
     <orderEntry type="library" name="babel-standalone" level="application" />
+    <orderEntry type="library" name="@types/express" level="application" />
   </component>
 </module>
