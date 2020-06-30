@@ -32,7 +32,7 @@
 					borderRadius: "8px"
 				});
 
-				$("div#image-title").hide();
+				// $("div#image-title").hide();
 
 				// Change the canvas's 'title' to reflect new file
 				// when a new file has been selected.
@@ -43,10 +43,19 @@
 					const filename = dataSeg[dataSeg.length-1];
 					// console.log("Selected filename:", filename, "Segments:", dataSeg);
 
+					// Reveal the name of selected file to the user of the application
 
-					$("div#image-title").html(`<h6 class="font-weight-bold">${filename}</h6>`);
+					$("div#image-title").html(`
+						<div class="alert alert-info container">
+							<span class="font-weight-bold">${filename}</span>
+						</div>
+					`);
+
+
 					$("div#image-title").show();
 
+					// Draw the image inside the Canvas
+					loadImageIntoCanvas();
 				});
 
 				$("button#uploadBtn").on("click", function () {
@@ -55,32 +64,20 @@
 
 				});
 
-				// function loadCanvasWithInputFile(){
-				// 	// canvas
-				// 	let canvas = document.getElementById('image-canvas');
-				// 	let context = canvas.getContext("2d");
-				// 	let fileinput = document.getElementById('selected-file'); // input file
-				// 	let img = new Image();
-				//
-				// 	fileinput.onchange = function(evt) {
-				// 		let files = evt.target.files; // FileList object
-				// 		let file = files[0];
-				// 		if(file.type.match('image.*')) {
-				// 			let reader = new FileReader();
-				// 			// Read in the image file as a data URL.
-				// 			reader.readAsDataURL(file);
-				// 			reader.onload = function(evt){
-				// 				if( evt.target.readyState == FileReader.DONE) {
-				// 					img.src = evt.target.result;
-				// 					context.drawImage(img,100,100);
-				// 				}
-				// 			}
-				//
-				// 		} else {
-				// 			alert("not an image");
-				// 		}
-				// 	};
-				// }
+				// LOAD IMAGE INTO CANVAS
+
+				const loadImageIntoCanvas = () => {
+
+					// use JQuery to get it fast and use '[0]' to get DOM version1
+					const selectedImg = $("input#selected-file")[0];
+
+					const userSimpleImg = new SimpleImage(selectedImg);
+
+					const canvas = $("canvas#image-canvas")[0];
+					userSimpleImg.drawTo(canvas);
+				};
+
+
 
 			});
 
@@ -140,6 +137,9 @@
 								</div>
 
 								<div id="image-title" class="text-center">
+									<div class="alert alert-warning border-warning">
+										No image selected
+									</div>
 								</div>
 								<canvas class="mb-1" id="image-canvas"></canvas>
 
@@ -153,7 +153,7 @@
 							</div>
 						</div>
 						<div class="col-sm-7">
-							<div class="alert alert-info p-3">
+							<div class="alert alert-secondary">
 								<div class="text-center">
 									No documents uploaded
 								</div>
