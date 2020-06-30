@@ -14,6 +14,8 @@
 		<script src="node_modules/jquery/dist/jquery.js"></script>
 		<script src="node_modules/popper.js/dist/popper.js"></script>
 		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<!-- DOCUMENTATION: https://www.dukelearntoprogram.com/course1/doc/#simpleimage		-->
 		<script src="public/js/SimpleImage.js"></script>
 
 		<script type="text/javascript">
@@ -25,19 +27,26 @@
 				// Hide loading feature.
 				$("div#main-spinner").hide();
 
+				const CANVAS__DEFAULT_COLOR = "#e3e0e0";
+
 				$("canvas#image-canvas").css({
 					width: "100%",
 					height: 300,
-					border: "1px solid grey",
+					backgroundColor: CANVAS__DEFAULT_COLOR,
 					borderRadius: "8px"
 				});
 
-				// $("div#image-title").hide();
+				// Remove the clear canvas button for the image.
+				$("button#clear-canvas-btn").hide();
+
+
+				// ==============[ ADD SOME FUNCTIONALITIES TO THE APPLICATION ]=====
 
 				// Change the canvas's 'title' to reflect new file
 				// when a new file has been selected.
 
 				$("input#selected-file").on("change", function () {
+
 					const data = $(this).val().trim();
 					const dataSeg = data.split("\\");
 					const filename = dataSeg[dataSeg.length-1];
@@ -55,8 +64,14 @@
 					$("div#image-title").show();
 
 					// Draw the image inside the Canvas
-					loadImageIntoCanvas();
+					__loadImageIntoCanvas();
+
+					// Show button to clear canvas, so the user can remove chosen image.
+					$("button#clear-canvas-btn").show();
 				});
+
+
+				// Button to upload image to server
 
 				$("button#uploadBtn").on("click", function () {
 
@@ -64,9 +79,33 @@
 
 				});
 
+				// Button to clear the image in the canvas
+				$("button#clear-canvas-btn").on("click", function () {
+					const imageCanvas = $("canvas#image-canvas")[0];
+
+					// Clear the image from the canvas
+					__clearCanvas(imageCanvas, 0, 0, imageCanvas.width, imageCanvas.height);
+
+					// Reset the selected file from input field
+					$("input#selected-file").val("");
+
+					// Hide the 'clear' button since there is no longer an image in canvas.
+					$(this).hide();
+
+					// Reset the name of file chosen above the canvas
+					$("div#image-title").html(`
+						<div class="alert alert-warning container">
+							<span class="font-weight-bold">
+								No image selected.
+							</span>
+						</div>
+					`);
+
+				});
+
 				// LOAD IMAGE INTO CANVAS
 
-				const loadImageIntoCanvas = () => {
+				const __loadImageIntoCanvas = () => {
 
 					// use JQuery to get it fast and use '[0]' to get DOM version1
 					const selectedImg = $("input#selected-file")[0];
@@ -75,6 +114,12 @@
 
 					const canvas = $("canvas#image-canvas")[0];
 					userSimpleImg.drawTo(canvas);
+				};
+
+				const __clearCanvas = (targetCanvas, startX, startY, widthLen, heightLen)  => {
+					let mainCtx = targetCanvas.getContext("2d");
+					mainCtx.fillStyle = CANVAS__DEFAULT_COLOR;
+					mainCtx.clearRect(startX, startY, widthLen, heightLen);
 				};
 
 
@@ -141,12 +186,15 @@
 										No image selected
 									</div>
 								</div>
-								<canvas class="mb-1" id="image-canvas"></canvas>
+								<canvas class="mb-2 shadow-elem" id="image-canvas"></canvas>
 
-								<input id="selected-file" type="file" class="btn btn-dark btn-block" accept="image/*">
+								<input id="selected-file" type="file" class="btn btn-dark btn-block shadow-elem" accept="image/*">
 
 								<div class="mt-2">
-									<button id="uploadBtn" type="button" class="btn btn-primary btn-block">
+									<button id="clear-canvas-btn" class="btn btn-danger btn-block shadow-elem">
+										Remove selected image
+									</button>
+									<button id="uploadBtn" type="button" class="btn btn-primary btn-block shadow-elem">
 										Upload selected document.
 									</button>
 								</div>
