@@ -21,11 +21,9 @@ app.get("/home", (request, response) => {
 
 app.post("/img_upload", (req, resp) => {
 	console.log("request at:", req.url);
-	global.setTimeout(() => {
-		resp.send({
-			status: "success"
-		});
-	}, 3000);
+	resp.send({
+		status: "success"
+	});
 })
 
 const server = app.listen(PORT, HOST_NAME, () => {

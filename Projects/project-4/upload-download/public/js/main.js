@@ -1,4 +1,26 @@
 
+// ##################### [HELPER FUNCTIONS] #######################
+
+const createListItem = (listData, onRemove=f=>f) => {
+	const list = $(`
+		<li class='list-group-item list-group-item-action'>
+			<div class="card-title font-weight-bold">${listData}</div>
+		</li>`);
+	const delBtn = $(`
+		<button style="float: right" class="btn btn-outline-danger btn-sm">
+			Remove
+		</button>
+	`).on("click", onRemove);
+
+	list.append(delBtn).fadeIn();
+	return list;
+};
+
+const getFileName = (somePath) => {
+	const pathSegments = somePath.split("\\");
+	return pathSegments[pathSegments.length-1];
+};
+
 
 // ==================== [ MODAL CONFIGURATION ]================
 $(document).ready(function () {
@@ -85,7 +107,38 @@ $(document).ready(function () {
 			const formSerializedData = $("form#user-file-form").serialize();
 
 			// Upload the data to the server
-			$.post("/img_upload", formSerializedData, function (...params) {
+			$.post("/img_upload", formSerializedData, function (data, status) {
+
+				if (status === "success") {
+					// window.alert("Data Uploaded!");
+
+					// Hide the alert message that says 'No history of uploaded uploaded' from the UI,
+					// if it's not hidden, since we've got new data to show.
+
+					$("div#content-state-alert").hide();
+
+					// Create new list item with the name of th uploaded file and a buton
+					// to 'clear' the upload file from the UI.
+					const uploadedFileName = getFileName($("input#selected-file").val());
+
+					console.log("Uploaded filename:", uploadedFileName);
+					const newListItem = createListItem(uploadedFileName, function () {
+						// This code below is to remove this list item from list when
+						// the button 'Remove' is clicked.
+						$(this).parent().remove();
+
+						// We check to see if this was the last list item on the UI,
+						// if it's the case, we show the alert message we previously
+						// did hide.
+
+						if ($("ul#uploaded-files li").length === 0) {
+							$("div#content-state-alert").show();
+						}
+					});
+
+					// Add new uploaded file to the list of uploaded files.
+					$("ul#uploaded-files").append(newListItem);
+				}
 
 				// Hide animation bouncer since the operation has been completed.
 
@@ -96,7 +149,10 @@ $(document).ready(function () {
 
 				$("button#uploadBtn").removeAttr("disabled");
 				$("input#selected-file").removeAttr("disabled");
-				$("button#clear-canvas-btn").removeAttr("disabled", "");
+
+				// Enable this button an trigger it's 'click' event,
+				// which will basically clear the canvas and hide the button
+				$("button#clear-canvas-btn").removeAttr("disabled").trigger("click");
 
 			});
 		}
@@ -147,8 +203,8 @@ $(document).ready(function () {
 
 		// Reset the name of file chosen above the canvas
 		$("div#image-title").html(`
-						<div class="alert alert-warning container">
-							<span class="font-weight-bold">
+						<div class="alert alert-warning container border-warning">
+							<span>
 								No image selected.
 							</span>
 						</div>
