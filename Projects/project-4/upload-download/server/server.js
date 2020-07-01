@@ -19,6 +19,15 @@ app.get("/home", (request, response) => {
 	response.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
+app.post("/img_upload", (req, resp) => {
+	console.log("request at:", req.url);
+	global.setTimeout(() => {
+		resp.send({
+			status: "success"
+		});
+	}, 3000);
+})
+
 const server = app.listen(PORT, HOST_NAME, () => {
 	console.log(`Upload server running at http://${HOST_NAME}:${PORT}/home`);
 });
