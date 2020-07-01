@@ -111,3 +111,6 @@ body {
 }
 
 /* ################# [CANVAS STYLES] ####################### */
+canvas {
+    cursor: pointer;
+}

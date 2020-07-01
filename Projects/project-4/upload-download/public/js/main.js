@@ -1,4 +1,16 @@
 
+
+// ==================== [ MODAL CONFIGURATION ]================
+$(document).ready(function () {
+
+	$("div#confirm-upload-modal").modal({
+		backdrop: "static",
+		keyboard: false,
+		show: false
+	});
+
+});
+
 $(document).ready(function () {
 
 	// ==============[ CANVAS SECTION SETTINGS ]===============
@@ -50,7 +62,7 @@ $(document).ready(function () {
 
 	$("button#uploadBtn").on("click", function () {
 
-		//loadCanvasWithInputFile();
+		$("div#confirm-upload-modal").modal("show");
 
 	});
 
