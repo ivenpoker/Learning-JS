@@ -1,0 +1,675 @@
+* [33m4d3608e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m Program that accepts a string as parameter and converts the first letter of each word of the string to uppercase.
+* [33m2a22f8e[m Program that returns a passed string with letters in alphabetical order.
+* [33mc8c0e6b[m Program that finds all combinations of a string.
+* [33m115b5a3[m Program that checks if a string is a palindrome or not.
+* [33m7911bf1[m Program that reverses a number.
+* [33m9d6f751[m Renamed previous program.
+* [33mdb899f1[m Program that clamp number within the inclusive range specified by the given boundary values of a and b.
+* [33m6e93d39[m Program that chunks an array into smaller arrays of specified size.
+* [33m4dd3b18[m Program that capitalizes every word in string.
+* [33mb63f152[m Program that capitalizes the first letter in a string.
+* [33md78bd92[m Program that creates a base-64 encoded ASCII string from a String object in which each character in the string is treated as a byte of binary data.
+* [33ma2d7a94[m Program that decodes a string of data which has been encoded using base-64 encoding.
+* [33mb4be65d[m Just renamed program and added new program that returns true if the bottom of the page is visible, false otherwise.
+* [33m7002abf[m Program that evaluates the binomial coefficient of two integers n and k.
+* [33mc50714c[m Program that creates a function that accepts up to n arguments, ignoring any additional arguments.
+* [33me3b8ee9[m Program converts a 2D-array to a comma-separated values (CSV) string.
+* [33me98633e[m Program that checks if two given numbers are approximately equal to each other.
+* [33m3d120e4[m Program that returns true if the provided predicate function returns true for at least one element in a collection, false otherwise.
+* [33mbed5456[m Program that generates a UUID in Node.JS.
+* [33mb81bb41[m Program that gets the UUID of the browswer.
+* [33m5dc4957[m Program that creates an element from a string (without appending it tot the document).
+* [33m0d0f032[m Renamed last two programs.
+* [33m4bedd6b[m Program that converts the values of RGB components to a color code.
+* [33mc6d66c3[m Program that writes a JSON object to a file.
+* [33m1f33ef4[m Program that gets the current page URL.
+* [33mff71277[m Program that deep flattens an array.
+* [33ma7fb975[m Program that assigns default values for all properties in an object that are undefined.
+* [33md5db10a[m Program that converts degrees to radians.
+* [33m85ffde1[m Program that invokes function after awaited number of milliseconds.
+* [33me27f472[m Program that finds the difference between two given arrays.
+* [33m8372238[m Program that gets the distance between two given points.
+* [33m1e311a6[m Program that removes element from the end of an array array until the passed function returns true. Returns the remaining elements in an array.
+* [33m13cf37c[m Program that removes element in an array until the passed function returns true. Returns the remaining elements in an array.
+* [33m05927a9[m [PROJ-4]: UI view of 'uploaded' documents inserted. Slight server modifications and UI modifications on index.html file.
+* [33me4d99fa[m [PROJ-4]: First connection to the backend success. Files logic re-structured for better management.
+* [33m46b3956[m [PROJ-4]: First modal integration
+* [33md80f74e[m [PROJ-4]: Move javascript code to external file for better management.
+* [33m4a41c5e[m [PROJ-4]: Add small functionalities to remove image when loaded and resetting UI views.
+* [33m531f45e[m [PROJ-4]: Load image into canvas using SimpleImage. Slight bootstrap mobile adaptation included.
+* [33m71ce83c[m [PROJ-4]: Add canvas for image, loading feature with small interactivity to view file to be loaded into the canvas.
+* [33me6f8694[m [PROJ-4]: Initials for the File Upload program.
+* [33mae89271[m Program that returns true if the parent element contains the child element, false otherwise.
+* [33m4d1ddb1[m Program tat esacpes a string to use in a regular expression.
+* [33md9be0fa[m Program tha computes the factorial of a number.
+* [33m5ea0c69[m Program that generates an array, containing the Fibonacci sequence, up until the nth until the nth term.
+* [33md23d642[m Program that gets the first eky that statisfies the provided testing function, otherwise returns undefined.y
+* [33mec1a563[m Program that gets the last key that satisfies the provided testing function, otherwise returns undefined.
+* [33m2bf6660[m Program that takes a function as an argument, then makes the first argument the last.
+* [33mee6d634[m Modified file names.
+* [33m3af4da4[m Program that flattens a given array up to the specified depth.
+* [33md8336b6[m Program that flattens an object with paths for keys
+* [33m8c9f497[m Program that iterates over all own properties of an object in reverse, running a callback for each one.
+* [33m6ea5f67[m Program that gets the human readable format of the given number of milliseconds.
+* [33m10b70ce[m Just renamed directories with appropriate names for my projects.
+* [33m7a52449[m PROJ: Addition of UI nav item hover animation.
+* [33mdc89b60[m PROJ: Slight changes to previous program folder structure (bug fix)
+* [33m5536b33[m PROJ: Application to view some facts about cats from an online api.
+* [33m124b7ea[m Program that converts a string from camelcase
+* [33m77faaf8[m Program that logs the name of a function.
+* [33m148a3ff[m Program that removes elements from an array for which the given function return false.
+* [33mdd9726d[m Program that Gets N random elements at unique keys from array up to the size of array.
+* [33m1dd4561[m Program that finds the standard deviation of an array of numbers.
+* [33m697bb5b[m Program that removes HTML/XHML tags from String.
+* [33mff259cd[m Program that calculates the greatest common divisor between two or more numbers/arrays.
+* [33m13e49a8[m Program that initializes an array containing the numbers in the specified range.
+* [33m13d4fe2[m Program that gets a string of the form HH:MM:SS from a Date object.
+* [33me04e569[m Program that gets the native type of a value. Returns the lowercased constructor name of a value, "undefined" or "null" if value is undefined or null.
+* [33m2a8bb4b[m Program that checks if the current process's arguments contain the specified flags.
+* [33m2500034[m Program that computes the number of times a function executed per second.
+* [33mbac48b2[m Added missing semi colon.
+* [33mf437007[m Program that checks if a given number falls within a certain range.
+* [33m32e6213[m Program that gets all indices of 'val' in an array. If 'val' never occurs, return [].
+* [33m2d4f133[m Program that get all the elements of an array except the last one.
+* [33mf822faf[m Program that initializes an array containing the numbers in the specified range (in reverse) where start and end are inclusive with their common difference step.
+* [33m20d5a29[m Program that initializes and fills an array with the specified values.
+* [33m8eb923d[m Update for previous program (previous commit)
+* [33m0b86387[m Program that creates an N-dimensional array with given value.
+* [33m365fac2[m Program that gets a list of elements that exists in both arrays.
+* [33mb89499a[m Programt that gets a list of elements that exists in both arrays, after applying the provided function to each array element of both.
+* [33m228e3df[m Program that gets a list of elements that exists in both arrays, using a provided comparator function.
+* [33mf332bb1[m Program that checks if the provided value is of the specified type.
+* [33m44e0cc2[m Program that determines if a given string is an absolute URL, false otherwise.
+* [33mad5e8bc[m Program that checks whether a given string is an anagram of another string.
+* [33m2b8ac46[m Program that checks whether the given argument to a function is array-like.
+* [33m3c66707[m Sligth documentation update for program in previous commit.
+* [33m9c3f25b[m Program that checks whether the given argument to a function is a native boolean element.
+* [33mbba90cb[m Program determines if the current runtime environment is a browser.
+* [33m363648b[m Program that checks if the browser tab of the page is focused.
+* [33m9231439[m Program that checks if the first numeric argument is divisible by the second one.
+* [33m99b75d3[m Program that returns true if a value is an empty object, collection map or set, has no enumerable properties or is any type that is considered a collection.
+* [33m3e6e227[m Program that checks whether an argument (number) is even or not.
+* [33m46e4b77[m Program that checks whether the given argument to a function is a function.
+* [33mf92fecf[m Program that checks if a string is lowercase or not.
+* [33me110417[m Program that checks if a provided argument is null or not.
+* [33m18ca6bb[m Program that checks if a given argument is a number or not.
+* [33m0972fd8[m Program that gets a boolean if the passed value is an object or not.
+* [33m3967369[m Program that checks whether a value is object-like. Checks whether the provided value is not null and its typeof is equal to 'object'.
+* [33md76fdab[m Program file for previous commit.
+* [33md0ad4db[m Program that checks whether the provided value is an object created by the Object constructor.
+* [33md3f3957[m Program file for previous commit.
+* [33m4f73bbc[m Program that checks whether the provided integer is a prime number or not.
+* [33mf508a20[m File for previous commit.
+* [33m83efdf2[m Program that gets a boolean determining if the passed to function is primitive or not.
+* [33mb3ffa73[m Program that checks if an object looks like a Promise or not.
+* [33m176aab4[m Program that returns 1 if the array is sorted in ascending order, -1 if it is sorted in descending order or 0 if it is not sorted.
+* [33m7e4a216[m Program that checks if a given argument is a string or not.
+* [33m31f1d44[m Program that checks whether the given argument is a symbol.
+* [33m3b3cf36[m Program that returns true if a specified value is undefined otherwise returns false.
+* [33m01fe876[m Program that checks if a given string is uppercase or not.
+* [33m459dbfb[m Program that checks whether the provided argument to a function is a valid JSON.
+* [33mc5d5d5c[m Program that joins all elements of an array into a string and returns this string.
+* [33m02e6adc[m Program that obtains the last element from a given array.
+* [33m79beeb1[m Program that creates a new object from the combination of two or more objects.
+* [33m0fc3f01[m Just renamed files to their approriate names.
+* [33mee3a842[m Program that creates a new object from the specified object, where all the keys are in lowercase.
+* [33m55a2cbc[m Program that compares two objects to determine if the first one contains equivalent property values to the second one, based on a provided function.
+* [33m938bb90[m Program that gets the minimum value of an array, after mapping each element to a value using the provided function.
+* [33mf011fea[m Program that gets the n minimum elements from the provided array. If n is greater than or equal to the provided array's length, then return  the original array (sorted in ascending order).
+* [33mf9f9fcd[m Program that gets the index of the function in an array of functions which executed the fastest.
+* [33m1f11439[m Program that converts a NodeList to an array.
+* [33m85ff383[m Program tha gets the nth element of a given array.
+* [33mc1b7fd8[m Program that creates a function that invokes the provided function with its arguments transformed.
+* [33me0f5bfc[m Program that parses an HTTP Cookie header string and return an object of all cookie name-value pairs.
+* [33m9a3e718[m Program that creates a function that invokes another function with partials appended to the arguments it receives.
+* [33m664acce[m Program that creates a function that invokes another function with partials appended to the arguments it receives.
+* [33md6e5d52[m Program that groups elements into two arrays, depending on the provided function's truthiness for each element.
+* [33m369c7cb[m Program that calculates how many numbers in the given array are less than or equal tot he given value using the percentile formula.
+* [33m5238ed9[m Progrma that performs left-to-right function composition for asynchronous functions.
+* [33m77a8281[m Program that performs left-to-right function composition.
+* [33m433da3c[m Program that returns the singlular or plural form of the word based on the input number.
+* [33md5f3c4c[m Program that converts a number in bytes to a human-readable string.
+* [33me415690[m Program that converts an asynchronous function to return a promise.
+* [33me6cd03c[m Program that mutates the original array to filter out the values specified.
+* [33m81b5c27[m Program that mutates the original array to filter out the values specified, based on a given iterator function.
+* [33m3ad225f[m Program that gets an array of lines from the specified file.
+* [33mc8bd7b2[m Program that creates a function that invokes the provided function with its arguments arranged according to the specified indexes.
+* [33m299b3bf[m Program that redirects to a specified URL.
+* [33m4338ec9[m Program that applies a function against an accumulator and each element in the array (from left to right), returning an array of successively reduced values.
+* [33mb983bda[m Program that takes a predicate function and an array, like Array.filter(), but only keeps x if pred(x) === false
+* [33m5d0d7c9[m Program that creates an object composed of the properties the given function returns falsy for.
+* [33m1daac14[m Program that reverses the order of the characters in a string.
+* [33me521d4e[m Program that rounds a number to a specified amount of digits.
+* [33m077bf1f[m Program that runs a function in a separate thread by using a Web worker, allowing long running functions to not block the UI.
+* [33mfd87169[m Program that runs a given array of promises in series.
+* [33mf890b33[m Program that obtains a random element from an array.
+* [33m7c4b63c[m Program that hashes an input string into a whole number.
+* [33m2eac533[m Slight typo fix.
+* [33m9b033ef[m Program that serializes a cookie name-value pair into a Set-cookie header string.
+* [33md438f78[m Program that creates a shallow clone of an object.
+* [33mf63a948[m Program that randomizes the order of the values of an array, returning a new array.
+* [33mf4f1e45[m Program that creates an array of elements whose contents appear in two different arrays.
+* [33m30ecf9f[m Program that sorts characters of a string alphabetically.
+* [33m50b2507[m Program that gets the lowest at which value should be inserted into array in order to maintain its sorted order.
+* [33med765c4[m Prorgam that gets the highest index at which a value should be inserted into the array in order to maintain its sorted order.
+* [33mf1f2b6c[m Program that gets the highest index at which a value should be inserted into array in order to maintain it's sorted order, based on a provided iterator function.
+* [33mf6d9d13[m Program that splits a multiline string into an array of lines.
+* [33m306ab76[m Program that takes a variadic function and returns a closure that accepts an array arguments to map to the inputs of the function.
+* [33m9cc59f9[m Program that performs stable sorting of an array, preserving the initial indexes of its items when their values are the same.
+* [33m80c727e[m Program that generates all permutations of a string.
+* [33m36bbcca[m Program that gets the sum of the powers of all the numbers from start to end.
+* [33m817efd6[m Program that finds the symmetric difference between two given arrays.
+* [33m768d007[m Program that gets the symmetric difference between two given arrays, after applying the provided function to each array of both.
+* [33m6e87545[m Slight fix for previous program.
+* [33mfa51000[m Program that gets the symmetric difference between two given arrays, using a provided function as a comparator.
+* [33m8ea8a99[m Program that gets an array with 'n' elements removed from the beginning from a given array.
+* [33m52f727c[m Program that gets the removed elements from the end of a given array until the passed function returns true.
+* [33m7a20bd5[m Program that gets removed elements from the end of a given array until the passed function returns true.
+* [33mb8e46a2[m Program that gets removed elements of a given array until the passed function returns true.
+* [33m4d6aa70[m Program that iterates over a callback function 'n' times.
+* [33m81a8573[m Program that creates a specified currency formatting from a given number.
+* [33m58d61fc[m Program that converts a floating-point arithmetic to the Decimal mark form and It will make a comma separted string from a number.
+* [33m77e9056[m Reduce a given Array-like object into a value hash.
+* [33madedb13[m Program that converts a string to kebab case.
+* [33m75bc881[m Program that adds an ordinal suffix to a number.
+* [33mb120c4a[m Program that converts a value to safe integer.
+* [33m7a2f3ab[m Program that converts a string to snake case.
+* [33mf58ec77[m Program that creates tomorrow's date in string representation.
+* [33m27ab9be[m Applies a function against an accumulator and each key in the object (from left to right).
+* [33me4ed370[m Program that truncates a string up to a specified length.
+* [33m9b2edd2[m Program that checks if a predicate (second argument) is truthy on all elments of a collection (first argument).
+* [33m7b359d1[m Program that creates a function that accepts up to one argument, ignoring any additional arguments.
+* [33m3fca8db[m Program that uncurries a function up to depth n.
+* [33m1705291[m Program unescapes HTML characters.
+* [33m7ab8398[m Program unflattens an object with the paths for keys.
+* [33md6cdb6f[m Program that builds an array, using an iterator function and an initial seed value.
+* [33m71ca7c2[m Program that gets every element that exists in any of the two arrays once.
+* [33mab9bf93[m Program gets the nth element of an array.
+* [33m3d47742[m Gets all unique values of an array, based on a provided comparator function.
+* [33m3eb7e5d[m Gets all unique values (from the right side of the array) of an array, based on a provided comparator function.
+* [33md9ef139[m Creates an array of elements, ungrouping the elements in an array produced by zip and applying the provided function.
+* [33m06535ee[m Returns true if the given value is a number, false otherwise.
+* [33m3079d1b[m Tests a value, x, against a predicate function.
+* [33mb1e28a5[m Converts a given string into an array of words.
+* [33m0f3240a[m Creates an array of elements, grouped based on the position in the original arrays.
+* [33mcc5bd33[m Program that returns an object associating the properties to the values of a given array of valid property identifiers and an array of values.
+* [33m807572d[m Creates an array of elements, grouped based on the position in the original arrays and using function as the last value to specify how grouped values should be combined.
+* [33ma30e3dc[m Program that hashes a given input string into a whole number.
+* [33m2aa8e1d[m Program that picks the key-value pairs corresponding to the given  keys from an object.
+* [33mb3bb909[m Just renamed files.
+* [33mdc747f3[m Program that filters an array of objects based on a condition while also filtering out unspecified keys.
+* [33me0006e5[m Program that creates an object composed of the properties the given function returns truthy for.
+* [33m21383ae[m Program that adds an event listener to an element with the ability to use event delegation.
+* [33m7d6289c[m Documentation for previous program (with in-complete documentation)
+* [33m0a536e5[m Date documentation fix for previous js program. Alongside a new program implementation.
+* [33m63ed5e3[m Program that removes an event listener from an element.
+* [33m068a4fc[m Program that creates a function that gets the argument at index n.
+* [33m2e61efe[m Program that returns true if a provided predicate function returns false for all elements in a collection, false otherwise.
+* [33md7be856[m Slight date for fix for previous program.
+* [33m2fbe976[m Program that demonstrates how to do nested comments (like those in reddit.com). Given flat array of objects linked to one another, program nests them recursively.
+* [33mc3ab95f[m Program that negates a predicate function.
+* [33m32df2bf[m Program that gets the median of an array of numbers.
+* [33mcce3abc[m Program that gets the 'n' maximum elements from the provided array.
+* [33m52b8d88[m Program that gets the maximum value of an array, after mapping each element to value using the provided function.
+* [33m25c5af8[m Program that replaces all but the last number of characters with the specified mask character.
+* [33m75e3dac[m Program that creates an object with the same keys as the provided object and values generated by running the provided function for each value.
+* [33m119860d[m Program that creates a new string with the results of calling a provided function on every character in the calling string.
+* [33mf3c4ee1[m Program that maps the values of an array to an object using a function, where the the key-value pairs consist of the original value as the key and the mapped value.
+* [33m880462a[m Program that creates an object with keys generated by running the provided function for each key and the same values as the provided object.
+* [33mc6f14a8[m Program that implements the Luhn Algorithm used to validate a variety of identification numbers, such as credit card number, IMEI numbers, National Identifier numbers etc.
+* [33ma25402b[m Program that takes any number of iterable objects or objects with a length property and returns the longest one.
+* [33m2f6e388[m Program that inverts the key-value pairs of an object, without  mutating it.
+* [33mc236d55[m Program that iterates over all own properties of an object, running a callback for each one.
+* [33ma92be98[m Program that executes a function once for each array element, starting from the array's last element.
+* [33m0406fe7[m Program that computes the new ratings between two or more opponents using the Elo rating system.
+* [33m630baa0[m Program that filters out all values from an array for which the comparator function does not return true.
+* [33m8f3070e[m Program that finds the difference between two arrays, after applying the provided function to each array element of both.
+* [33mb8d59a1[m Program that detects whether a website is being opened in a mobile device or a desktop/laptop
+* [33m6a71fb3[m Program that creates a deep clone of an object.
+* [33m510f809[m Program that count occurrences of a value in an array of values.
+* [33m061cc1b[m Program that groups element in an array based on the given function and returns the count of elements in each group.
+* [33me022e55[m Program that performs left-to-right function composition.
+* [33m486bfda[m Just renamed file.
+* [33ma4f8e00[m Program that accepts a converging function and a list of branching functions and returns a function that applies each branching to the arguments and the results of the branching function are passed as arguments to the converging function.
+* [33mebcf22a[m Program that performs right to left composition.
+* [33mbfaee29[m Slight documentation fix.
+* [33m2406af4[m Program that adds special characters to text to print to color in the console (combined with console.log()).
+* [33m182294a[m Program that gets the first non-null / undefined argument.
+* [33m2d65730[m Program that clones a given regular expression.
+* [33m7b62da6[m Program that chains asynchronous functions.
+* [33m080031a[m Program that casts the provided value as an array if it's not one.
+* [33m62cebea[m Program that creates a function that invokes the method at a given key of an object.
+* [33mef96d6c[m Program that creates a function that invokes fn with a given context, optionally adding any additional parameters to the beginning of the arguments.
+* [33m187244a[m Splits values into two groups according to predicate function, which specifies which group an element in the input collection belongs to.
+* [33mf04a2bc[m Program that computes the average of an array, after mapping each element to a value using the provided function.
+* [33m4cfb2f0[m Program that joins all given URL segments together, then normalizes the resulting URL.
+* [33m4d01550[m Program that initializes an array containing the numbers in the specified range where start and end are inclusive with their common difference step.
+* [33m40b1e4e[m Program that initializes a 2D array of given width and height and value.
+* [33m80e52d7[m Program that groups the elements of a given array based on the given function.
+* [33mce6e17c[m Program that gets an object containing the parameters of the current URL.
+* [33m078ad6d[m Program that converts an integer to a suffix string, adding am or pm based on its value.
+* [33m5358fbe[m Just renamed program file.
+* [33mba77a48[m Program that retrieves a set of properties indicated by the given selectors from an object.
+* [33m2b993ae[m Program that gets an array of function property names from own enumerable properties of an object.
+* [33mcece189[m Program that performs a deep comparison between two values to determine if they are equivalent.
+* [33mf9cfdec[m Program that curries a function.
+* [33mad4ea88[m Program that splits values into two groups, if an element in filter is truthy, the corresponding element in the collection belongs to the first group; otherwise it belongs to te second group.
+* [33m2490727[m Program that removes falsey values from a given array.
+* [33mb8fdc96[m Changes a function that accepts an array into a variadic function.
+* [33m1a42215[m Program that gets a customized coalesce function that returns the first argument that returns true from the provided argument validation function.
+* [33mbbbb881[m Program that creates an object from given key value pairs
+* [33m1bb01be[m Program that creates an array of key-value pair array from a given object.
+* [33m102327e[m Slight date fix in documentation of previous commit.
+* [33m37300bd[m Program that removes the key-value pairs corresponding to the given keys from an object.
+* [33m6b93618[m Modified date of documentation
+* [33m12a93d7[m Pads a string on both sides with the specified characters, if it's shorter than the specified length.
+* [33m8635480[m Program tha gets a sorted array of objects ordered by properties and orders.
+* [33mb10cf24[m Program that creates a function that invokes each provided function with the arguments it receives and returns the results.
+* [33mdacc252[m Program that gets an array of 'n' random integers in the specified range.
+* [33md44e7e5[m Program that gets a random integer in a specified range.
+* [33mb5ad96d[m Program that gets a random number in a specified range.
+* [33mb333d3d[m Program that sums a given array after mapping each element to a value using the provided function.
+* [33m12bc6e8[m Program that finds all elements in a given array except for the first one. Returns the whole if the array's length is 1.
+* [33m640c242[m Program that filters out the element(s) of a given array, that have one of the specified values.
+* [33m2dbdbcd[m Program that converts a value to a safe integer.
+* [33mb6cb58f[m Program that measures the time taken by a function to execute.
+* [33m6cda804[m Program that finds every element that exists in any of the two given array once.
+* [33m0c15c4a[m Program that returns true if the string is y/yes or false if the string is n/no.
+* [33mdc11ecb[m Program that creates a new array out of the two supplied by creating each possible pair from the arrays.
+* [33m3aeedcf[m Program that de-capitalizes the first letter of a string.
+* [33mb0dc9b9[m Program that filters out non-unique values in an array based on a provided comparator function.
+* [33me5d7ea2[m Program that filters out the non-unique values in an array.
+* [33m76bbfe7[m Program that gets every nth element in a given array.
+* [33ma51c3e4[m Program that extends a 3-digit color code to a 6-digit color code.
+* [33mb037c7f[m Program that removes specified elements from the right of a given array of elements.
+* [33m0b03b3f[m Program that removes specified elements from the left of a given array of elements.
+* [33m772d743[m Web application to animate all divs to slide down and slide up
+* [33m79f160d[m Web application that animates all hidden elements to show slowlt.
+* [33m9c992dd[m Web application that toggles animation on and off.
+* [33m9cb4f29[m Web application that runs an animation with less frames.
+* [33m21d1df6[m Web application that animates all shown paragraphs to hide slowly.
+* [33m0cf46b8[m Web application to finish a currently running animation.
+* [33m9c3942e[m Web application that toggles between fading-in and fading-out different boxes.
+* [33m09f79c8[m Web application that gets a single element from a selection using jquery.
+* [33ma138674[m Program that split values of two given arrays into two groups, based on some function.
+* [33m262eb1f[m Program that returns true if the provided predicate function returns true for all elements in a collection, false otherwise.
+* [33m8fb7e36[m Program that finds the minimum-maximum value of an array, after applying the provided function to set comparing rule.
+* [33m54a7683[m Program that replaces the names of multiple object keys with the values provided.
+* [33m80841be[m Program that converts the length of a given string in bytes.
+* [33m96b1bfe[m Program that removes non-printable ASCII characters from a given string.
+* [33m7e2733f[m Program that generates random hexadecimal color codes.
+* [33md7cf703[m Program that extracts out the values at the specified indexes from a specified array.
+* [33m3de63da[m Combines the numbers of a given array into an array containing all combinations.
+* [33mab7728a[m Program that filters out the specified values from a specified array.
+* [33m9f41355[m Program that converts a specified number to an array of digits.
+* [33mcea92bb[m Program that targets a given value in a nested JSON object, based on the given key.
+* [33m6be371f[m Program that converts an array of objects to a comma-separated values (CSV) string that contains only the columns specified.
+* [33m6ca9864[m Program converts a comma-separated values string to a 2D array of objects.
+* [33me29356e[m Just renamed previous file (script program).
+* [33me93779a[m Program that converts comma-separated values (CSV) string to 2D-array
+* [33mbafd394[m Web application that copies data found in text area to clipboard.
+* [33mac7fd8f[m Program that compares two objects to determine if the first one contains equivalent property values to the second one.
+* [33mdcb43bd[m Program that swaps pairs of adjacent digits of a given integer of even length.
+* [33m7991ef9[m Program that changes the capitalization of all letters in a given string.
+* [33mcc51934[m Program that swap two halves of a given array of integers of even length.
+* [33m0355529[m Program that computes the sum of all digits that occur in a given string.
+* [33md59397b[m Computes the sum of cubes of all integers from 1 to an given integer.
+* [33m7651aac[m Just renamed file.
+* [33m71309fa[m Program that finds the maximum integer n such that 1 + 2 + ... + n <= a given integer.
+* [33mc74c04c[m Program that breaks and address of an URL and put it's part into an array.
+* [33m655b9d6[m Program that sorts the strings of a given array of strings in the order of increasing lengths.
+* [33m160537a[m Program that simplifies a given absolute path for a file in Unix-style.
+* [33mc7e810b[m Program that finds the number of elements which are present in 2 given arrays.
+* [33mf9f0f65[m Program that checks whether all the digits in a given number are the same or not.
+* [33m6ea2c46[m Program that finds the position of a rightmost round number in an array of integers. Returns 0 if there are no round number.
+* [33m102ddce[m Program that tests whether a given integer is greater than 15 return the given number, otherwise return 15.
+* [33mef96d53[m Just renamed file.
+* [33m354a434[m Program that reverses the bits of a given 16 bits unsigned short integer.
+* [33m0312f35[m Program that replaces the first digit in a string (should contain at least a digit) with $ character.
+* [33m64a83b1[m Program that removes all characters from a given string that appears more than once.
+* [33mc3a5b06[m Program changes the letters found in string in a systematic way.
+* [33m6e12f8d[m Program that checks if a given fraction is proper or not.
+* [33m09fa9a2[m Program that finds all distinct prime factors of a given integer.
+* [33ma779188[m Program that creates an array of prefix sums of the given array.
+* [33mfe33e62[m Program finds the number of given digits in a given integer.
+* [33ma5265a8[m Program that finds the smallest prime number strictly greater than a given number.
+* [33m8ea3853[m Program that finds the smallest round number that is not less than a given value.
+* [33ma98c9c4[m Program that reverses the order of the bits in a given integer.
+* [33m496f1c5[m Program that gets the largest even number from an array of integers.
+* [33m69bb185[m Program that finds the longest string from a given array of strings.
+* [33m42fc4bc[m Program that checks whether a given integer has increasing digits sequence or not.
+* [33m18c56c6[m Just renamed files.
+* [33md3a9c24[m Program that finds the longest string from a given array of strings.
+* [33m2aa26dd[m Program that creates the logical value of logical NOR operation for two given booleans.
+* [33m83dff46[m Program that finds whether the members of a given array of integers is a permutation of numbers from 1 to a given integer.
+* [33mf45bc9e[m Program that checks whether a given array of integers represents either a strictly increasing or a strictly decreasing sequence.
+* [33mcfcb69d[m Program that checks whether a point lies within a circle of specified radius.
+* [33m742839e[m Slight fix to previous program.
+* [33m8f38996[m Checks whether a point lies within a circle of specified radius.
+* [33mec21215[m Program that checks whether a given integer is in a given range.
+* [33m962aafb[m Program that checks whether a matrix is an identity matrix or not.
+* [33m2ce335b[m Program date correction.
+* [33m3a855d1[m Program that finds all the possible options to replace the hash in a string with a digit to produce an integer divisible by 3.
+* [33mbd142d9[m Just renamed file.
+* [33me69340f[m Program that checks if a matrix is a diagonal matrix or not.
+* [33m4763327[m Program that checks whether a given string represents a correct sentence or not. A string is considered correct sentence if it starts with the capital letter and ends with full stop (.).
+* [33ma72e86f[m Program that calculates the sum of n + n/2 + n/4 + n/8 + ... where n is a +ve integer and all divisors are integer.
+* [33m9bc9f6b[m Program that finds the number of trailing zeros in decimal representation of the factorial of a given number.
+* [33me2a9337[m Program that checks a number from three given numbers where two numbers are equal, finds the third one.
+* [33m628d03c[m Program that finds the number of even values in sequence before the first occurrence of a given number.
+* [33m65268f6[m Program date fix.
+* [33m5f803f6[m Program that sorts an array of all prime numbers between 1 and a given integer.
+* [33m9f63d32[m Program that creates the dot product of two given 3D vectors.
+* [33m6d2fc27[m Web application that animates paragraph to fade to an specified opacity when clicked.
+* [33m13454bf[m Web application to FadeIn and fadeOut certain div elements.
+* [33me397217[m Web application that uses dequeue to end a custom queue function which allows the queue to keep going
+* [33m8eb9901[m Program that finds the number of sorted pairs formed by it's elements of a given array of integers such that one element in the pair is divisible by the other.
+* [33maa220ba[m Program that divides an integer by another integer as long as the results is an integer and return the result.
+* [33m0729170[m Program that finds the number of times to replace a given number with the sum of its digits until it converts to a single number.
+* [33m60fd710[m Program that finds two elements of the array such that their absolute difference is not greater than a given integer but is as close to the said integer.
+* [33m4dc214a[m Program that finds the maximum number from a given positive integer by deleting exactly one digit of the given number.
+* [33m3680920[m Program that finds number of inversions of a given array of integers.
+* [33mf616adb[m Program that checks whether a given string contains only latin letters and no two uppercase and no two lowercase letters in adjacent positions.
+* [33mdb85004[m Program that checks whether there is atleast one element which occurs in two given sorted arrays of integers.
+* [33mba51444[m Program that rearranges characters of a given string in such a way that it will become equal to another given string.
+* [33m1d26ff8[m Program that switches case of the minimum possible number of letters to make a given string written in the uppercase or the lowercase.
+* [33m5d37da7[m Program that finds the shortest possible string which can create a string to make it a palindrome by adding characters to the end of it.
+* [33m3148f7e[m Program that computes the sum of absolute difference of consecutive numbers of a given array of integers.
+* [33m49fe8eb[m Program that replaces all the numbers with a specified number of a given array of integers.
+* [33m4abf977[m Program that finds the number which appears the most in a given array of integers.
+* [33m99b1663[m Program that finds the maximum difference among all possible pairs of a given array of integers.
+* [33m01a31b8[m Program that finds the maximum difference between any two adjacent elements of a given array of integers.
+* [33mee0a011[m Program that finds the maximum possible sum of its K consecutive numbers of a given array of +ve integers.
+* [33mfea565d[m Web application that sets a timer to delay execution of subsequent items in the queue.
+* [33m3fab566[m Web application to stop an animation.
+* [33me23cc15[m Just moved and renamed previous web application to it's rightful name and place it under the correct folder.
+* [33m188061a[m Web application to animate an element, by changing it's height and width.
+* [33m35382ec[m Web application to display the window width while (or after) it is resized.
+* [33m3d81d8e[m Web application that shows text when mouse is clicked and release.
+* [33mc9be42f[m Web application to count the number of li in DOM.
+* [33mb6e7b62[m Web application to display the name of the clicked element in the DOM
+* [33m83d4614[m Slight ID fix for previous application
+* [33m2f9801f[m Web application that sets the background color of an element when the element gets focus or loses focus.
+* [33md3dc600[m Web application that tests if an input has focus or not.
+* [33m1145129[m Web application to set the focus to the first input box.
+* [33md6e2973[m Added some libraries and settings. Included web application that attaches a function to the focus event on input field.
+* [33me29c691[m Web application that displays keyboard key code which was pressed in a text box.
+* [33m16b1d41[m Web application that displays the event type when user click on a particular heading.
+* [33mb57a721[m Web application to count number of milliseconds between two clicks on a paragraph.
+* [33m115f5c6[m Web application to display the tag's name on click event.
+* [33mf962ebd[m Web application that returns the previous value(s) of custom events.
+* [33m5708627[m Prevent the default action upon clicking a form button.
+* [33m4a72e4e[m Web application that stops people from writing into the first input box.
+* [33mcb6d6f7[m Web application that finds the position of the mouse relative to left and top edges of document.
+* [33mce4b5ad[m Web application to change the background color of a paragraph upon button click.
+* [33mad5786f[m Web application to find the data passed with on() method for each DOM (heading) element.
+* [33me4338ef[m Web application to a new heading when another (or same) is being clicked.
+* [33m3d63de9[m Web application to toggle paragraph background color upon paragraph double click.
+* [33m40b1f1a[m Just renamed certain files.
+* [33m5d3518c[m Web application that hides all headings when clicked.
+* [33m2396f34[m Web application that creates a paragraph with the `change` event in an input field.
+* [33m4516648[m Slight UI and feedback improvements on previous application.
+* [33mb400f5c[m Web application that attaches a function to the blur event on an  input field.
+* [33m748a274[m Added some new files
+* [33mc81ff99[m Web application attaches a click and double click event on a <p> DOM element.
+* [33ma6a8de4[m Web application that toggles a specified class on DOM element.
+* [33m00a70ee[m Web application that finds the offset of an element.
+* [33ma482af0[m Web application that finds an element with a specified class.
+* [33m4a93e75[m Web application that finds the outerHeight and outerWidth of an element.
+* [33m56348d9[m Web application to reveal innerHeight and innerWidth of DOM element.
+* [33mde5b0f8[m Web application to find the position of a `div` element and reveal it to the browser.
+* [33m228686f[m Web Application that gets the scroll top and left position of an element.
+* [33m9a9df12[m Web Application to show the width and height of divs
+* [33m4082587[m Added new background image
+* [33m5addc3a[m Web application to add class `myClass` to special paragraphs in document.
+* [33me19511b[m Web application that generates random paragraphs that are clickable and reveals their color (both code and name)
+* [33mdff45e3[m Web application that generates random paragraphs that are clickable and reveals their color (both code and name)
+* [33mb7aac55[m Web application to change hyperlink and the text of an existing link.
+* [33m0c5a528[m Web application that adds a tag at the beginning of the list item, containing the index of the list item.
+* [33m1ec31cc[m Web application that Gets a single element from a set of list items (a selection).
+* [33m5a63152[m Web application that appends the new contents dynamically into the body element.
+* [33me147ab9[m Check/Uncheck a checkbox input or radio button.
+* [33m5b259e2[m Finds the kth greatest element in an array.
+* [33m4974fff[m Program that checks whether it is possible to replace $ in a specified expression.
+* [33m152fca2[m Program that checks whether two given integers are similar or not.
+* [33m2323171[m Program that checks whether two arrays of integers of same length are similar or not. The arrays will be similar if one array can be obtained from another array by swapping at most one pair of elements.
+* [33m0fb816d[m Program that finds the type of a given angle.
+* [33m0cbc73b[m Program to compute the sum of two parts and store into an array of size two.
+* [33me35883e[m Program that replaces each character of a given string by the next one in the English alphabet.
+* [33m33ca84d[m Program that finds the longest string in an array of strings.
+* [33m4bb4d85[m Program that adds two positive integers without carry.
+* [33m39ad7cb[m Program that adds the two digits of a given positive integer of length two.
+* [33mf87505c[m Web application that finds a specific (reveals) option tag
+* [33m2e29099[m Web application to hide all input elements within a form
+* [33mbb02774[m Web application that sets the background color of page to red.
+* [33m1549c8e[m Web application that finds all h4 elements that are children of a div element and apply a background to them.
+* [33m5cb35e0[m Web application on mouseout of anchors, alert the element of type being entered.
+* [33mf2a56d9[m Web application that displays the mouse position to the left and top edges of the document.
+* [33m3357745[m Web application that checks whether an event namespace is used.
+* [33m41359f6[m Program that swaps array first and last element. Array element must be at least 1.
+* [33m52737ac[m Program that tests if an array of integers of length 2 DOES NOT contains 1 or a 3.
+* [33mc9ad522[m Program that tests if an array of integers of length 2 DOES NOT contains 1 or a 3.
+* [33m3e3a443[m Program that tests if an array of integers of length 2 contains 1 or a 3.
+* [33md0edf0d[m Slight documentation fix for the program.
+* [33m9786c5b[m Web application that determines if the META key was pressed.
+* [33m6a4c236[m Web application that finds even table rows, matching the first, third and so on (index 0, 2, 4 etc)
+* [33m70f0d28[m Web application that finds the 6th cell (second row and third column) of a 3x3 table.
+* [33m55ce2d5[m Web application that set the background color of the 4th division to red by adding an appropriate class.
+* [33m429d82a[m Web application that selects all paragraphs and finds span element inside these and reverts the selection back to the paragraphs.
+* [33m2e1f9fd[m Program that creates a new array taking the first and last elements from a given array of integers and length must be > 1.
+* [33m024a169[m Program that takes the middle elements of two arrays of integers each of length 3, forms a new array from middle data.
+* [33mdb58aaf[m Program that finds the larger value between the first or last and set all other elements with that value. Displays the new array.
+* [33mb6dcc70[m Program that reverses the elements of an array.
+* [33md058e63[m Program that checks if the first and the last elements of an array are equal.
+* [33md3babdf[m Program that checks if 1 appears in the first or last position of a given array of integers.
+* [33mbefcad3[m Program that rotates the element of array of length 3.
+* [33m4d63760[m Program that computes the length of three elements of a given array of integers of length 3.
+* [33m473be18[m Program that creates a nwe string taking the first and last n characters from a given string. The string length must be >= n.
+* [33m733c6d0[m Program that creates a new string from a given string, removing the first and last characters of the string if the first or last characters are 'P'. Returns the original string if the condition is not satisfied.
+* [33m44a19c5[m Web application that finds all input elements that are enabled.
+* [33m109a20d[m Web application that finds all elements in DOM that are empty!
+* [33m1a8c2c0[m Web application to remove all child nodes from all paragraphs.
+* [33m05dc132[m Web application that finds all paragraph in DOM
+* [33m6512a7e[m Web application to iterate over three paragraphs and set their color property to red.
+* [33m1ded1db[m Web application that finds all elements that are disabled in the DOM.
+* [33m2156ab0[m Web application to remove all paragraphs from the DOM.
+* [33m77ea4a3[m Find descendants of a form and marking them with a dotted red border.
+* [33m84136aa[m Web application to end custom queue function using dequeue which allows the queue to keep going.
+* [33ma1bd324[m Web application that creates a new paragraph and add to DOM upon click of a master paragraph.
+* [33mc9821a7[m Web application to animate by hiding and showing of two divs, delaying the first before showing the it.
+* [33mdb0cd47[m Web application to resolve a deferred object when the user clicks a button, triggering a number of callback functions
+* [33m38c3927[m Web application to toggle background color of paragraphs upon double clicking.
+* [33mf8ed8d6[m Web-application to display message upon double click on all paragraphs of web page.
+* [33m625da0c[m Web-application to retrieve data found in div element and display them.
+* [33m6ca8f0a[m Web application to change the font weight and color of paragraphs upon mouse enter and mouse leave.
+* [33m5d7f2b7[m Web application to increase the size of a div when clicked upon.
+* [33mf558956[m Program that checks if a string starts with 'New' or 'Los'
+* [33m2cca70d[m Program to test if a string ends with 'Script'. The string length must be greater or equal to 6
+* [33m36b21dc[m Program to concatenate two strings and return the result. If the length of the strings are not same then remove the characters from the longer string.
+* [33mb21a80b[m Program to create a string using the middle three characters of a given string of odd length. The string must be greater or equal to three.
+* [33m73b2537[m Program that moves the last 3 characters to the start of a given string. Length must be >= 3.
+* [33m5fd4adc[m Program that concatenates two string except their first characters.
+* [33mf3a981e[m Creates a new string without the first and last characters of a given string
+* [33mf10b08a[m Program that Extracts the first half of a string of even length.
+* [33m84b2c07[m Program that creates a new string of 4 copies of the last 3 characters of a given original string. The length of the given string must be 3 and above.
+* [33m63dcd7a[m Web application to highlight a word when clicked inside a card.
+* [33m49b907f[m JavaScript program to create a new string of specified copies (positive number) of a given string.
+* [33mc47ff51[m JavaScript program to divide two positive numbers and return a string with properly formatted commas.
+* [33md46dea2[m Java Script program to check if a string contains equal number of p's and and t's .
+* [33m1e15a08[m JavaScript program to count number of vowels in string.
+* [33mba693fe[m JavaScript program to check if the characters a and b are separated by exactly 3 places anywhere (at least once) in a given string.
+* [33m25fa37b[m JavaScript program that converts the letter of a given string to alphabetic order.
+* [33mb8c02b2[m java Script program that converts a number to hours and minutes.
+* [33m3b75773[m JavaScript program to capitalize the first letter of each word in a given string.
+* [33mdbad493[m Slight date modifications
+* [33m1b05ebb[m Replaces every character in a given string with the character following it in the alphabet.
+* [33md6d4723[m Web application to increase the size of division upon click by a specified number of pixels.
+* [33m9851f34[m Web application to change color or paragraph upon mouseover with JQuery
+* [33mad06d90[m Web application to get the styles (width, height, text color, and background color) of a clicked division.
+* [33m6fa776d[m Web application to reveal background color of a division upon click
+* [33m8bc0281[m Slight modifications to previous web application
+* [33me3c749b[m Web application that changes background color of DOM element with JQuery upon right click.
+* [33m17cd0cd[m Web application that displays a message when the contextmenu event is triggered on the paragraph elements.
+* [33m427bdc0[m Web application to find all text nodes within paragraphs in document and wrap them with an italic element.
+* [33md7cddbe[m Web application to find all children with a specified class of each division
+* [33m5ef214b[m Web application to find all children of each division.
+* [33mc81acb0[m Web application to place border around all list items that are children of a specified class of an unordered list.
+* [33m8f085a7[m Web application to reveal checked button in form data.
+* [33m76f3858[m JavaScript program to reverse a string.
+* [33mf2f01e1[m Web application to find all checked elements.
+* [33mf215861[m Web application to find all checkbox inputs and reveal them done.
+* [33m2445874[m Web application that attaches a change event to selected element(s) from options.
+* [33m335e012[m Web application to remove callback or callbacks from a callback.
+* [33med4cae0[m Web application to check the lock state of callback list.
+* [33m27f2b6f[m Slight documentation fix.
+* [33me63a58d[m Program to check if a given number in range 40 ... 10000 presents in two number (in same range).
+* [33mce0e632[m Program that checks if two given non-negative integers and if one of the number (not both) is multiple of 7 or 11.
+* [33m0e2b1d6[m JS Program #45 to meet some condition.
+* [33m8395fb7[m JS Program to check if two given integer values and return true if one of the number is 15 or if their sum or difference is 15.
+* [33m05445a9[m Web application that checks if some integers end with the same last digit.
+* [33m9f9b510[m Just some slight renaming and re-structuring.
+* [33me0e8bae[m Web application that checks if three given numbers are increasing in strict mode or in soft mode
+* [33mb1aa376[m Web application to check three given numbers, if the three numbers are same return 30 otherwise return 20 and if two numbers are same return 40.
+* [33md0a1e7f[m Removed redundant white spaces.
+* [33mc7e5f96[m Web application to find all divisions with a specific name attribute.
+* [33m6440e80[m Two version of the Udacity DOM project.
+* [33mb4b3aca[m A sample blog website.
+* [33m81616b9[m Web application to find all divisions in DOM with specific attribute value.
+* [33m3263c36[m Web application to find all element in DOM with specific attribute value.
+* [33meb8ed23[m Web application to locate (visually) the 'title' attribute of first emphasized element in DOM
+* [33m3e5d543[m Web application to dynamically properties of an attribute using JQuery.
+* [33m399dc52[m Web application to append a span to DOM element with unique ID.
+* [33m0965c6a[m Web application to append a DOM element to another using JQuery
+* [33mfb267f8[m Just changed jquery file from minified (production version) to non-minified (development version)
+* [33m58b21d2[m Web application to check input fields for some condition.
+* [33m21acb83[m Web application to find sum of two integers based on some condition.
+* [33m84052c8[m Web application to create a substring based on the length of given string.
+* [33m0112636[m Web application to check if the last digit of three numbers are same.
+* [33mf130a58[m Just updated jquery version
+* [33mffce14b[m Web application to check if a character repeats between 2 to 4 times in a string
+* [33m6b4a127[m Web application to find a larger number from a given range.
+* [33m2e6347a[m Web application to check if a program is within a given range done.
+* [33mc33442c[m Just changed the system.
+* [33m688eeb8[m Web Application to check if three integers are within a specific range.
+* [33m88a6644[m Web application to append JQuery object to all paragraph.
+* [33m84ea85c[m Web application to use JQuery to append some text to a paragraph.
+* [33m407f5cb[m Web application to change the color a div that is animated
+* [33mad0d509[m Web application to do some basic animation
+* [33md4fcc75[m Web application to check if two integer values are within a specific range
+* [33me05980b[m Web application to animate div with relative values
+* [33m9c5c4fc[m Web application that uses JQuery animate paragraph with properties.
+* [33m409fa57[m Web application to use JQuery to count number of DOM elements within a div.
+* [33mfaa99aa[m Web application to count every element in document using JQuery.
+* [33m2486796[m Web application to register a handler when ajax request call is successful.
+* [33m4f96c16[m Web application to register a handler when an AJAX request is complete
+* [33m6c8cf9b[m Web application to register a handler when an AJAX request begins
+* [33mfd96ea6[m Web applications to add class to the last paragraph element in the DOM.
+* [33m802049a[m Web app to insert HTML after all paragraphs using JQuery
+* [33m59e59bf[m Web app to insert DOM element after all p elements using JQuery
+* [33mf7c4016[m Web app to register a handler for and AJAX request sent
+* [33m3f0a445[m Web application to register a handler to be called when Ajax requests completes with an error
+* [33m1e9c0c5[m Web application to register a handler to be called when Ajax request complete.
+* [33m77cd212[m Web application to insert object after all paragraph.
+* [33mdc23804[m Renamed file according to exercises on w3resource.com
+* [33md740da5[m Typo in application file name fixed.
+* [33m329d160[m Application to check if a give number is a multiple of 3 or 7, another to create new string from a given string. Yet another to check if a string starts with 'Java' (case insensitive) done.
+* [33m2194f67[m Application to create a new string from a a given string based on some condition done
+* [33m0f161a2[m Application to create a new string from a a given string based on some condition done
+* [33md3d3e13[m Application to remove a character at a specific index in a string complete.
+* [33maf36e89[m Web application to prepend the string 'Py' to a user defined string (if the 'Py' string is absent).
+* [33m9c444db[m Web application to check, given two integers, whether one is positive and the other negative.
+* [33ma2f7379[m Web application to check if an integer is within 20 of 100 or 400.
+* [33mf2a5736[m Web application to check if integer passes some condition done.
+* [33mbfeb2c9[m Web application to compute the absolute difference.
+* [33mf105818[m Web application to compute the sum of two integers done.
+* [33m12c84e1[m Web application to compute a difference based on some factor done.
+* [33m81174f2[m Slight UI modification.
+* [33mb52d5d8[m Bug that causes image to resize as the different images are loaded into the DOM, fixed. Now we have fixed size image container for all images that will ever be loaded.
+* [33mc93b4a6[m Web application to add class to an element
+* [33mc1c7529[m Web application to add class to last paragraph in a unique section using JQuery
+* [33mca1f784[m Web application to add previous JQuery selection to the current JQuery selection (using JQuery)
+* [33ma347906[m Web application to add paragraphs with text dynamically into the DOM after display.
+* [33mf2a99d4[m Web application to set background color of text area using jQuery
+* [33meb7d165[m Web application to add border to all text areas in page from JQuery object then access all 'p' in document from same object and make borders 'red'
+* [33mf3e0eb3[m Just renamed the folder
+* [33me39b3b8[m Web application add/modify attribute using JQuery
+* [33m85a7228[m Web application to access a form data
+* [33m0e668ab[m Web application to add options to select element using JQuery.
+* [33m81f8afb[m Web application to reveal the total width of an element using JQuery.
+* [33m6c69093[m Web application to set the 'disabled' property of an element to 'true', using JQuery.
+* [33mf46cad1[m Web application to add href to an 'a' element using JQuery at runtime.
+* [33mffd7c1a[m Web application to reveal the classes in a DOM element (button in this case) using JQuery.
+* [33m2efc18d[m Web application to set the value of a span element using JQuery.
+* [33m6e62d6a[m Web application to set the value of an input field using JQuery.
+* [33mecfb708[m Web application to count the number of 'p' elements using JQuery.
+* [33m46d7f1e[m Web application to add class to DOM element using JQuery
+* [33mc59ed4a[m Web application to change CSS value using JQuery
+* [33m1cc498b[m Web application to disable a link using JQuery.
+* [33m33f51ff[m Web application to get the selected item from a drop down list.
+* [33m979a485[m Web application to remove first row form a table and remove all the rows after the first one.
+* [33m4ea56a9[m Renamed application base on the order found in w3resource.com
+* [33m4f1d598[m Web application to remove specific row from table complete.
+* [33m159400f[m Web application to reveal the JQuery version in use.
+* [33m77c212e[m Web application to restrict input fields only to numbers.
+* [33m5e51de0[m Web application to set background image using JQuery
+* [33md82904f[m Web application to add item(s) to a drop down list using JQuery dynamically.
+* [33m1c7f401[m Web application to change the text found in a button using JQuery.
+* [33m3ed38aa[m Web application to remove and add elements in array using JQuery dynamically.
+* [33mce58494[m Web application to detect change in a text-box (input), using JQuery.
+* [33mb041977[m Web application to convert jquery object to string complete.
+* [33m314392f[m Web application to find the absolute position of DOM element using Jquery
+* [33me045d61[m Web application to obtain the extension from a file name.
+* [33mabf3e84[m Web application to create a variable dynamically, with name from user.
+* [33m3ee8ea0[m Web application to display page URL
+* [33mb4e3cd5[m Web application to convert between temperatures
+* [33m64c4d90[m Web application to basic multiplication and division.
+* [33m6618bfe[m Slight fix for the leap year application.
+* [33m49da6e5[m Web application to compute the number of days till christmas complete.
+* [33m8010519[m Whitespace bug fixed.
+* [33mbca95af[m Missing semi-colon fix.
+* [33mb32eeab[m Slight display fix for the web application.
+* [33mbb3565c[m Web application to access the form input fields using JQuery.
+* [33m44507e9[m Web application that get the content of the text area using JQuery.
+* [33mf764bf2[m Web application to count the number of rows and cols in a table complete.
+* [33m8536740[m Background image loading fix for 'div.jumbotron'.
+* [33m653d67d[m Web application to verify if the 'enter' key was pressed.
+* [33meae8a47[m Web application to verify if an object is a JQuery object.
+* [33ma499206[m Slight box width fix (to match the alert box)
+* [33mbe06536[m Web application for distinguishing between left and right clicks within a section of the web page.
+* [33m6118053[m Slight fix to web app #19
+* [33mcbf7a3e[m Web application to remove all css from three (3) 'button' elements using JQuery
+* [33m0c0d49b[m Renaming previous web application purpose.
+* [33m9eb2183[m Web application to remove all css from a 'div' using jquery.
+* [33mb2b859e[m Web application to retrieve the contents of a 'text box' completed!
+* [33m5cbeb8f[m Web Application to underline all words in a text area field completed.
+* [33m45e23c9[m Applications to add elements to list dynamically and remove options from a drop down completed.
+* [33m0075bed[m Web application to parse the content of a JSON object.
+* [33m9ae5ad7[m Better documentation for the previous application.
+* [33mf9d91f6[m Web application, switches 'divs' using JQuery
+* [33mb064b84[m Web application to create a 'div' using jQuery.
+* [33mb9057fd[m Removed redundant code.
+* [33mb24f173[m Slight button behavioural fix for aplication
+* [33m7d962db[m Web application to process user's string and make the first 'word' bold.
+* [33m267067b[m Web Application to limit the number of characters input inside a text field, completed.
+* [33mf9eb2e3[m Web Application to print a page using JQuery
+* [33me457255[m Basic web applications (2).
+* [33m9f9896b[m Basic web applications (2).
+* [33m1b40024[m Basic web applications (2).
+* [33m147c957[m Web application to play round(s) of 'guess a number'
+* [33m2ac53e2[m Web app to check if a year is a leap year.
+* [33m22e37b4[m Web Application to right rotate user string periodically finished.
+* [33md1b2d01[m Web application to 'right rotate' a user provided string.
+* [33m503fd31[m Web app to compute the area of triangle.
+* [33m092e8b4[m Removed redundant code.
+* [33med9f97f[m Web App to show current date in various format on the web browser
+* [33m4021dfb[m Bug, preventing header background image from loading fixed.
+* [33m852a30a[m Removing redundant variable
+* [33m29b6fda[m Centralizing the time on display.
+* [33m7489c1e[m Picture url bug, fixed!
+* [33m87c427d[m Slight files movement and renaming done.
+* [33m1010c53[m web application to show the current date and time completed.
+* [33mfa04d2d[m Change the location of main libraries files.
+* [33m7bb3560[m Application to validate user input based on some ranges.
+* [33m6e2a5b2[m Web application changes the pictures displayed on the web page. A .gitignore file is also added.
+* [33m562e1c8[m Initial setup for the JS studies :). Some project configuration files and major libraries to be used with the project...all setup.
+* [33m12d5d70[m Initial commit
