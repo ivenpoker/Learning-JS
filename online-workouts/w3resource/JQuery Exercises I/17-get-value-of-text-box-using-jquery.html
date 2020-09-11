@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Get value from text box using JQuery</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_02.jpg')",
+				    "color" : "white"
+			    }).end().add("div.jumbotron h4, div.divBtn, div#userData").css("text-align", "center");
+
+			    $("button#mainBtn").click(function () {
+			        let userData = $("input#userText").val();
+			        if (userData.length === 0) {
+			            let divUserData = $("div#userData");
+			            divUserData.removeClass('alert').addClass('alert');
+			            if (divUserData.hasClass('alert-success')) {
+			                $(divUserData).removeClass('alert-success');
+			            }
+			            divUserData.addClass('alert-danger').html("Please provide some data");
+			        } else {
+			            let divUserData = $("div#userData");
+			            if (!divUserData.hasClass('alert'))
+				            divUserData.addClass('alert');
+                        divUserData.removeClass('alert-danger').addClass('alert-success')
+                            .html("<b>" + userData + "</b>");
+			        }
+			    });
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Get value of text box using <code><ins>JQuery</ins></code></h4>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="userData"></div>
+				<div class="input-group mb-3 input-group-sm">
+					<input type="text" class="form-control" id="userText" placeholder="Enter some text" aria-label="Recipient's username" aria-describedby="basic-addon2">
+				</div>
+				<br/>
+				<div class="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Get value from text box now
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

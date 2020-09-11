@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Remove all CSS classes using JQuery</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_02.jpg')",
+				    "color" : "white"
+			    }).end().add('div.jumbotron h4, div.divBtn, div#cssDiv').css("text-align", "center");
+
+				$("div#cssDiv").css({
+					"border" : "2px solid black",
+					"border-radius" : "8px",
+					"height" : "250px",
+					"width"  : "340px",
+					"background-color" : "orange"
+				});
+
+				$("button#mainBtn").click(function () {
+				    $("div#cssDiv").css({
+					    "border" : "",
+					    "border-radius" : "",
+					    "height" :  "",
+					    "width" : "",
+					    "background-color" :  ""
+				    }).html("All previous css values, removed!");
+				});
+
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Removing all <code><ins>CSS</ins></code> classes, using <code><ins>JQuery</ins></code></h4>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="cssDiv"></div>
+				<hr/>
+				<div class="divBtn">
+					<button id="mainBtn" type="button" class="btn btn-outline-dark btn-sm">
+						Remove all css from the box above
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

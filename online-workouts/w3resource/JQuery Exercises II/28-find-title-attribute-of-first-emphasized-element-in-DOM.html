@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Get the title attribute</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add("div#link a").addClass('small').css({color: 'orange', textAlign: 'center'});
+
+			    $('div#data, div#divBtn, div#info').css({textAlign: 'center'});
+
+				$("div#divBtn button#mainBtn").click(function () {
+				    let titleAttribute = $("em[title]").attr('title');
+					$("div#info").addClass('alert alert-info').html(`<code>title</code> attribute
+                                    values is "<b>${titleAttribute}</b>"`);
+				})
+
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Find title attribute of emphasized element in DOM</h5>
+			<div id="link">
+				<a href="https://www.w3resource.com/jquery-exercises/1/jquery-fundamental-exercise-28.php">
+					Web application source
+				</a>
+			</div>
+		</div>
+		<div id="info"></div>
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div id="data">
+					<p>JQuery Exercises, Practice, <em title="Real life jQuery or all">Solution</em>.</p>
+					<p id="id1"></p>
+				</div>
+				<hr/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Get the <code>title</code> attribute with jQuery.
+					</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</body>
+</html>

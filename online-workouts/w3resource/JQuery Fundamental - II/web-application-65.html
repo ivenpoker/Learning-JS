@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Change color on mouseover</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+				$('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')", color: 'orange'});
+				$('div#header, div#mainData, div#jsInfo').css({textAlign: 'center'});
+				$("div#jsInfo").addClass('alert alert-info').html('Hover over paragraphs');
+
+				$('div#mainData p').mouseover(function () {
+				    if ($(this).hasClass('target')) {
+				        $(this).css({backgroundColor: 'orange', color: 'black', borderRadius: '8px'});
+				    }
+				});
+			});
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="header">
+				<h5>Change color of paragraph on mouseover</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<p class="target">This is paragraph 1</p>
+					<p>This is paragraph 2</p>
+					<p>This is paragraph 3</p>
+					<p class="target">This is paragraph 4</p>
+					<p>This is paragraph 5</p>
+					<p class="target">This is paragraph 6</p>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

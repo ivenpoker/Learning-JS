@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<script type="text/javascript" src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+
+                let swapClasses = (elem, classA, classB, htmlData) => {
+                    if ($(elem).hasClass(classA))
+                        $(elem).removeClass(classA);
+                    $(elem).addClass(classB).html(htmlData);
+                };
+
+			    $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_04.jpg')"})
+				    .add('div#link a').addClass('small').css({color: 'orange', textAlign: 'center'});
+
+			    $('div#divBtn, div#info, input#intA, input#intB, input#intC').css({textAlign: 'center'});
+
+				$('div#divBtn button#mainBtn').click(function (evt) {
+                    let intA = $('input#intA').val().trim();
+                    let intB = $('input#intB').val().trim();
+                    let intC = $('input#intC').val().trim();
+                    let info = $('div#info');
+
+                    let errorText = "";
+                    if (intA.length === 0) {
+                        errorText += "Please enter first";
+                    }
+                    if (intB.length === 0) {
+                        if (errorText) {
+                            errorText += " and second";
+                        } else {
+                            errorText += "Please enter second";
+                        }
+                    }
+                    if (intC.length === 0) {
+                        if (errorText) {
+                            errorText += " and third";
+                        } else {
+                            errorText += "Please enter third";
+                        }
+                    }
+                    if (errorText) {
+                        errorText += " integer(s)";
+                        swapClasses(info, "alert-info", "alert alert-danger", errorText);
+                    } else {
+                        let valA = Number(`${intA}`.charAt(`${intA}`.length-1));
+                        let valB = Number(`${intB}`.charAt(`${intB}`.length-1));
+                        let valC = Number(`${intC}`.charAt(`${intC}`.length-1));
+
+                        if (valA === valB || valB === valC || valA === valC) {
+                            swapClasses(info, "alert-danger", "alert alert-info", `Two (or more) integers have same rightmost digit`);
+                        } else {
+                            swapClasses(info, "alert-info", "alert alert-danger", `None of integers meet specifications`);
+                        }
+                    }
+				});
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Checks from three given numbers (non negative integers) that two or all of them have
+				the same rightmost digit</h4>
+			<div id="link">
+				<a href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-43.php">
+					Application source
+				</a>
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="info"></div>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="intA" class="form-control" placeholder="Enter first number">
+				</div>
+				<br/>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="intB" class="form-control" placeholder="Enter first number">
+				</div>
+				<br/>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="intC" class="form-control" placeholder="Enter first number">
+				</div>
+				<br/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Do the check now.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Move a 'div' from one location to another using jQuery</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image": "url('../../Pictures/background_02.jpg')",
+				    "color": "white"
+			    }).end().add("div.jumbotron h4").css("text-align", "center");
+			    $("button#mainBtn").click(function () {
+			        if ($(this).text().indexOf("Create") >= 0) {
+				        $("div.mainRow div.col-4").each(function (index, data) {
+				            if (index === 0) {
+				                let newDiv = $("<div/>").css({
+					                "border-radius" : "8px",
+					                "border": "2px solid black",
+					                "width" : "100px",
+					                "height" : "100px",
+					                "padding-top" : "35px",
+					                "padding-left" : "20px",
+				                }).click(function () {
+				                    $(this).css("background-color", "orange");
+				                }).html("DIV A");
+				                $("div.mainRow div.col-4 div#div1").append(newDiv);
+				            } else if (index === 2) {
+                                let newDiv = $("<div/>").css({
+	                                "border-radius" : "8px",
+	                                "border" : "2px solid black",
+	                                "width" : "100px",
+	                                "height" : "100px",
+	                                "padding-top" : "35px",
+	                                "padding-left" : "20px",
+                                }).click(function () {
+                                    $(this).css("background-color", "lightgrey");
+                                }).html("DIV B");
+                                $("div.mainRow div.col-4 div#div2").append(newDiv);
+                            }
+				        });
+				        $(this).html("Moved the divs now...");
+			        } else {
+			            let tmpCloneA = $("div#div1 div").clone();
+			            let tmpCloneB = $("div#div2 div").clone();
+			            $("div#div1 div").remove();
+			            $("div#div2 div").remove();
+
+			            tmpCloneA.appendTo("div#div2");
+			            tmpCloneB.appendTo("div#div1");
+
+			        }
+			    });
+			});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Moving a <code>div</code> from one location to another</h4>
+		</div>
+		<hr/>
+		<div class="row mainRow">
+			<div class="col-4">
+				<div id="div1"></div>
+			</div>
+			<div class="col-4">
+				<div class="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Create the 'divs' now.
+					</button>
+				</div>
+			</div>
+			<div class="col-4">
+				<div id="div2"></div>
+			</div>
+		</div>
+	</body>
+</html>

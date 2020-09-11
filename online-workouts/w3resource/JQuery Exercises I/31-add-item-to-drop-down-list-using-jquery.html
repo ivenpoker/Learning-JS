@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Add item to drop down list</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_02.jpg')",
+				    "color" : "white"
+			    }).end().add('div.jumbotron h5, div#divColors, div#divInfo, div#divBtn').css('text-align', 'center');
+
+			    $("button#mainBtn").click(function () {
+			        let userColorName = $("input#newVal").val().trim();
+			        let elem = $("div#divInfo");
+
+			        if (userColorName.length === 0) {
+                        if (elem.hasClass('alert-info'))
+                            elem.removeClass('alert alert-info');
+                        elem.addClass('alert alert-danger').html("Provide a <ins><b>string</b></ins> (color name) to add to <ins>colors options</ins>")
+			        } else if (userColorName.indexOf(" ") > -1){
+			            if (elem.hasClass('alert-info'))
+			                elem.removeClass('alert alert-info');
+			            elem.addClass('alert alert-danger').html("No <b><ins>spaces</ins></b> allowed in color name!");
+			        }
+			        else {
+			            let newElem = $("<option/>").attr({
+				            value: userColorName,
+				            selected: "selected"
+			            }).html(`${userColorName} color`);
+			            if (elem.hasClass('alert-danger'))
+			                elem.removeClass('alert alert-danger');
+				        elem.addClass('alert alert-info').html(`Color with name <ins><b>${userColorName}</b></ins> added!`);
+				        $("select#myColors").append(newElem);
+				        $("input#newVal").val('');
+			        }
+			    });
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Add items to drop down list using JQuery</h5>
+		</div>
+		<hr/>
+
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="divInfo"></div>
+				<div id="divColors">
+					<select id='myColors'>
+						<option value="Red">Red color</option>
+						<option value="Green">Green color</option>
+						<option value="White">White color</option>
+						<option value="Black">Black color</option>
+					</select>
+				</div>
+				<hr/>
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="newVal" class="form-control" placeholder="Enter a string">
+				</div>
+				<hr/>
+				<div id="divBtn">
+					<button id="mainBtn" type="button" class="btn btn-outline-dark btn-sm">
+						Add string to colors dropdown.
+					</button>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="dropdown">
+
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

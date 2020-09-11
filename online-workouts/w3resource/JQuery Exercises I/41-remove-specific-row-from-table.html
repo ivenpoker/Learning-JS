@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Remove row from table using JQuery</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_02.jpg')",
+				    "color" : "white"
+			    }).end().add("div.jumbotron h5, div#info, div#divBtn, div#divTable, div#mainOps").css('text-align', 'center');
+
+			    $("div#divBtn button#mainBtn").click(function () {
+			        let i = 1;
+			        $("div#divTable thead tr").append($("<th/>").html("ID"));
+			        $("div#divTable tbody tr").each(function (index, elem) {
+			            $(elem).append($("<td/>").html(`#${i++}`));
+			        });
+			        i = 1;
+                    $("div#divTable tbody tr").each(function (index, elem) {
+                        $(elem).attr('id', 'btn' + i);
+                        let newButton = $(`<button>delete row #${i++}</button>`).attr('type', 'button').addClass('btn btn-outline-danger btn-sm').click(function (evt) {
+                            // window.alert(`You've just clicked the button #${$(elem).attr('id')}`);
+	                        $(`div#divTable tbody tr#${$(elem).attr('id')}`).remove();
+	                        $(this).parent().remove();
+                        });
+                        let newElem = $("<td></td>").append(newButton);
+                        $("table#ops tbody").append($("<tr/>").append(newElem));
+                    });
+				    $(this).attr('disabled', 'disabled');
+			    });
+
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Remove specific row from Table using JQuery</h5>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-2">
+
+			</div>
+			<div class="col-8">
+				<div id="info"></div>
+				<div id="divTable">
+					<table class="table table-bordered">
+						<thead>
+						<tr>
+							<th>Firstname</th>
+							<th>Lastname</th>
+							<th>Email</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>John</td>
+							<td>Doe</td>
+							<td>john@example.com</td>
+						</tr>
+						<tr>
+							<td>Mary</td>
+							<td>Moe</td>
+							<td>mary@example.com</td>
+						</tr>
+						<tr>
+							<td>King</td>
+							<td>Kong</td>
+							<td>King@example.com</td>
+						</tr>
+						<tr>
+							<td>Brad</td>
+							<td>Dickson</td>
+							<td>bdickson@example.com</td>
+						</tr>
+						<tr>
+							<td>James</td>
+							<td>Hooks</td>
+							<td>jHooks@example.com</td>
+						</tr>
+						<tr>
+							<td>Houston</td>
+							<td>Finley</td>
+							<td>finley@example.com</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="mainOps">
+					<table id="ops" class="table table-bordered">
+						<thead>
+						<tr><th>Operation</th></tr>
+						</thead>
+						<tbody>
+
+						</tbody>
+					</table>
+				</div>
+				<div id="divBtn">
+					<button id="mainBtn" type="button" class="btn btn-outline-dark btn-sm">
+						Reveal buttons to delete rows
+					</button>
+				</div>
+			</div>
+			<div class="col-2">
+
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Click a paragraph to create new ones</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_04.jpg')"})
+				    .add('div#link a').addClass('small').css({color: 'orange', textAlign: 'center'});
+
+			    $('div#newParasDiv').css({textAlign: 'center'});
+
+			    let cnt = 0;
+			    $('div#keyPara p').css({
+				    border: '2px solid black',
+				    borderRadius: '8px',
+				    padding: '10px',
+				    textAlign: 'center'
+			    }).hover(function () {
+			        $(this).css({backgroundColor: 'lightgray'});
+			    }, function () {
+			        $(this).css({backgroundColor: ''});
+			    }).click(function () {
+			        let newPara = $('<p id="newPara"></p>').html(`New paragraph #${++cnt}`).css({
+				        border: '2px solid grey',
+				        borderRadius: '8px',
+				        padding: '10px',
+				        backgroundColor: 'orange'
+			        });
+			        $('div#newParasDiv').append(newPara);
+			    });
+			});
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="head">
+				<h5>Click a paragraph to add another paragraph.</h5>
+			</div>
+			<div id="link">
+				<a href="https://www.w3resource.com/jquery-exercises/2/jquery-fundamental-exercise-75.php">
+					Application Source
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<div id="keyPara">
+						<p>Click this paragraph to create new ones</p>
+					</div>
+					<div id="newParasDiv"></div>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

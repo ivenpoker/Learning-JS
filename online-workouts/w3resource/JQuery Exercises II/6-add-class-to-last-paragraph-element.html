@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Add paragraph</title>
+
+		<style type="text/css">
+			p {
+				margin: 8px;
+				font-size: 16px;
+			}
+			.w3r_font_color {
+				color: black;
+			}
+			.w3r_background {
+				background: orange;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add('div#link a').addClass('small').css({textAlign: "center", color: "orange"});
+			    let paraDiv = $("div#paraDiv");
+			    for (let i = 1; i <= 5; i++)
+                    paraDiv.append($("<p/>").html(`${i}. This is a paragraph`));
+
+			    $("div#btnDiv button#mainBtn").click(function () {
+				    $("div#paraDiv p").last().addClass("w3r_font_color w3r_background");
+			    });
+
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Add 2 classes to last paragraph element</h5>
+			<div id="link">
+				<a href="http://www.w3resource.com/">Go to the website</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="paraDiv">
+				</div>
+				<hr/>
+				<div id="btnDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Add classes to the last paragraph
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

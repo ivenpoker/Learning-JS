@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<meta charset="UTF-8">
+		<title>Get a single selection</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/dark.jpg'", marginTop: '10px'})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+				$('div#mainData, div#buttonDiv, div#jsInfo').css({textAlign: 'center'});
+
+                // Function returns a random number >= 0 and < 'max'.
+                const getRandomInt = (max) => {
+                    return Math.floor(Math.random() * Math.floor(max));
+                };
+
+				const createListItems = (parent, listItemCnt) => {
+				    let wrapper = $('<ul/>').addClass('list-group small');
+				    Array(listItemCnt).fill(0).forEach((elem, i) => {
+				        let newListItem = $('<li/>').addClass('list-group-item')
+				                                    .html(`List date item <b>#${i+1}</b>`);
+				        wrapper.append(newListItem);
+				    });
+				    $(parent).append(wrapper);
+				};
+
+				$('button#mainBtn').click(function () {
+				    createListItems($('div#mainData'), 6);
+
+				    $(this).unbind('click').html('Randomly select single element from list').bind({
+					    'click': function (evt) {
+
+					        let listItems = $('div#mainData ul li');
+
+                            // remove any previous class 'active' from list items
+                            // since we're about to set a new (or same) list item
+                            // to be 'active'.
+
+                            listItems.each(function (ind, elem) {
+                                if ($(elem).hasClass('active')) {
+                                    $(elem).removeClass('active');
+                                }
+                            });
+
+					        let randIndex = getRandomInt(listItems.length);
+
+						    // window.alert(`Random index: ${randIndex}`);
+					        listItems.eq(randIndex).addClass('active');
+
+						    $('div#jsInfo').addClass('alert alert-info small')
+						        .html(`List item <b>#${randIndex+1}</b> is <b>active</b>`);
+					    }
+				    })
+				});
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Get a single element from a selection.</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData"></div>
+				<div id="buttonDiv">
+					<br/>
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Begin application
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

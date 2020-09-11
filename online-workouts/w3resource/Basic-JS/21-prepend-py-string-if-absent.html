@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Prepend 'Py' String to user input</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add("div#link a").addClass('small').css({textAlign: 'center', color: 'orange'});
+			    $("div#divBtn, input#userStr, div#info").css({textAlign: 'center'});
+
+				$("div#divBtn button#mainBtn").click(function () {
+				    let userStr = $("input#userStr").val();
+					let info = $("div#info");
+
+					if (userStr.length === 0) {
+					    if (info.hasClass('alert-info'))
+					        info.removeClass('alert alert-info');
+					    info.addClass('alert alert-danger').html('Please provide a <b>string</b>');
+					} else {
+					    if (info.hasClass('alert-danger'))
+					        info.removeClass('alert alert-danger');
+					    if (!userStr.startsWith("Py"))
+					        userStr = "Py" + userStr;
+					    info.addClass('alert alert-info').html(`String is now <b>${userStr}</b>`);
+					}
+				});
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Prepend string with 'Py' (if absent)</h5>
+			<div id="link">
+				<a href="http://www.w3resource.com/">Go to the website</a>
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="info"></div>
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="userStr" class="form-control" placeholder="Enter some string">
+				</div>
+				<hr/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Prepend the string now.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

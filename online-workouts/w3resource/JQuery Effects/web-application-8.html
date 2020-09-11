@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Toggling fade-in and fade-out</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')",
+				    marginTop: '10px'}).addClass('small').css({textAlign: 'center', color: 'orange'});
+
+                // Function returns a random number >= 0 and < 'max'.
+                const getRandomInt = (max) => {
+                    return Math.floor(Math.random() * Math.floor(max));
+                };
+
+				$('div.colorBox').each(function (index, elem) {
+				    $(elem).css({
+					    width: '100%',
+					    height: '200px',
+						backgroundColor: ['orange', 'pink', 'purple', 'brown', 'red'][getRandomInt(5)],
+					    border: '2px solid black',
+					    borderRadius: '10px'
+				    });
+				});
+			    $('div#buttonDiv, div.colorBox').css({textAlign: 'center'});
+				$('button#mainBtn').click(function (evt) {
+				    $('div#boxA').fadeToggle();
+				    $('div#boxB').fadeToggle('slow');
+
+				    let thisBtn = this;
+
+				    $('div#boxC').fadeToggle(4000, () => {
+                        $(thisBtn).html('Animation finished').attr('disabled', 'disabled');
+				    });
+				});
+
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Toggle between fading in and fading out different boxes</h5>
+			<div id="link">
+				<a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3">
+				<div class="colorBox" id="boxA"></div>
+			</div>
+			<div class="col-6">
+				<div class="colorBox" id="boxB"></div>
+				<br/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Activate animation now
+					</button>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="colorBox" id="boxC"></div>
+			</div>
+		</div>
+	</body>
+</html>

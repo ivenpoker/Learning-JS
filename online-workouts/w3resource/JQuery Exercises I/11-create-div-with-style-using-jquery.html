@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Creating a new div with style using JQuery</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image": "url('../../Pictures/background_01.jpg')",
+				    "color": "white"
+			    }).end().add("div.jumbotron h4, div.divBtn").css("text-align", "center");
+			    $("button#mainBtn").click(function () {
+			        $("div.newDivRow div.col-4").eq(1)
+				        .append($("<div style='width: 300px; height: 200px;" +
+					        "border: 2px solid black; border-radius: 8px; ' id='newDiv'/>"));
+			        $("#newDiv").click(function () {
+			            $(this).css({
+				            "background-color": "grey",
+				            "text-align": "center"
+			            });
+			        });
+			    });
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Create a <kbd>div</kbd> with <kbd>style</kbd> using JQuery</h4>
+		</div>
+		<hr/>
+		<div class="row newDivRow">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<!-- This is where the new div will be created -->
+			</div>
+			<div class="col-4"></div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div class="divBtn">
+					<button class="btn btn-outline-dark btn-sm" type="button" id="mainBtn">
+						Create new div with style
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Compute difference</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')", color: 'white'})
+				    .add('a').addClass('small').css({color: 'orange'});
+				$("div#btnDiv, div.jumbotron h5, div.jumbotron div#link, div#info")
+					.css({textAlign: 'center'});
+
+				$("div#btnDiv button#mainBtn").click(function () {
+				    let userVal = $("input#userNum").val();
+				    let divInfo = $("div#info");
+
+				    if (userVal.length === 0 || isNaN(userVal)) {
+				        if (divInfo.has("alert-info"))
+				            divInfo.removeClass('alert alert-info');
+				        divInfo.addClass('alert alert-danger').html("Please provide a <b><ins>number</ins></b>")
+				    } else {
+				        if (divInfo.has('alert-danger'))
+				            divInfo.removeClass('alert alert-danger');
+
+				        let ans = 0;
+				        if (Number(userVal) > 13) {
+                            ans = 2 * Math.abs(Number(userVal) - 13);
+                        } else {
+				            ans = 13 - Number(userVal);
+                        }
+                        divInfo.addClass('alert alert-info')
+	                        .html(`Response is: <b>${ans}</b>`)
+				    }
+				});
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Compute the difference</h5><br/>
+			<div id="link">
+				<a href="http://www.w3resouce.com/" target="_blank">Go the problem site</a>
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="info"></div>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="userNum" class="form-control" placeholder="Enter number">
+				</div>
+				<hr/>
+				<div id="btnDiv">
+					<button type="button" class="btn btn-outline-dark btn-sm" id="mainBtn">Compute the difference</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Add paragraphs</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+                let i = 1;
+			    $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_02.jpg')", color: 'white'})
+				    .end().add("div.jumbotron h5, input#paraText, div#divBtn, div#info,div#newParas").css({textAlign: 'center'});
+			    $("div#divBtn button#mainBtn").click(function () {
+			        let userText = $("input#paraText").val().trim();
+			        let info = $("div#info");
+
+				    if (userText.length === 0) {
+				        if (info.hasClass('alert-info'))
+				            info.removeClass('alert-info');
+				        info.addClass('alert alert-danger').html('Please provide some text');
+				    } else {
+				        if (info.hasClass('alert-danger'))
+				            info.removeClass('alert-danger');
+
+				        let newPara = $("<p/>").html(`<span style="color: red">${i++}</span>. ${userText}`);
+				        $("div#newParas").append(newPara);
+				        info.addClass('alert alert-info').html(`Paragraph with text '<b>${userText}</b>' added!`);
+				        $("input#paraText").val('').focus();
+				    }
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Add paragraphs into the document with some text using JQuery</h5>
+		</div>
+		<hr/>
+		<div id="info"></div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div>
+					<div class="input-group input-group-sm">
+						<input type="text" width="50" id="paraText" class="form-control" placeholder="Attribute name">
+					</div>
+				</div>
+				<hr/>
+				<div id="divBtn">
+					<button id="mainBtn" type="button" class="btn btn-outline-dark btn-sm">
+						Add paragraph with text
+					</button>
+				</div>
+				<hr/>
+				<div id="newParas"></div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

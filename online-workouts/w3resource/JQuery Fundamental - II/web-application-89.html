@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Check for key-press</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+                $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_02.jpg')"})
+                    .add('div#link a').addClass('small').css({textAlign: 'center', color: 'orange'});
+                $('div#mainData, div#jsInfo, div#buttonDiv').css({textAlign: 'center'});
+
+                $("div#buttonDiv button#mainBtn").click(function (evt) {
+                    if (evt.metaKey !== "false") {
+                        $('div#jsInfo').addClass('alert alert-danger').html("Nope, wasn't pressed!");
+                    } else {
+                        $("div#jsInfo").addClass('alert alert-success').html('Yep, it was pressed!');
+                    }
+                });
+			})
+
+		</script>
+
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Determine if the <kbd>META</kbd> key was pressed</h5>
+			<div id="link">
+				<a href="https://www.w3resource.com/jquery-exercises/2/jquery-fundamental-exercise-89.php">
+					Application Source
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<h4>Basic Info</h4>
+					<hr/>
+					<p>On Macintosh keyboards, the META key maps to the Command key (⌘).</p>
+					<p>On Windows keyboards, the META key maps to the Windows key.</p>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" type="button" class="btn btn-outline-dark btn-sm">
+						Check if <kbd>META</kbd> key was pressed.
+					</button>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</body>
+</html>

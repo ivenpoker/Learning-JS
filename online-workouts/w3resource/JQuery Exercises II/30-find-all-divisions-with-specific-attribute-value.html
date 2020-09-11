@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Find DOM element with particular attribute and value</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add("div#link a").addClass('small').css({color: 'orange', textAlign: 'center'});
+
+			    // Adjust text to have same width
+				$('div[id*=div]').css({textAlign: 'justify'});
+				$("div#info, div#divBtn, div[id*=div]").css({textAlign: 'center'});
+
+				$("div#divBtn button#mainBtn").click(function () {
+				    $('div[name*=tutorial]').css({border: 'thick solid black', borderRadius: '8px', backgroundColor: 'lightyellow'});
+				});
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Find all the divisions with a name attribute that contains <code>tutorial</code> and sets the background color yellow</h5>
+			<div id="link">
+				<a href="https://www.w3resource.com/jquery-exercises/1/jquery-fundamental-exercise-30.php">
+					Web application source
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div id="data">
+					<div id="divA" name="java-articles">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at eligendi libero nam quae
+						reiciendis sit, sunt tempora. Accusamus adipisci corporis deserunt eveniet, facilis iusto
+						nemo quod reprehenderit suscipit veritatis!Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. Ab adipisci aliquam amet aut blanditiis consequatur corporis hic, itaque,
+						iusto laborum laudantium odit, quam recusandae rerum similique sit suscipit tempora
+						voluptatibus?
+					</div>
+					<hr/>
+					<div id="divB" name="python-tutorial-and-exercises">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut delectus deleniti dolore
+						harum, illum iste libero maiores mollitia natus necessitatibus nostrum rerum, unde vel
+						voluptatem. Harum nesciunt obcaecati temporibus.Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. Aliquid aut consequatur cum ex impedit ipsam ipsum minima nam natus
+						numquam, odio omnis optio pariatur repudiandae, soluta vel, veniam vitae? Ab?
+					</div>
+					<hr/>
+					<div id="divC" name="tutorial-php">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem dolorum ea, excepturi
+						exercitationem inventore iusto perspiciatis, praesentium qui sit, soluta tempora vel
+						voluptatibus? Beatae explicabo odit porro quos sed.Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. A ad asperiores debitis earum et explicabo ipsum iste, labore laboriosam
+						magni modi molestias nam necessitatibus odio, quasi ratione saepe! Rerum, totam.
+					</div>
+					<hr/>
+
+					<div id="divBtn">
+						<button class="btn btn-outline-dark btn-sm" id="mainBtn" type="button">
+							Find and set now
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+
+	</body>
+</html>

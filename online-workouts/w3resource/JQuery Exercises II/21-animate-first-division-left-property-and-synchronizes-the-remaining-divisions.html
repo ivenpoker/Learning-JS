@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Animation</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.add('div#link a').addClass('small').css({textAlign: "center", color: "orange"});
+
+				$("div#divBtn").css({textAlign: "center"});
+				$("button#mainBtn").click(function () {
+				    $("div.block:first").animate({
+					    left: 100
+				    }, {
+				        duration: 2000,
+					    step: function (now, fx) {
+				            $(".block:gt(0)").css("left", now)
+					    }
+				    });
+				});
+
+			    $("div.block").css({
+				    position: "relative",
+				    backgroundColor: "#B0E0E6",
+				    width: "60px",
+				    height: "60px",
+				    float:  "left",
+				    margin: "5px"
+			    });
+			}).end().add("div#data").css({textAlign: "center"});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Animate first division's left property</h5>
+			<div id="link">
+				<a href="http://www.w3resource.com/" target="_blank">Go to the website</a>
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="data">
+					<div class="block"></div>
+					<div class="block"></div>
+					<div class="block"></div>
+					<div class="block"></div>
+				</div>
+				<div id="divBtn">
+					<button type="button" id="mainBtn" class="btn btn-outline-dark btn-sm">Animate now</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

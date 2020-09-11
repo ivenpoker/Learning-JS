@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+		<title>Attaches a click and double click event on a &lt;p&gt; element</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+
+			    $('div#jsInfo, div#mainPara').css({textAlign: 'center'});
+				$('div#mainPara p').css({
+					textAlign: 'center',
+					padding: '10px',
+					backgroundColor: 'orange',
+					borderRadius: '10px'
+				}).html('Click or double click this paragraph').on({
+					'click': function (evt) {
+					    $('div#jsInfo').addClass('alert alert-info').html(`Just <kbd>clicked</kbd> on the paragraph`)
+					},
+					'dblclick': function (evt) {
+					    $('div#jsInfo').addClass('alert alert-info').html(`Just <kbd>double clicked</kbd> on the paragraph`);
+					}
+				});
+
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Attache a click and double click even on a <kbd>&lt;p&gt;</kbd> element</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<hr/>
+				<div id="mainPara">
+					<p></p>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

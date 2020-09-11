@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Title</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image": "url('../../Pictures/background_02.jpg",
+				    "color": "white"
+			    });
+			    $("div.jumbotron h4").css("text-align", "center");
+			    $("div.card p.card-text").css("color", "white");
+			    let alpha = "abcdefghijklmonpqrstuvwxyz123456789#$@!?", i = 0;
+			    $("p.card-text").each(function (index, elem) {
+			        $(this).html(alpha[i++].toUpperCase());
+			    });
+			    $("div#divBtn").css("text-align", "center");
+
+			    // code to scroll to the top of the page
+				$("button#mainBtn").click(function () {
+				    $("html, body").animate({scrollTop: 0}, "slow");
+				    return false;
+				});
+			});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Scroll to the top</h4>
+		</div>
+		<hr/>
+<!--		<div class="row">-->
+<!--			<div class="col-4">-->
+<!--				<div>-->
+<!--				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, consectetur culpa cum enim eos-->
+<!--				eum exercitationem fugiat, inventore laudantium magnam mollitia nemo nostrum praesentium quidem-->
+<!--				quisquam, reprehenderit voluptates voluptatum. </div>-->
+<!--			</div>-->
+<!--			<div class="col-4">-->
+<!--				<div>-->
+<!--					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, consectetur culpa cum enim eos-->
+<!--					eum exercitationem fugiat, inventore laudantium magnam mollitia nemo nostrum praesentium quidem-->
+<!--					quisquam, reprehenderit voluptates voluptatum. </div>-->
+<!--			</div>-->
+<!--			<div class="col-4">-->
+<!--				<div>-->
+<!--					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, consectetur culpa cum enim eos-->
+<!--					eum exercitationem fugiat, inventore laudantium magnam mollitia nemo nostrum praesentium quidem-->
+<!--					quisquam, reprehenderit voluptates voluptatum. </div>-->
+<!--			</div>-->
+<!--		</div>-->
+		<div class="card-deck">
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the first card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the second card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the third card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the fourth card</p>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="card-deck">
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the first card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the second card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the third card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the fourth card</p>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="card-deck">
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the first card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the second card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the third card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the fourth card</p>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="card-deck">
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the first card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the second card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the third card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the fourth card</p>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="card-deck">
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the first card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the second card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the third card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the fourth card</p>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="card-deck">
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the first card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the second card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the third card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the fourth card</p>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="card-deck">
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the first card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the second card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the third card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the fourth card</p>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="card-deck">
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the first card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the second card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the third card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the fourth card</p>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="card-deck">
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the first card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the second card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the third card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the fourth card</p>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="card-deck">
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the first card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the second card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the third card</p>
+				</div>
+			</div>
+			<div class="card bg-dark">
+				<div class="card-body text-center">
+					<p class="card-text">Some text inside the fourth card</p>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="divBtn">
+					<button type="button" class="btn btn-outline-dark btn-sm" id="mainBtn">
+						Scroll to the top of page
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+		<br/>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Limit the number of chars in text area.</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $('div.jumbotron').css({
+				    "background-image": "url('../../Pictures/background_02.jpg')",
+				    "color" : "white"
+			    });
+			    $('div.jumbotron h4, div.divBtn').css("text-align", "center");
+
+			    // Code to set monitor the number or characters entered so far.
+			    $("textarea#textArea").on('keyup', function () {
+				    let textLength = Number($(this).attr('maxlength')) - $(this).val().length;
+				    $('kbd#charsLeft').text(textLength);
+                })
+			});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Limit <span>characters</span> in textarea (using JQuery).</h4>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<p>Enter 100 characters. Characters left <kbd id="charsLeft">200</kbd></p>
+				<form role = "form">
+					<div class = "form-group">
+						<textarea id="textArea" class="form-control" rows="6" cols="25"
+						          placeholder="Enter some text"
+								maxlength="200"></textarea>
+					</div>
+				</form>
+				<hr/>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

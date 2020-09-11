@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Toggle background color of paragraphs upon double click</title>
+
+		<style>
+			.orange {
+				background-color: orange;
+			}
+			.skyblue {
+				background-color: #4cc5ff;
+			}
+		</style>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_02.jpg')"})
+				    .add('div#link a').addClass('small').css({color: 'orange', textAlign: 'center'});
+			    $('div#instructions').css({textAlign: 'center'});
+			    $('div#mainData p').each(function (index, elem) {
+			        $(elem).css({
+                        border: '1px solid black',
+                        padding: '8px',
+                        borderRadius: '8px',
+				        textAlign: 'center'
+			        });
+
+			        $(elem).dblclick(function (evt) {
+			            if ($(elem).attr('id') === 'p1') {
+                            $(elem).toggleClass('orange');
+			            } else if ($(elem).attr('id') === 'p2') {
+			                $(elem).toggleClass('skyblue');
+			            }
+			        });
+			    });
+			    $("div#instructions").addClass('alert alert-info')
+				    .html('Double click on the paragraphs to see toggle color');
+			});
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="head">
+				<h5>Double click to change background color of paragraphs</h5>
+			</div>
+			<div id="link">
+				<a href="https://www.w3resource.com/jquery-exercises/2/jquery-fundamental-exercise-72.php">Application Source</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<p id="p1">This is paragraph #1</p>
+					<p id="p2">This is paragraph #2</p>
+				</div>
+				<div id="instructions"></div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

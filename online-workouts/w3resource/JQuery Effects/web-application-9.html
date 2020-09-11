@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Finish running animation</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')", marginTop: '10px'})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+
+			    $('div#mainBox').css({
+				    width: '100%',
+				    height: '150px',
+				    backgroundColor: 'orange',
+				    borderRadius: '10px',
+				    border: '2px solid black'
+			    });
+
+			    $('div#buttonDiv, div#mainBox').css({textAlign: 'center'});
+				$('button#startBtn').click(function () {
+				    $('div#mainBox').animate({height: 275}, 4000).animate({width: 275}, 4000);
+				});
+				$('button#finishBtn').on('click', () => {
+				    $('div#mainBox').finish();
+				});
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Finish a currently running animation</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="mainBox"></div>
+				<br/>
+				<div id="buttonDiv">
+					<button id="startBtn" class="btn btn-primary btn-sm" type="button">
+						Start Animation
+					</button>
+					<span> </span>
+					<button id="finishBtn" class="btn btn-danger btn-sm" type="button">
+						Finish Animation
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

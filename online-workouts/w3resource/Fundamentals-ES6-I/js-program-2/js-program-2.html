@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script type="text/javascript" src="../../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="../../../../Main-Libraries/css-files/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+		<meta charset="UTF-8">
+		<title>Copy data to clipboard</title>
+
+		<script type="text/javascript">
+
+			$(document).ready((evt) => {
+			    $(this).css({fontFamily: 'Roboto, sans-serif'});
+			    $('div.jumbotron').css({backgroundImage: "url('../../../Pictures/dark.jpg')"})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+			    $('button#mainBtn').attr('disabled', 'disabled').click(function () {
+                    copyToClipboard();
+                    $('div#jsInfo').addClass('alert alert-success')
+                        .html(`Data copied to clipboard!`);
+                });;
+
+				$('textarea').keyup(function (evt) {
+				    let text = $(this).val();
+				    console.log(text);
+				    if (text.length > 0) {
+				        $('button#mainBtn').removeAttr('disabled');
+				    } else {
+				        $('button#mainBtn').attr('disabled', 'disabled');
+				    }
+				});
+				$('div#jsInfo').addClass('alert alert-info small').html('Write some text in <kbd>textarea</kbd> below and ' +
+					'click the <kbd>button</kbd> to copy contents in <kbd>textarea</kbd> to <b>clipboard</b>');
+
+				$('div#mainData, div#buttonDiv, div#jsInfo').css({textAlign: 'center'});
+
+                const copyToClipboard = () => {
+                    $('textarea').select();
+                    document.execCommand('copy');
+                };
+
+            })
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Copy some data to clipboard</h5>
+			<div id="link">
+				Author: <a href="https://www.github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<hr/>
+				<div id="mainData">
+					<textarea class="form-control form-rounded small" rows="3"></textarea>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-dark btn-sm" type="button">
+						Copy data to clipboard now
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

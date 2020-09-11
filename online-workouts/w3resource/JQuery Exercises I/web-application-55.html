@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Finds all checked</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_02.jpg')",
+			                color: 'orange'});
+			    $('div#buttonDiv, div#mainHead, div#jsInfo, div#mainForm').css({textAlign: 'center'});
+			    $('div#buttonDiv button#mainBtn').click(function () {
+
+			        let selectedInput = $('input:checked');
+
+			        $('div#jsInfo').addClass('alert alert-info').html(`Number of selected input: <b>${selectedInput.length}</b>`);
+
+			        selectedInput.each(function (index, elem) {
+			            console.log(`Selected Element: ${elem.tagName} -- Index: ${index}`);
+			            $(this).css({border: '1px solid red'});
+			        });
+			    });
+
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div id="mainHead">
+				<h5>Find all elements that are checked or selected</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<hr/>
+				<div id="mainForm">
+					<form>
+						<input type="checkbox" name="color" value="Bike">Red
+						<input type="checkbox" name="color" value="Car">Green
+						<input type="checkbox" name="color" value="Car">Blue
+						<input type="checkbox" name="color" value="Car">Black
+					</form>
+				</div>
+				<p></p>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Reveal all elements that are checked or selected
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

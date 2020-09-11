@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Toggle animation on and off</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')", marginTop: '10px'})
+					.addClass('small').css({textAlign: 'center', color:'orange'});
+			    $('div#buttonDiv, div#jsInfo').css({textAlign: 'center'});
+			    $('div#mainBox').css({
+					width: '60%',
+				    height: '180px',
+				    border: '2px solid black',
+				    borderRadius: '10px',
+				    backgroundColor: 'orange',
+				    marginLeft: '185px',
+				    // marginRight: '100px'
+
+			    });
+
+			    $('button#enableBtn').on('click', () => {
+			        jQuery.fx.off = false;
+			        $('div#jsInfo').addClass('alert alert-info small')
+				            .html(`The <kbd>jQuery.fx.off</kbd> is set to <kbd>false</kbd>`);
+			    });
+			    $('button#disableBtn').on('click', () => {
+			        jQuery.fx.off = true;
+			        $('div#jsInfo').addClass('alert alert-info small')
+				            .html(`The <kbd>jQuery.fx.off</kbd> is set to <kbd>true</kbd>`);
+			    });
+			    $('button#toggleBtn').on('click', function () {
+			        $('div#mainBox').toggle('slow');
+			    })
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Toggle animation on and off</h5>
+			<div id="link">
+				Author: <a target="_blank" href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+				<div id="jsInfo"></div>
+				<div id="mainBox"></div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="enableBtn" class="btn btn-outline-dark btn-sm" type="button">
+						(Enable) <kbd>jQuery.fx.off = <span>false</span></kbd>
+					</button>
+					<br/>
+					<button id="disableBtn" class="btn btn-danger btn-sm" type="button" style="margin-top: 10px">
+						(Disable) <kbd>jQuery.fx.off = true</kbd>
+					</button>
+					<br/>
+					<button id="toggleBtn" class="btn btn-primary btn-sm" type="button" style="margin-top: 10px">
+						Toggle animation
+					</button>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</body>
+</html>

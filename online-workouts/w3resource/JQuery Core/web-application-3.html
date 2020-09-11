@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Hide all input elements in form</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_04.jpg')"})
+				    .add('div#link a').addClass('small').css({textAlign: 'center', color: 'orange'});
+
+			    $('input[type=submit]').click(function (evt) {
+			        evt.preventDefault();
+			    });
+
+			    $("div#jsInfo, div#mainData, div#buttonDiv").css({textAlign: 'center'});
+			    $('div#buttonDiv button#mainBtn').click(function (evt) {
+			        $('form input').hide();
+			        $("div#jsInfo").addClass('alert alert-info').html(`All <kbd>input</kbd> elements have been hidden`);
+			    });
+			})
+
+		</script>
+
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Hide all <kbd>input</kbd> elements within a <kbd>form</kbd></h4>
+			<div id="link">
+				<a href="">Application Source</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div id="mainData">
+					<form id="mainForm">
+						First Name: <input type="text" name="fname"><br/><br/>
+						Last Name: <input type="text" name="lname"><br/><br/>
+						<input type="submit" value="Submit"/>
+					</form>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Hide all the <kbd>input</kbd> elements in the form.
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

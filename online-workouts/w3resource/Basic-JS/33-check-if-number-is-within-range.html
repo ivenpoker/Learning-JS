@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css"/>
+		<title>Check if a number is within some range</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.add("div#link a").addClass('small').css({textAlign: "center", color: "orange"});
+				$("div#divBtn, input#numA, input#numB, div#info").css({textAlign: 'center'});
+
+				$("div#divBtn button#mainBtn").click(function () {
+				    let valA = $("input#numA").val();
+				    let valB = $("input#numB").val();
+				    let info = $("div#info");
+
+				    let errorTxt = "";
+				    if (valA.length === 0 || isNaN(Number(valA))) {
+				        errorTxt += "Please provide <b>first</b>"
+				    }
+				    if (valB.length === 0 || isNaN(Number(valB))) {
+				        if (errorTxt) {
+				            errorTxt += ", <b>second</b>"
+				        } else {
+				            errorTxt += "Please provide <b>second</b>";
+				        }
+				    }
+				    if (errorTxt) {
+				        errorTxt += " integer value";
+						swapClasses(info, "alert-info", "alert alert-danger");
+						info.html(errorTxt);
+				    } else {
+				        let inputIsValid = false;
+
+				        // let's check input
+					    if ((inRange(40, valA, 60) || inRange(40, valA, 60)) &&
+						    (inRange(40, valB, 60) || inRange(40, valA, 60))) {
+					        inputIsValid = true;
+					    }
+					    if (inputIsValid) {
+                            swapClasses(info, "alert-danger", "alert alert-info");
+					        info.html(`Numbers ${Number(valA)} and ${Number(valB)} <b>PASSED</b> test!`);
+					    } else {
+                            swapClasses(info, "alert-info", "alert alert-danger");
+					        info.html(`Number(s) ${Number(valA)} and/or ${Number(valB)} <b>FAILED</b> test`);
+					    }
+
+				    }
+				});
+
+				function swapClasses(elem, classA, classB) {
+				    if (elem.hasClass(classA))
+				        elem.removeClass(classA);
+				    elem.addClass(classB);
+				}
+
+				function inRange(valA, key, valB) {
+				    return Number(valA) <= Number(key) && Number(key) <= Number(valB);
+				}
+
+			});
+
+			function demo() {
+			    console.log("This is working well");
+			}
+
+			demo();
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Check if two numbers are within a <code>40</code> and <code>60</code>
+				OR in the range <code>70</code> and <code>100</code>
+			</h5>
+			<div id="link">
+				<a href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php">
+					Main program source
+				</a>
+			</div>
+		</div>
+		<div id="info"></div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="numA" class="form-control" placeholder="Enter first integer">
+				</div>
+				<br/>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="numB" class="form-control" placeholder="Enter first integer">
+				</div>
+				<br/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-dark btn-sm" type="button">
+						Check if inputs are in range
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

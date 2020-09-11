@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Animates all divs to slide down and slide up</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+                $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')", marginTop: '10px'})
+                    .addClass('text-center text-danger small');
+
+                const createBoxes = (container, boxCnt) => {
+	                let parentContainer = $(container);
+	                Array(boxCnt).fill(0).forEach((elem, ind) => {
+						let newDiv = $('<div/>').css({
+							width: '100px',
+							height: '100px',
+							backgroundColor: 'orange',
+							border: '1px solid',
+							borderRadius: '10px',
+							marginLeft: '5px',
+							marginRight: '5px'
+						}).addClass('col');
+						parentContainer.append(newDiv);
+	                });
+                };
+
+				$('button#mainBtn').on('click', function () {
+
+					createBoxes($('div#mainBoxes div'), 3);
+
+					let newSlideUpBtn = $('<button/>').addClass('btn btn-outline-dark btn-sm')
+						.html('Slide Up').on('click', function () {
+						   $('div#mainBoxes div.row div.col').slideUp('slow', () => {
+						       $('div#jsInfo').addClass('alert alert-info').html('Slide up <b>finished!</b>')
+						   });
+						   $('div#jsInfo').addClass('alert alert-info').html('Sliding up ...');
+						});
+					$(this).unbind('click').html('Slide down').on('click', function () {
+					    $('div#mainBoxes div.row div.col').slideDown('slow', () => {
+					        $('div#jsInfo').addClass('alert alert-info').html('Slide down <b>finished!</b>')
+					    });
+					    $('div#jsInfo').addClass('alert alert-info').html('Sliding down ...');
+					});
+					$('div#buttonDiv').append($('<span/>')).append(newSlideUpBtn);
+                })
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Animates all <kbd>divs</kbd> to slide down and slide up</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-8">
+				<div id="jsInfo" class="text-center small"></div>
+				<div id="mainBoxes">
+					<div class="row"></div>
+				</div>
+				<br/>
+				<div id="buttonDiv" class="text-center">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Begin application now.
+					</button>
+				</div>
+			</div>
+			<div class="col"></div>
+		</div>
+	</body>
+</html>

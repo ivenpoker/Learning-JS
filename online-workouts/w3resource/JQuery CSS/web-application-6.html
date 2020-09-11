@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+		<title>Find inner data</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/dark.jpg')"})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+
+			    $('div#mainBox').css({
+				    width: 'auto',
+				    height: '200px',
+				    backgroundColor: 'orange',
+				    borderRadius: '10px'
+			    });
+			    $('div#buttonDiv, div#jsInfo, div#mainBtn').css({textAlign: 'center'});
+				$('div#buttonDiv button#mainBtn').click(function (evt) {
+				    let elem = $('div#mainBox');
+				    let innerWidth = $(elem).innerWidth();
+				    let innerHeight = $(elem).innerHeight();
+				    $('div#jsInfo').addClass('alert alert-info')
+						.html(`Box inner height: <b>${innerHeight}</b> | Box inner width: <b>${innerWidth}</b>`);
+				});
+			});
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Find the <kbd>innerHeight</kbd> and the <kbd>innerWidth</kbd> of an element</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker" target="_blank">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+
+				<div id="jsInfo"></div>
+				<div id="mainBox"></div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Reveal the <kbd>innerHeight</kbd> and <kbd>innerWidth</kbd> of box above.
+					</button>
+				</div>
+
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

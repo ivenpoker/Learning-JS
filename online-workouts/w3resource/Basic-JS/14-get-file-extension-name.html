@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Obtaining file extension</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_02.jpg')",
+				    "color" : "white"
+			    }).end().add('div.jumbotron h4, div#divBtn, div#divInfo').css('text-align', 'center');
+			    $("button#mainBtn").click(function () {
+			        let filename = $("input#fileName").val().trim();
+			        let validInfo = validateFileName(filename);
+                    let elem = $("div#divInfo");
+
+			        if (validInfo.isEmpty || filename.indexOf(' ') >= 0) {
+				        if (elem.hasClass('alert-info') || elem.hasClass('alert-warning'))
+				            elem.removeClass('alert-info').removeClass('alert-warning');
+				        elem.addClass('alert alert-danger').html('Please provide <b>valid</b> <ins>filename</ins> with <ins>extension</ins>');
+			        } else if (!validInfo.hasDot) {
+			            if (elem.hasClass('alert-danger') || elem.hasClass('alert-success'))
+			                elem.removeClass('alert-danger').removeClass('alert-info');
+			            elem.addClass('alert alert-warning').html(`'<b>${filename}</b>' has no <ins>extension</ins>`);
+                    } else {
+			            if (elem.hasClass('alert-danger') || elem.hasClass('alert-warning'))
+			                elem.removeClass('alert-danger').removeClass('alert-warning');
+			            elem.addClass('alert alert-info').html(`<ins><b>${filename}</b></ins>
+											has extension <b><ins>${filename.split('.').pop()}</ins></b>`);
+			        }
+			    });
+
+			    function validateFileName(filename) {
+			        if (filename.length === 0 || filename.indexOf('.') < 0)
+			            return {valid: false, hasDot: false, isEmpty: filename.length === 0};
+			        let parts = filename.split('.');
+			        return {valid: parts.length === 2, hasDot: parts.pop().length !== 0, isEmpty: false};
+
+			    }
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Getting file extension </h4>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="divInfo"></div>
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="fileName" class="form-control" placeholder="Enter filename with extension">
+				</div>
+				<hr/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm">Get filename extension</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

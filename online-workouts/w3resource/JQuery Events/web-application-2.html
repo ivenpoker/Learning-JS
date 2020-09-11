@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+		<title>Attaches a function to the blur event</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+				$('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+				$('input#mainInput, div#buttonDiv, div#jsInfo').css({textAlign: 'center'});
+
+				let numTimes = 1;
+				$('div#buttonDiv button#mainBtn').click(function (evt) {
+				    $('input#mainInput').on({
+					    'blur': function (evt) {
+					        $('div#jsInfo').addClass('alert alert-info small')
+						        .html(`<kbd>blur</kbd> function called <kbd>${numTimes++}X</kbd>. Content is <kbd>${$(this).val()}</kbd>`);
+					    }
+				    });
+				    $(this).attr('disabled', 'disabled');
+				    $('div#jsInfo').addClass('alert alert-success small')
+						.html(`Function to handle <kbd>blur</kbd> event now active`);
+				});
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Attach a <kbd>function</kbd> to the <kbd>blur</kbd> event.</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="jsInfo"></div>
+				<div>
+					<input id="mainInput" class="form-control form-control-sm" type="text" placeholder="Sample placeholder"/>
+				</div>
+				<hr/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-dark btn-sm" type="button">
+						Attach function to <kbd>blur</kbd> event now on <kbd>input</kbd>
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

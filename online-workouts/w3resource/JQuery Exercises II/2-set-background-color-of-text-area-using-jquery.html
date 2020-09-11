@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Set background color for text area using jquery</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_04.jpg')",
+				    "color" : "white"
+			    }).end().add('div.jumbotron h5, div#textArea, div#divBtn').css({textAlign: 'center'});
+
+			    $("div#divBtn button#mainBtn").click(function () {
+			        $("textArea#mainTextArea").css({backgroundColor: 'orange', color: 'black'});
+			    });
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Set background color for text area using jquery</h5>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="textArea">
+					<form role = "form">
+						<div class = "form-group">
+								<textarea id="mainTextArea" class="form-control" rows="6" cols="25" maxlength="200"></textarea>
+						</div>
+					</form>
+				</div>
+				<hr/>
+				<div id="divBtn">
+					<button type="button" class="btn btn-outline-dark btn-sm" id="mainBtn">
+						Do JQuery modifications.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

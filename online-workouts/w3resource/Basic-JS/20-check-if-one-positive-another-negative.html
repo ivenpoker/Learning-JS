@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Title</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add('div#link a').addClass('small').css({textAlign: 'center', color: 'orange'});
+			    $("input#intA, input#intB, div#info, div#divBtn").css({textAlign:'center'});
+
+			    $("button#mainBtn").click(function () {
+			        let intA = $("input#intA").val();
+			        let intB = $("input#intB").val();
+			        let info = $("div#info");
+
+			        let errorTxt = "";
+			        if (intA.length === 0 || isNaN(intA))
+			            errorTxt += "Please enter <b>first number</b>";
+			        if (intB.length === 0 || isNaN(intB)) {
+			            if (errorTxt.length === 0) {
+			                errorTxt += "Please enter <b>second number</b>";
+			            } else {
+			                errorTxt += " and <b>second number</b>";
+			            }
+			        }
+			        if (errorTxt.length !== 0) {
+			            if (info.hasClass('alert-info'))
+			                info.removeClass('alert alert-info');
+			            info.addClass('alert alert-danger').html(errorTxt);
+			        } else {
+			            if (info.hasClass('alert-danger')) info.removeClass('alert alert-danger');
+			            if ((Number(intA) < 0 && Number(intB) > 0) ||
+				            (Number(intA) > 0 && Number(intB) < 0)) {
+			                info.addClass('alert alert-info').html(`Integer values pass condition`);
+			            }
+			            else {
+			                info.addClass('alert alert-danger').html(`Integer values don't pass condition`);
+			            }
+			        }
+
+			    });
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Check if one integer is positive and another negative</h5>
+			<div id="link">
+				<a href="http://www.w3resouce.com/">Go to the website</a>
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="info"></div>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="intA" class="form-control" placeholder="Enter first integer">
+				</div>
+				<hr/>
+				<div class="input-group input-group-sm">
+					<input type="number" width="50" id="intB" class="form-control" placeholder="Enter second integer">
+				</div>
+				<hr/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Check the integers for property.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

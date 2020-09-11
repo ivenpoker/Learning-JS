@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+		<title>Finds widths and heights</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function (evt) {
+
+			    let colors = ['lightblue', 'orange', 'pink', 'purple'];
+
+                // Function returns a random number >= 0 and < 'max'.
+                let getRandomInt = (max) =>  {
+                    return Math.floor(Math.random() * Math.floor(max));
+                };
+
+				$('div.jumbotron').css({backgroundImage: "url('../../Pictures/dark.jpg')"})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+
+				$('div#buttonDiv, div#jsInfo').css({textAlign: 'center'});
+
+				let createDivs = (parents) => {
+				   if (!parents.jquery) {
+				       console.log(`Application have undergone an ERROR! Check code!`);
+				   } else {
+				       let initWidth = 150;
+				       let initHeight = 150;
+
+				       $(parents).each(function (ind, elem) {
+					        let temp = $('<div/>').css({
+						        backgroundColor: colors[getRandomInt(colors.length)],
+						        width: `${initWidth}px`,
+						        height: `${initHeight}px`,
+						        borderRadius: '10px',
+						        margin: 'auto',
+						        marginBottom: '10px'
+					        }).addClass('newDiv');
+					        $(elem).append(temp);
+
+					        initWidth += 10;
+					        initHeight += 10;
+				       })
+				   }
+				};
+
+				$('div#buttonDiv button#mainBtn').click(function () {
+				    createDivs($('div.col-4'));
+					$(this).remove();           // Removes this element (button) from DOM
+
+					let newButton = $('<button/>').addClass('btn btn-outline-dark btn-sm')
+						.html('Show the widths and heights of all <kbd>div</kbd> elements')
+						.click(function (evt) {
+						    let divsInfo = '';
+							$('div.newDiv').each(function (ind, elem) {
+							    divsInfo += `DIV #${ind+1} -> <b>width</b>: ${$(elem).css('width')}
+                                                and <b>height</b>: ${$(elem).css('height')}<br/>`
+							});
+							$('div#jsInfo').addClass('alert alert-info').html(divsInfo);
+							$(this).attr('disabled', 'disabled');
+						});
+					$('div#buttonDiv').append(newButton);
+				});
+
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Finds widths and heights of various elements</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<hr/>
+		<div id="jsInfo"></div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4"></div>
+			<div class="col-4"></div>
+		</div>
+		<hr/>
+		<div id="buttonDiv">
+			<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+				Create the <kbd>divs</kbd> now
+			</button>
+		</div>
+	</body>
+</html>

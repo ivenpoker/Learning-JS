@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Select values from JSON using JQuery</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$("div.jumbotron").css({
+					"background-image" : "url('../../Pictures/background_01.jpg')",
+					"color" : "white"
+				}).end().add('div.jumbotron h4, div.divBtn, div#originalData, div#newData').css("text-align", 'center');
+                let colors = $("<kbd></kbd>").html('{ "name":"John", "age":30, "car":null}');
+
+				$("div#originalData").append(colors);
+
+				$("button#mainBtn").click(function () {
+                    let colors = '{ "name":"John", "age":30, "car":null}';
+                    let jsColors = JSON.parse(colors);
+					let newData = "";
+					for (let prop in jsColors)
+					    newData += "<kbd>" + prop + "</kbd>" + " : " + "<kbd> " + jsColors[prop] + "</kbd></br></hr>";
+					$("div#newData").html(newData);
+
+				});
+			});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Select values from JSON using JQuery</h4>
+		</div>
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<div id="originalData"></div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div class="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Select values from JSON using JQuery
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="newData"></div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

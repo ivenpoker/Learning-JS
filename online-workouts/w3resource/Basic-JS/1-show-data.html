@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Display Time</title>
+
+		<script type="text/javascript">
+            $(document).ready(function () {
+                $("div.jumbotron").css({
+                    "background-image": "url('../../Pictures/background_06.jpg')",
+                    "color": "white"
+                });
+            });
+            function showTime() {
+                let time = new Date();
+                let dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                let monthNames = ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"];
+                let dayName = dayList[time.getDay()];
+                let monthName = monthNames[time.getMonth()];
+
+                let seconds = time.getSeconds();
+                let minutes = time.getMinutes();
+
+                document.getElementById('timeSpace').innerHTML = dayName + ", " + monthName + " " + time.getDate() + " " + time.getFullYear()
+                    + " " + time.getHours() + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" +
+                    (seconds < 10 ? "0" + seconds : seconds);
+                document.getElementById('timeSpace').style.color = "blue";
+            }
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4 style="text-align: center;">
+				Current Time
+			</h4>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<hr/>
+				<p id="timeSpace" style="text-align: center;"></p>
+				<hr/>
+				<div style="text-align: center;">
+					<button type="button" class="btn btn-outline-dark btn-sm"
+					        onclick="showTime()">
+						Show the current time
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

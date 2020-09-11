@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Remove character at a specified position</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+					.add("div#link a").addClass('small').css({textAlign: 'center', color: 'orange'});
+				$("div#divBtn, input#someString, input#index, div#info").css({textAlign: 'center'});
+
+				$("button#mainBtn").click(function () {
+				    let str = $("input#someString").val();
+				    let info = $("div#info");
+				    if (str.length === 0) {
+				        if (info.hasClass('alert-info'))
+				            info.removeClass('alert-info');
+				        info.addClass('alert alert-danger').html('Please provide a <ins>string</ins> to work with');
+				        $("input#someString").val('').focus();
+				    } else {
+				        let ind = $("input#index").val();
+				        if (ind < 0 || ind >= str.length || ind.length === 0) {
+				            if (info.has('alert-info'))
+				                info.removeClass('alert-info');
+					        info.addClass('alert alert-danger').html(`Please provide a valid  index!`);
+				        } else {
+				            let char = str.charAt(ind);
+				            let fstHalf = str.substring(0, ind);
+				            let sndHalf = str.substring(ind+1);
+				            if (info.hasClass('alert-danger'))
+				                info.removeClass('alert-danger');
+				            info.addClass('alert alert-info').html(`After removing <b>${char}</b>, new string
+									is: <b>${fstHalf + sndHalf}</b>`)
+				        }
+				    }
+				});
+
+            })
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Remove character at a specified position</h5>
+			<div id="link">
+				<a href="http://www.w3resource.com/" target="_blank">Go to the website</a>
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="info"></div>
+				<div class="input-group input-group-sm">
+					<input type="text" width="50" id="someString" class="form-control" placeholder="Enter string to remove character from">
+				</div>
+				<br/>
+				<div class="input-group input-group-sm">
+					<input type="number" width="10" id="index" class="form-control" placeholder="Enter index to remove character at">
+				</div>
+				<br/>
+				<div id="divBtn">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Remove the character at specified index.
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>

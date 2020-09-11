@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../Main-Libraries/js-files/jquery-3.4.1.minjs"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Verify last digit of three numbers</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $("div.jumbotron").css({backgroundImage: "url('../../Pictures/background_06.jpg')"})
+				    .add("div#link a").addClass('small').css({textAlign: 'center', color: 'orange'});
+
+			    $("div#divBtn button#mainBtn").css({color: 'orange', border: '2px solid orange'}).click(function () {
+					let valA = $("input#numA").val().trim();
+					let valB = $("input#numB").val().trim();
+					let valC = $("input#numC").val().trim();
+				    let info = $("div#info");
+
+				    let errorText = "";
+
+				    if (valA.length === 0) {
+				        errorText += "Please provide data for <b>first</b>";
+				    }
+				    if (valB.length === 0) {
+				        if (errorText.length === 0) {
+				            errorText +="Please provide data for <b>second</b>";
+				        } else {
+				            errorText += ", <b>second</b>";
+				        }
+				    }
+				    if (valC.length === 0) {
+				        if (errorText.length === 0) {
+				            errorText += "Please provide data for <b>third</b>";
+				        } else {
+				            errorText += " and <b>third</b>"
+				        }
+				    }
+				    if (errorText.length !== 0) {
+				        errorText += " integer.";
+						swapClasses(info, "alert-success", "alert alert-danger", errorText);
+				    } else {
+				        let lastA = Number(valA) % 10;
+				        let lastB = Number(valB) % 10;
+				        let lastC = Number(valC) % 10;
+
+				        if (lastA === lastB && lastB === lastC) {
+				            swapClasses(info, "alert-danger", "alert alert-success",
+				                `Integers <b>${valA}</b>, <b>${valB}</b> and <b>${valC}</b> have <b><ins>SAME</ins></b>
+									last digits`);
+				        } else {
+                            swapClasses(info, "alert-success", "alert alert-danger",
+                                `Integers <b>${valA}</b>, <b>${valB}</b> and <b>${valC}</b> <b><ins>DO NOT HAVE SAME</ins></b>
+									last digits`);
+                        }
+				    }
+			    });
+
+			    let swapClasses = (elem, classA, classB, html) => {
+			        if (elem.jquery) { // if this is a jquery object
+			            if (elem.hasClass(classA))
+			                elem.removeClass(classA);
+			            elem.addClass(classB).html(html);
+			        } else { // DOM object
+			            if (elem.classList.contains(classA))
+			                elem.classList.remove(classA);
+			            elem.classList.add(classB);
+			            elem.innerHTML = html;
+			        }
+			    };
+
+			    $("div#divBtn, div#info, input#numA, input#numB, input#numC").css({textAlign: 'center'});
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Checks if the last digit of the three given positive integers is same</h4>
+			<div id="link">
+				<a href="https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-36.php">
+					Web application source
+				</a>
+			</div>
+			<br/>
+			<div id="info"></div>
+			<div class="row">
+				<div class="col-4"></div>
+				<div class="col-4">
+					<div class="input-group input-group-sm">
+						<input type="text" width="50" id="numA" class="form-control" placeholder="Enter first integer">
+					</div>
+					<br/>
+					<div class="input-group input-group-sm">
+						<input type="text" width="50" id="numB" class="form-control" placeholder="Enter second integer">
+					</div>
+					<br/>
+					<div class="input-group input-group-sm">
+						<input type="text" width="50" id="numC" class="form-control" placeholder="Enter third integer">
+					</div>
+					<br/>
+
+					<div id="divBtn">
+						<button id="mainBtn" class="btn btn-dark btn-sm" type="button">
+							Find largest within range
+						</button>
+					</div>
+				</div>
+				<div class="col-4"></div>
+			</div>
+		</div>
+	</body>
+</html>

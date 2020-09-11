@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Hide all paragraphs slowly</title>
+
+		<script type="text/javascript">
+
+			const createParagraphs = (parent, cnt) => {
+			    let jqParent = $(parent);
+				Array(cnt).fill(0).forEach((val, ind) => {
+				    let newElem = $('<p/>').html(`Paragraph <b>#${ind+1}</b>`);
+				    jqParent.append(newElem);
+				})
+			};
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')", marginTop: '10px'})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+			    $('div#buttonDiv, div#mainData').css({textAlign: 'center'});
+
+			    // create 5 paragraphs
+				createParagraphs($('div#mainData'), 5);
+				$('button#mainBtn').on('click', (evt) => {
+				    let doneOnce = false;
+				    let thisBtn = evt.target;
+				    $('div#mainData p').hide(3000, () => {
+				        if (!doneOnce) {
+				            $(thisBtn).html('All animations done!').attr('disabled', 'disabled');
+				            doneOnce = true;
+				        }
+				    });
+				});
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Animates all shown paragraphs to hide slowly (within a specific time)</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="mainData"></div>
+				<br/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-outline-dark btn-sm" type="button">
+						Click to hide all the <kbd>&lt;p&gt;</kbd>
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<title>Compute Area</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image": "url('../../Pictures/background_04.jpg')",
+				    "color": "white"
+			    });
+
+			    $("button#mainBtn").click(function() {
+			        let side1 = document.getElementById('side1').value;
+			        let side2 = document.getElementById('side1').value;
+			        let side3 = document.getElementById('side1').value;
+
+			        if ((side1.length === 0 || Number(side1) < 0) ||
+				        (side2.length === 0 || Number(side2) < 0) ||
+				        (side3.length === 0 || Number(side3) < 0)) {
+			            $("div#computeInfo").addClass('alert').addClass('alert-danger')
+				            .html("Some (or all) of side(s) is/are invalid. Must be a positive integer");
+			        } else {
+			            let val = (side1 + side2 + side3) / 2;
+			            let area = Math.sqrt(val * ((val-side1) * (val-side2) * (val-side3)));
+			            $("div#computeInfo").removeClass('alert').removeClass('alert-danger')
+				            .addClass('alert').addClass('alert-info')
+				            .html("Area of triangle is: <b>" + area + "</b>");
+			        }
+			    });
+			});
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<div style="text-align: center;">
+				<h3>Compute The Area of Triangle</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div style="text-align: center;" id="computeInfo"></div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<table class="table table-striped table-dark">
+					<tbody>
+						<tr>
+							<td>Side A:</td>
+							<td><input type="number" id="side1"></td>
+						</tr>
+						<tr>
+							<td>Side B:</td>
+							<td><input type="number" id="side2"></td>
+						</tr>
+						<tr>
+							<td>Side C:</td>
+							<td><input type="number" id="side3"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-4"></div>
+		</div>
+		<hr/>
+		<div style="text-align: center">
+			<button type="button" class="btn btn-outline-dark btn-sm"
+				id="mainBtn">
+				Compute the Area
+			</button>
+		</div>
+	</body>
+</html>

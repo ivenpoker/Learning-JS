@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css" type="text/css"/>
+		<meta charset="UTF-8">
+		<title>Run an animation with less frames</title>
+
+		<script type="text/javascript">
+
+			$(document).ready(function () {
+			    $('div.jumbotron').css({backgroundImage: "url('../../Pictures/background_06.jpg')", marginTop: '10px'})
+					.addClass('small').css({textAlign: 'center', color: 'orange'});
+				$('div#buttonDiv').css({textAlign: 'center'});
+				$('div#mainBox').css({
+					textAlign: 'center',
+					backgroundColor: 'orange',
+					height: '175px',
+					width: '100%',
+					border: '2px solid black',
+					borderRadius: '10px'
+				});
+				jQuery.fx.interval = 200;
+				$('button#mainBtn').on('click', () => {
+					$('div#mainBox').toggle(3000);
+				});
+			})
+
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h5>Run an animation with less frames</h5>
+			<div id="link">
+				Author: <a href="https://github.com/ivenpoker">Happi Yvan</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<div id="mainBox"></div>
+				<br/>
+				<div id="buttonDiv">
+					<button id="mainBtn" class="btn btn-dark btn-sm" type="button">
+						Run an animation with less frames.
+					</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</body>
+</html>

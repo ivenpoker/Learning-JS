@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="../../../Main-Libraries/js-files/bootstrap.min.js"></script>
+		<script src="../../../Main-Libraries/js-files/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="../../../Main-Libraries/css-files/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Title</title>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $("div.jumbotron").css({
+				    "background-image" : "url('../../Pictures/background_02.jpg')",
+				    "color" : "white"
+			    }).end().add("div.jumbotron h4, div#divInfo, div#divBtn").css('text-align', 'center');
+			    $("div#divBtn button").click(function () {
+				    let today = new Date();
+				    let christmas = new Date(today.getFullYear(), 11, 25);
+
+				    if (today.getMonth() === 11 & today.getDate() > 25)
+				        christmas.setFullYear(christmas.getFullYear()+1);
+				    let oneDay = 1000 * 60 * 60 * 24;
+
+			        $("div#divInfo").addClass("alert alert-info")
+				        .html("<b>" + Math.ceil((christmas.getTime() - today.getTime()) / (oneDay)) +
+				            "</b> days left until christmas");
+			    });
+			})
+		</script>
+	</head>
+	<body class="container">
+		<div class="jumbotron">
+			<h4>Compute days left till christmas</h4>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="divInfo"></div>
+				<div id="divBtn">
+					<button type="button" id="mainBtn" class="btn btn-outline-dark btn-sm">
+						Show number of days till christmas
+					</button>
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</body>
+</html>
