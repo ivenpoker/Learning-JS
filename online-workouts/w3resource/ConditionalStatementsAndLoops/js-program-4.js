@@ -1,6 +1,6 @@
 // #######################################################################################################
 // #                                                                                                     #
-// #    Program Purpose: Find the largest of five numbers using just 'if' statements.		 	         #
+// #    Program Purpose: Find the largest of five numbers using just 'if' statements only.	 	         #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                           #
 // #       Program Date: September 7, 2020.                                                              #
 // #                                                                                                     #
