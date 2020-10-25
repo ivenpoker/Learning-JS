@@ -2,7 +2,7 @@
 // #                                                                                                    #
 // #    Program Purpose: Determines if a number is a power of 2 or not.                                 #
 // #     Program Author: Happi Yvan <ivensteinpoker@gmail.com>                                          #
-// #       Program Date: October 30, 2020.                                                              #
+// #       Program Date: October 25, 2020.                                                              #
 // #                                                                                                    #
 // ######################################################################################################
 
